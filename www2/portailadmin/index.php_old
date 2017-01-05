@@ -1,0 +1,61 @@
+
+<?php
+session_start();
+require_once("variables.php");
+
+
+
+/**********************************************************
+  AUTHENTIFICATION OK
+***********************************************************/
+$_SESSION['PORTAIL\app='.$nom_app] = (isset($_SESSION['PORTAIL\app='.$nom_app])) ? $_SESSION['PORTAIL\app='.$nom_app] : 0;
+$_SESSION['PORTAIL\app='.$nom_app_admin] = (isset($_SESSION['PORTAIL\app='.$nom_app_admin])) ? $_SESSION['PORTAIL\app='.$nom_app_admin] : 0;
+
+
+if (!empty($_SESSION['PORTAIL\id']) && ($_SESSION['PORTAIL\app='.$nom_app]==1 || $_SESSION['PORTAIL\app='.$nom_app_admin]==1)) {
+
+
+	require_once("variables_".$_SESSION['PORTAIL\lang'].".php");
+	include_once("../commun/functions/functions.php");
+	
+	template_header_commun("multiping",$var_titre); //template commune
+	
+	echo "<link type='text/css' rel='stylesheet' href='css/styles.css'/>";
+?>
+</head>
+<body>
+<?php
+	template_banniere_commun($var_titre);
+	//template_menu_commun($var_menu,$_SESSION['PORTAIL\app='.$nom_app_admin]);
+	template_menu_commun_jquery($var_menu,$_SESSION['PORTAIL\app='.$nom_app_admin]);
+?>
+<!-- ----------------------------------------------- -->
+<!-- ----------------  BASE PERSO   ---------------- -->
+<!-- ----------------------------------------------- -->
+
+	
+<!-- CORPS DE PAGE -->
+<div id="corps">
+<?php 
+
+$sql="SELECT url FROM menus WHERE id=".$_GET['id_menu'];
+$req=mysql_query($sql);
+include("include/".mysql_result($req,0,0));
+
+
+
+?>
+</div>
+</body>
+</html>
+
+<?php
+ }
+/**********************************************************
+  AUCUNE AUTHENTIFICATION ACTIVE
+***********************************************************/
+else
+{
+	header("Location: ../portail/authentication.php");
+}
+?>

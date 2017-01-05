@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!-- partie 1 : Definitions -->
+<definitions 	name="Contacts" 
+   targetNamespace="http://opera/webservices/portailV2/wsdl/Contacts.wsdl"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns="http://opera/webservices/portailV2/wsdl/Contacts.wsdl"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:opera="http://opera/webservices/">
+ 
+ 	<!-- partie 2 : Types -->
+	<types>
+	   <xsd:schema targetNamespace="http://opera/webservices/" xmlns="http://www.w3.org/2001/XMLSchema">
+			<xsd:simpleType name="sortie">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="XML"/>
+					<xsd:enumeration value="JSON"/>
+				</xsd:restriction>	
+			</xsd:simpleType>
+			<xsd:simpleType name="rechercheExacte">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="OUI"/>
+					<xsd:enumeration value="NON"/>
+				</xsd:restriction>	
+			</xsd:simpleType>
+	   </xsd:schema>
+	</types>
+ 
+ 
+	<!-- partie 3 : Messages -->
+	<message name="getContactsPortailAvecEmailRequest">
+		<part name="sortie" type="opera:sortie"/>
+	</message>
+	<message name="getContactsPortailAvecEmailResponse">
+		<part name="return" type="xsd:string"/>
+	</message>
+	
+	
+	
+	<!-- partie 4 : Port Type -->
+	<portType name="ContactsPort">
+		<!-- partie 5 : Operation -->
+		<operation name="getContactsPortailAvecEmail">
+			<input message="tns:getContactsPortailAvecEmailRequest"/>
+			<output message="tns:getContactsPortailAvecEmailResponse"/>
+		</operation>
+	</portType>
+ 
+	<!-- partie 6 : Binding -->
+	<binding name="ContactsBinding" type="tns:ContactsPort">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getContactsPortailAvecEmail">
+			<soap:operation soapAction="ContactsAction"/>
+			<input>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:Contacts" 	
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:Contacts" 
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+
+			
+		
+	</binding>
+ 
+	<!-- partie 7 : Service -->
+	<service name="ContactsService">
+		<documentation>Listes des contacts du portail OPERA</documentation>
+		<!-- partie 8 : Port -->
+		<port name="ContactsPort" binding="tns:ContactsBinding">
+			<soap:address location="http://opera/webservices/commun/services/Contacts.php"/> 
+		</port>
+	</service>
+</definitions>

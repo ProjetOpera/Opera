@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!-- partie 1 : Definitions -->
+<definitions 	name="RattachementCI" 
+   targetNamespace="http://opera/webservices/commun/wsdl/RattachementCI.wsdl"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns="http://opera/webservices/commun/wsdl/RattachementCI.wsdl"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:opera="http://opera/webservices/">
+ 
+ 	<!-- partie 2 : Types -->
+	<types>
+	   <xsd:schema targetNamespace="http://opera/webservices/" xmlns="http://www.w3.org/2001/XMLSchema">
+			<xsd:simpleType name="sortie">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="XML"/>
+					<xsd:enumeration value="JSON"/>
+				</xsd:restriction>	
+			</xsd:simpleType>
+			<xsd:simpleType name="rechercheType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="EQUIPEMENT"/>
+					<xsd:enumeration value="SERVICE"/>
+					<xsd:enumeration value="INDIFFERENT"/>
+				</xsd:restriction>	
+			</xsd:simpleType>
+			<xsd:simpleType name="rechercheExacte">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="OUI"/>
+					<xsd:enumeration value="NON"/>
+				</xsd:restriction>	
+			</xsd:simpleType>
+	   </xsd:schema>
+	</types>
+ 
+ 
+	<!-- partie 3 : Messages -->
+	<message name="getCiFromOtherRequest">
+		<part name="recherche" type="xsd:string"/>
+		<part name="rechercheType" type="opera:rechercheType"/>
+		<part name="rechercheExacte" type="opera:rechercheExacte"/>
+		<part name="sortie" type="opera:sortie"/>
+	</message>
+	<message name="getCiFromOtherResponse">
+		<part name="return" type="xsd:string"/>
+	</message>
+	<message name="getCiFromLotModuleRequest">
+		<part name="recherche" type="xsd:string"/>
+		<part name="lot" type="xsd:string"/>
+		<part name="module" type="xsd:string"/>
+		<part name="rechercheType" type="opera:rechercheType"/>
+		<part name="rechercheExacte" type="opera:rechercheExacte"/>
+		<part name="sortie" type="opera:sortie"/>
+	</message>
+	<message name="getCiFromLotModuleResponse">
+		<part name="return" type="xsd:string"/>
+	</message>
+	
+	
+	<!-- partie 4 : Port Type -->
+	<portType name="RattachementCIPort">
+		<!-- partie 5 : Operation -->
+		<operation name="getCiFromOther">
+			<input message="tns:getCiFromOtherRequest"/>
+			<output message="tns:getCiFromOtherResponse"/>
+		</operation>
+		<operation name="getCiFromLotModule">
+			<input message="tns:getCiFromLotModuleRequest"/>
+			<output message="tns:getCiFromLotModuleResponse"/>
+		</operation>
+	</portType>
+ 
+	<!-- partie 6 : Binding -->
+	<binding name="RattachementCIBinding" type="tns:RattachementCIPort">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getCiFromOther">
+			<soap:operation soapAction="RattachementCIAction"/>
+			<input>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:RattachementCI" 	
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:RattachementCI" 
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	
+		<operation name="getCiFromLotModule">
+			<soap:operation soapAction="RattachementCIAction"/>
+			<input>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:RattachementCI" 	
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:RattachementCI" 
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+			
+		
+	</binding>
+ 
+	<!-- partie 7 : Service -->
+	<service name="RattachementCIService">
+		<documentation>Listes des services ou equipements rattaches respectivement a un equipement ou un service.</documentation>
+		<!-- partie 8 : Port -->
+		<port name="RattachementCIPort" binding="tns:RattachementCIBinding">
+			<soap:address location="http://opera/webservices/commun/services/rattachementCI.php"/> 
+		</port>
+	</service>
+</definitions>

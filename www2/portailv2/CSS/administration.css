@@ -1,0 +1,17 @@
+#menu_administration{
+float:left;
+width:270px;
+margin:0;
+padding:0;
+}
+
+#menu_administration ul{ list-style:none; margin:0; padding:0; }
+#menu_administration a{ float:none; }
+
+
+#corps_admin{
+float:left;
+width:670px;
+margin:0 0 0 15px;
+padding:0;
+}

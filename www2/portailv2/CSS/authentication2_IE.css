@@ -1,0 +1,67 @@
+body {
+	font-family:Arial;
+	background-color:#91CBFD;
+	background-image:url("../images/Fifa-World-Cup-Brazil-2014.jpg");
+	background-position:50% 40%;
+	background-repeat:no-repeat;
+}
+
+
+#info {
+	font-size:10px;
+}
+
+#authentication{
+	width:500px;
+	height:240px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-120px 0 0 -250px;
+	border:1px solid #0066A1;
+	font-family: Verdana, Arial;
+	font-size:12px;
+	color:#000;
+	background-image:url("../images/bg60.png");
+	/*-ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=50); */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";	
+	/*filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);   
+	filter:alpha(opacity=50);
+		*/
+	box-shadow: 6px 6px 12px #333;
+	-moz-box-shadow: 6px 6px 12px #333;
+	-webkit-box-shadow: 6px 6px 12px #333;
+}
+
+#authentication table {	padding-top:5px; text-align:center;	width:320px;}
+#authentication input.input {	border:1px solid #0066A1; color:#0066A1; padding:2px }
+#authentication #valid {  }
+#authentication #valid:hover { }
+
+#entete {
+	width:500px;
+	height:70px;
+	background-image:url("../images/logo_atos.jpg");
+	background-position:3% 50%;
+	background-color:#0066A1;
+	background-repeat:no-repeat;
+	margin:0; padding:0;
+	position:relative;	
+}	
+
+#flag { float:right; margin:10px;}
+#flag img { border:1px solid #0066A1 }
+
+#corps_auth {
+	float:none;
+	margin:0; padding:0;
+}
+
+#title{
+	background-color:#66A3C7; 
+	text-align:left;
+	font-size:12px;
+	margin:0 0 8px 0;
+	padding:3px 0 3px 14px;
+	color:#fff;
+}

@@ -1,0 +1,146 @@
+<?php
+$var_ajout_menu = "Ajouter un menu";
+$select_menu = "Selectionnez une application";
+$liste_libelles = "Libelles";
+$liste_url = "URL";
+$liste_ordre = "Ordre";
+$supprimer = "Supprimers";
+
+// INSERTION FICHIER AJOUT/MODIF/SUPPR EN BASE DE DONNEES
+include("include/applications/menus_bdd.php");
+
+
+// MISE EN VARIABLE DE ID APPLICATION
+$var_appli = (isset($_GET['appli'])) ? $_GET['appli'] : "";
+
+
+// LISTE DES APPLICATIONS *************************
+$sql_appli = "
+	SELECT id,nom_appli
+	FROM applications
+	ORDER BY nom_appli";
+$req_appli = mysql_query($sql_appli);
+
+echo "$select_menu :&nbsp;&nbsp;&nbsp;";
+echo "<select onchange='window.location.href = (\"index.php?id_menu=".$_GET['id_menu']."&appli=\"+this.value);'><option></option>";
+while ($line_appli = mysql_fetch_array($req_appli)) {
+	$selected = ($var_appli==$line_appli['id']) ? "selected='selected'": "" ; 
+	echo "<option value='".$line_appli['id']."' $selected>".$line_appli['nom_appli']."</option>";
+}
+echo "</select><br /><br />";
+
+
+if ($var_appli != "") {
+	?>
+	
+	<a href="include/applications/menus_gestion.php?type=ajout&id_menu=<?php echo $_GET['id_menu']; ?>&id_appli=<?php echo $var_appli; ?>" class="various1"><?php echo $var_ajout_menu; ?></a>
+	<br /><br />
+	
+	
+	<table class='display_list2' cellpadding="0" cellspacing="0" border="0"><tbody>
+	<tr class='table_line'>
+		<td><?php echo $liste_libelles; ?></td>
+		<td><?php echo $liste_url; ?></td>
+		<td style='text-align:center;width:70px;'><?php echo $liste_ordre; ?></td>
+		<td style='text-align:center;width:70px'></td>
+	</tr>
+	
+	<?php
+
+	// requete menu
+	$sql0 = "
+		SELECT menus.id, url, traduction, ordre, parent
+		FROM menus, libelles_trad, applications, lookup_values
+		WHERE menus.code_libelle = libelles_trad.id_libelle
+		AND applications.id = $var_appli
+		AND menus.id_applications = applications.id
+		AND libelles_trad.id_lookup_values = lookup_values.id
+		AND lookup_values.value='FR'
+		AND lookup_values.type='langue'
+		AND parent=-1
+		ORDER BY ordre";
+	$req0 = mysql_query($sql0);
+	
+	//echo $sql0;
+	
+	while ($line0 = mysql_fetch_array($req0)) {
+		
+		// affichage menu
+		echo "<tr class='line0'>";
+		echo "	<td><a href='include/applications/menus_gestion.php?type=modif&id=".$line0[0]."&id_appli=$var_appli&id_menu=".$_GET['id_menu']."' class='various1'>".$line0['traduction']."</a></td>";
+		echo "	<td>".$line0[1]."</td>";
+		echo "	<td style='text-align:center'>";
+		echo "		<a class='desc' href='include/applications/menus_ordre.php?sens=1&id_menu=".$_GET['id_menu']."&id=".$line0[0]."&appli=".$_GET['appli']."&ordre=".($line0['ordre']-1)."&p=".$line0['parent']."'></a>";
+		echo "		<a class='asc' href='include/applications/menus_ordre.php?sens=-1&id_menu=".$_GET['id_menu']."&id=".$line0[0]."&appli=".$_GET['appli']."&ordre=".($line0['ordre']+1)."&p=".$line0['parent']."'></a>";
+		echo 		$line0['ordre'];
+		echo "	</td>";
+		echo "	<td><a class='delete various1' style='margin-left:20px' href='include/applications/menus_gestion.php?type=suppr&id=".$line0[0]."&appli=".$_GET['appli']."'></a></td>";
+		echo "</tr>";
+		
+		// requete sous menu
+		$sql1 = "
+			SELECT menus.id, url, traduction, ordre, parent
+			FROM menus, libelles_trad, applications, lookup_values
+			WHERE menus.code_libelle = libelles_trad.id_libelle
+			AND applications.id = 1
+			AND menus.id_applications = applications.id
+			AND libelles_trad.id_lookup_values = lookup_values.id
+			AND lookup_values.value='FR'
+			AND lookup_values.type='langue'
+			AND parent=$line0[0]
+			ORDER BY ordre";
+		$req1 = mysql_query($sql1);
+		
+		//il existe un sous menu
+		if (mysql_num_rows($req1)>0) {
+			
+			while($line1 = mysql_fetch_array($req1)) {
+				
+				// affichage sous menu
+				echo "<tr class='line1'>";
+				echo "	<td>&nbsp;&nbsp;|--&nbsp;&nbsp;<a href='include/applications/menus_gestion.php?type=modif&id=".$line1[0]."&id_appli=$var_appli&id_menu=".$_GET['id_menu']."' class='various1'>".$line1['traduction']."</a></td>";
+				echo "	<td>".$line1[1]."</td>";
+				echo "	<td style='text-align:center'>";
+				echo "		<a class='desc' href='include/applications/menus_ordre.php?sens=1&id_menu=".$_GET['id_menu']."&id=".$line1[0]."&appli=".$_GET['appli']."&ordre=".($line1['ordre']-1)."&p=".$line1['parent']."'></a>";
+				echo "		<a class='asc' href='include/applications/menus_ordre.php?sens=-1&id_menu=".$_GET['id_menu']."&id=".$line1[0]."&appli=".$_GET['appli']."&ordre=".($line1['ordre']+1)."&p=".$line1['parent']."'></a>";
+				echo 		$line1['ordre'];
+				echo "	</td>";				
+				echo "	<td><a class='delete various1' style='margin-left:20px' href='include/applications/menus_gestion.php?type=suppr&id=".$line1[0]."&appli=".$_GET['appli']."'></a></td>";
+				echo "</tr>";
+				
+				//requete sous sous menu
+				$sql2 = "
+					SELECT menus.id, url, traduction, ordre
+					FROM menus, libelles_trad, applications, lookup_values
+					WHERE menus.code_libelle = libelles_trad.id_libelle
+					AND applications.id = 1
+					AND menus.id_applications = applications.id
+					AND libelles_trad.id_lookup_values = lookup_values.id
+					AND lookup_values.value='FR'
+					AND lookup_values.type='langue'
+					AND parent=$line1[0]
+					ORDER BY ordre";
+				$req2 = mysql_query($sql2);
+				
+				// sous sous menu s'il existe
+				if (mysql_num_rows($req2)>0) {
+					while($line2 = mysql_fetch_array($req2)) {
+						echo "<tr class='line1'>";
+						echo "	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&nbsp;&nbsp;<a href='include/applications/menus_gestion.php?type=modif&id=".$line2[0]."&id_appli=$var_appli&id_menu=".$_GET['id_menu']."' class='various1'>".$line2['traduction']."</a></td>";
+						echo "	<td>".$line2[1]."</td>";
+						echo "	<td style='text-align:center'><input type='text' style='text-align:center;border:1px solid grey;width:20px' value='".$line2['ordre']."' /></td>";
+						echo "	<td><a class='delete various1' style='margin-left:20px' href='include/applications/menus_gestion.php?type=suppr&id=".$line2[0]."&appli=".$_GET['appli']."'></a></td>";
+						echo "</tr>";
+					}
+				}
+			}
+			//echo "</ul>";
+		}
+		//echo "</td></tr>";
+	}
+}
+?>	
+	
+	
+
+</tbody></table>

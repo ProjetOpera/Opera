@@ -1,0 +1,83 @@
+﻿/* groupesusers/association/Association_App.php
+***********************************************/
+
+#association_app {
+	width: 1000px;
+	margin: auto;
+	
+}
+#select_association_app {
+	float: left;
+}
+
+#tab_association_app {
+	width: 400px;
+	float: left;
+}
+
+
+
+
+.clicable{
+ cursor: pointer;
+}
+
+.fancy-heading{
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: left;
+  font-size: 20px;
+  color: white;
+  height: 40px !important;
+  border:black  outset solid !important;
+  background-color:#66A3C7;
+}
+.fancy-body{
+  height: 190px;
+  max-height: 190px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+  position: relative;
+  padding: 10px;
+  font-size: 12px
+}
+
+.fancy-body label{
+  font-size:16px !important;
+}
+
+
+.fancy-body-Hxl{
+  height: 370px;
+  min-height: 370px;
+  max-height: 370px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+  position: relative;
+  padding: 10px;
+  font-size: 12px
+ 
+}
+
+.fancy-body label{
+    font-size: 18px;
+}
+.fancy-footer {
+  padding: 5px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+
+.modalFeedack{
+ margin:0px;
+ padding-left: 2px;
+}
+
+.inputTD_full{
+ height:28px!important;
+ margin:0px;
+ padding-left:5px;
+ width:100%;
+}

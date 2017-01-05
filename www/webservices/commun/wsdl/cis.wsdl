@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!-- partie 1 : Definitions -->
+<definitions 	name="CIS" 
+   targetNamespace="http://opera/webservices/portailV2/wsdl/CIS.wsdl"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns="http://opera/webservices/portailV2/wsdl/CIS.wsdl"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:opera="http://opera/webservices/">
+ 
+ 	<!-- partie 2 : Types -->
+	<types>
+	   <xsd:schema targetNamespace="http://opera/webservices/" xmlns="http://www.w3.org/2001/XMLSchema">
+			<xsd:simpleType name="sortie">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="XML"/>
+					<xsd:enumeration value="JSON"/>
+				</xsd:restriction>	
+			</xsd:simpleType>
+			<xsd:simpleType name="rechercheExacte">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="OUI"/>
+					<xsd:enumeration value="NON"/>
+				</xsd:restriction>	
+			</xsd:simpleType>
+			<xsd:simpleType name="rechercheTypeStricte">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="EQUIPEMENT"/>
+					<xsd:enumeration value="SERVICE"/>
+				</xsd:restriction>	
+			</xsd:simpleType>
+	   </xsd:schema>
+	</types>
+ 
+ 
+	<!-- partie 3 : Messages -->
+	
+	<message name="getCIInformationsRequest">
+		<part name="recherche" type="xsd:string"/>
+		<part name="rechercheType" type="opera:rechercheTypeStricte"/>
+		<part name="sortie" type="opera:sortie"/>
+	</message>
+	<message name="getCIInformationsResponse">
+		<part name="return" type="xsd:string"/>
+	</message>
+	
+	<message name="getCriticiteRequest">
+		<part name="listeEquipementsSource" type="xsd:string"/>
+		<part name="listeServicesSource" type="xsd:string"/>
+		<part name="listeEquipementsImpact" type="xsd:string"/>
+		<part name="listeServicesImpact" type="xsd:string"/>
+		<part name="sortie" type="opera:sortie"/>
+	</message>
+	<message name="getCriticiteResponse">
+		<part name="return" type="xsd:string"/>
+	</message>
+	
+	<message name="getSupervisionRequest">
+		<part name="listeEquipementsSource" type="xsd:string"/>
+		<part name="listeServicesSource" type="xsd:string"/>
+		<part name="listeEquipementsImpact" type="xsd:string"/>
+		<part name="listeServicesImpact" type="xsd:string"/>
+		<part name="sortie" type="opera:sortie"/>
+	</message>
+	<message name="getSupervisionResponse">
+		<part name="return" type="xsd:string"/>
+	</message>
+	
+	<!-- partie 4 : Port Type -->
+	<portType name="CISPort">
+		<!-- partie 5 : Operation -->
+		<operation name="getCIInformations">
+			<input message="tns:getCIInformationsRequest"/>
+			<output message="tns:getCIInformationsResponse"/>
+		</operation>
+		<operation name="getCriticite">
+			<input message="tns:getCriticiteRequest"/>
+			<output message="tns:getCriticiteResponse"/>
+		</operation>
+		<operation name="getSupervision">
+			<input message="tns:getSupervisionRequest"/>
+			<output message="tns:getSupervisionResponse"/>
+		</operation>
+	</portType>
+ 
+	<!-- partie 6 : Binding -->
+	<binding name="CISBinding" type="tns:CISPort">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getCIInformations">
+			<soap:operation soapAction="CISAction"/>
+			<input>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:CI" 	
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:CI" 
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+		<operation name="getCriticite">
+			<soap:operation soapAction="CISAction"/>
+			<input>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:CI" 	
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:CI" 
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+		<operation name="getSupervision">
+			<soap:operation soapAction="CISAction"/>
+			<input>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:CI" 	
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body 	
+						use="encoded" 	
+						namespace="urn:examples:CI" 
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>	
+		
+	</binding>
+ 
+	<!-- partie 7 : Service -->
+	<service name="CISService">
+		<documentation>Informations sur un CI du portail OPERA</documentation>
+		<!-- partie 8 : Port -->
+		<port name="CISPort" binding="tns:CISBinding">
+			<soap:address location="http://opera/webservices/commun/services/CIS.php"/> 
+		</port>
+	</service>
+</definitions>
