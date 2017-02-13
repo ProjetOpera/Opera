@@ -3,6 +3,7 @@
 	// Affichage tableau app //
 	///////////////////////////
 	
+	/*
 	$sql_recup_app="SELECT name, role, localisation FROM inv_san.baie WHERE date_releve = (SELECT MAX(date_releve) FROM inv_san.baie) ORDER BY name;";
 
 	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
@@ -42,4 +43,58 @@
 		
 		echo "</table>\n";
 	}
+	*/
 ?>
+<style type="text/css">
+	.date_jour {
+	  	text-align: right;
+	  	font-size: 16px;
+	  	font-weight: bold;
+	}
+
+	.tableau_meteo {
+		width: 25%;
+		margin-left: 37.5%;
+		background-color: #66A3C7;
+	}
+
+	.tableau_meteo td {
+	  	font-size: 16px;
+	 	font-weight: bold;
+	}
+
+	.tableau_meteo td {
+		text-align: center;
+		color: white;
+	}
+</style>
+
+<div class="date_jour">
+	<?=date("d/m/Y")?>
+</div>
+
+<center>
+	<select name="menu_deroulant">
+		<option>SI
+		<option>Data Center
+		<option>Baie/IPSTOR
+	</select>
+</center></br></br>
+
+<table class="tableau_meteo">
+  	<tr>
+		<th></th><th></th>
+	</tr>
+  	<tr>
+  		<td>Virtualisation</td><td><img src="images/nuageux.png"></td>
+  	</tr>
+  	<tr>
+		<td>Stockage</td><td><img src="images/pluvieux.png"></td>
+	</tr>
+  	<tr>
+		<td>Sauvegarde des VMs</td><td><img src="images/soleil.png"></td>
+	</tr>
+  	<tr>
+		<td>Sauvegarde</td><td><img src="images/nuageux.png"></td>
+	</tr>
+</table>
