@@ -1,10 +1,10 @@
 package util;
 
 public class PointXY {
-	int X;
-	int Y;
+	float X;
+	float Y;
 	
-	public PointXY(int new_X, int new_Y) {
+	public PointXY(float new_X, float new_Y) {
 		X = new_X;
 		Y = new_Y;
 	}
