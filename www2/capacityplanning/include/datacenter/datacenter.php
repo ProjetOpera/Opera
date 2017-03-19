@@ -110,13 +110,13 @@
 	}
 ?>
 
-<center>
+<!--<center>
 	<select name="menu_deroulant" id="menu_deroulant" onChange="redirection();">
-		<option value="SI" <?=$select_SI?>>SI</option>
-		<option value="data_center" <?=$select_data_center?>>Data Center</option>
-		<option value="baie_ipstor" <?=$select_baie_ipstor?>>Baie/IPSTOR</option>
+		<option value="SI" <?//=$select_SI?>>SI</option>
+		<option value="data_center" <?//=$select_data_center?>>Data Center</option>
+		<option value="baie_ipstor" <?//=$select_baie_ipstor?>>Baie/IPSTOR</option>
 	</select>
-</center></br></br>
+</center></br></br>-->
 
 <?php
 	if ($type == "SI") {
@@ -126,7 +126,7 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1</td><td style="color: black;" colspan=2>SNP2</td>
+	  		<td style="color: black;" colspan=2>SNP1 - Ampère</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
 	  		<td>Virtualisation</td><td><img src="images/nuageux.png"></td><td>Virtualisation</td><td><img src="images/soleil.png"></td>
