@@ -16,9 +16,8 @@ public class Test {
 		liste_PointXY.put(3, new PointXY(1489705200, 185));
 		liste_PointXY.put(4, new PointXY(1489791600, 175));
 		liste_PointXY.put(5, new PointXY(1489878000, 172));
-		liste_PointXY.put(6, new PointXY(1489878000, 160));
 		
-		for(int i = 1; i <= 50; i++)
+		for(int i = 1; i <= 30; i++)
 		{
 			PointXY PointXYSuivant = CalculPrevisionnel.PointXY_suivant(liste_PointXY);
 			liste_PointXY.put(liste_PointXY.size()+1, PointXYSuivant);
