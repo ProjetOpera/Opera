@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<capacityPlanning xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="DataMappingSchema.xsd">
+		
+	<!-- TSM -->
+	<tsm>
+		<label>label</label>
+		<valeur>valeur</valeur>
+		<date_releve>date</date_releve>
+		<site>site</site>
+		<custom>nbTotalBandes</custom>
+		<custom>nbTotalBandesVierges</custom>
+		<custom>nbTotalBandesExport</custom>
+		<mail_rapport>tsm@tsm.com</mail_rapport>
+	</tsm>
+	
+	<tsm>
+		<label>label</label>
+		<valeur>valeur</valeur>
+		<date_releve>date</date_releve>
+		<site>site</site>
+		<custom>EspaceTotal</custom>
+		<custom>EspaceUtilisé</custom>
+		<custom>PourcentageUtilisation</custom>
+		<mail_rapport>tsm@tsm.com</mail_rapport>
+	</tsm>
+	
+	<tsm>
+		<label>label</label>
+		<valeur>valeur</valeur>
+		<date_releve>date</date_releve>
+		<site>site</site>
+		<custom>BackEnd</custom>
+		<custom>FrontEnd</custom>
+		<mail_rapport>tsm@tsm.com</mail_rapport>
+	</tsm>
+	
+		<tsm>
+		<label>label</label>
+		<valeur>valeur</valeur>
+		<date_releve>date</date_releve>
+		<site>site</site>
+		<custom>nbTotalSlots</custom>
+		<custom>nbSlotsLibres</custom>
+		<custom>PourcentageUtilisation</custom>
+		<mail_rapport>tsm@tsm.com</mail_rapport>
+	</tsm>
+
+</capacityPlanning>
