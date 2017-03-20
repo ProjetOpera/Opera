@@ -16,6 +16,7 @@ public class Test {
 		liste_PointXY.put(3, new PointXY(1489705200, 185));
 		liste_PointXY.put(4, new PointXY(1489791600, 175));
 		liste_PointXY.put(5, new PointXY(1489878000, 172));
+		liste_PointXY.put(6, new PointXY(1489878000, 160));
 		
 		for(int i = 1; i <= 50; i++)
 		{
