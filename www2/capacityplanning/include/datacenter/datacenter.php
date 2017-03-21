@@ -132,7 +132,7 @@
 	  		<td>Virtualisation</td><td><img src="images/nuageux.png"></td><td>Virtualisation</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=228&type=data_center&target=SNP1" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=228&type=data_center&target=SNP2" target="_self">Stockage</a></td><td><img src="images/nuageux.png"></td>
+			<td><a href="http://localhost/capacityplanning/id_menu=235&type=data_center&target=SNP1" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=235&type=data_center&target=SNP2" target="_self">Stockage</a></td><td><img src="images/nuageux.png"></td>
 		</tr>
 	  	<tr>
 			<td>Sauvegarde des VMs</td><td><img src="images/soleil.png"></td><td>Sauvegarde des VMs</td><td><img src="images/soleil.png"></td>

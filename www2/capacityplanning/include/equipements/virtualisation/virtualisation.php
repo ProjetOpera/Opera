@@ -129,7 +129,7 @@
 	  		<td style="color: black;" colspan=2>SNP1 - Ampère</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="http://localhost/capacityplanning/id_menu=228&type=virtualisation&target=SNP1" target="_self">Virtualisation</a></td><td><img src="images/nuageux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=228&type=virtualisation&target=SNP2" target="_self">Virtualisation</a></td><td><img src="images/soleil.png">
+	  		<td><a href="http://localhost/capacityplanning/id_menu=235&type=virtualisation&target=SNP1" target="_self">Virtualisation</a></td><td><img src="images/nuageux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=235&type=virtualisation&target=SNP2" target="_self">Virtualisation</a></td><td><img src="images/soleil.png">
 	  	</tr>
 	</table>	
 	
