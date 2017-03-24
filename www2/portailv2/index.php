@@ -55,7 +55,7 @@ session_start();
 
 	// initialisation variables (a reutiliser dans les modules !!!)
 	// ********************************************************************
-	// Traiter l'URL avec des arguments URL=molue?arg1&arg2&...
+	// Traiter l'URL avec des arguments URL=module?arg1&arg2&...
 	list ($url, $arg) = explode ("?", $line_tum['url']);
 	//Parser les arguements
 	if ($arg) {

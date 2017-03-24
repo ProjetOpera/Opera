@@ -9,7 +9,7 @@ public class CalculPrevisionnel {
 		float ponderation = 0;		
 		float total = 0;
 		float total_ponderation_inverse = 0;
-		float PointXYSuivantX = 0;
+		int PointXYSuivantX = 0;
 		float PointXYSuivantY = 0;
 		
 		if (liste_PointXY.size() < 30)

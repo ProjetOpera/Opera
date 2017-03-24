@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<!-- Déclaration des éléments -->
+	
+	<!-- Global -->
+	<xsd:element name="table" type="xsd:string"/>
+	<xsd:element name="label" type="xsd:string"/>
+	<xsd:element name="valeur" type="xsd:string"/>
+	<xsd:element name="date_releve" type="xsd:string"/>
+	<xsd:element name="site" type="xsd:string"/>
+	<xsd:element name="custom" type="xsd:string"/>
+	<xsd:element name="mail_rapport" type="xsd:string"/>	
+
+	<!-- TSM -->
+	<xsd:element name="tsm">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="label"/>
+				<xsd:element ref="valeur"/>
+				<xsd:element ref="date_releve"/>
+				<xsd:element ref="site"/>
+				<xsd:element ref="custom" maxOccurs="3"/>
+				<xsd:element ref="mail_rapport"/>				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!-- VEEAM -->
+	<xsd:element name="veeam">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="label"/>
+				<xsd:element ref="valeur"/>
+				<xsd:element ref="date_releve"/>
+				<xsd:element ref="site"/>
+				<xsd:element ref="custom" maxOccurs="3"/>
+				<xsd:element ref="mail_rapport"/>				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!-- Virtualisation -->
+	<xsd:element name="virtualisation">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="label"/>
+				<xsd:element ref="valeur"/>
+				<xsd:element ref="date_releve"/>
+				<xsd:element ref="site"/>
+				<xsd:element ref="custom" maxOccurs="5"/>
+				<xsd:element ref="mail_rapport"/>				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!-- Stockage -->
+	<xsd:element name="stockage">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="label"/>
+				<xsd:element ref="valeur"/>
+				<xsd:element ref="date_releve"/>
+				<xsd:element ref="site"/>
+				<xsd:element ref="custom" maxOccurs="3"/>
+				<xsd:element ref="mail_rapport"/>				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+    <!-- Schéma XML -->
+    <xsd:element name="capacityPlanning">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="tsm" maxOccurs="4"/>
+				<!-- minOccurs à 0 car les modules ne seront pas tout de suite intégrés, mais ils seront prêts à être déclarés dans le fichier xml -->
+				<xsd:element ref="veeam" minOccurs="0" /> 
+				<xsd:element ref="virtualisation" minOccurs="0" />
+				<xsd:element ref="stockage" minOccurs="0" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
