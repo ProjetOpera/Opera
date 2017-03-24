@@ -1,13 +1,12 @@
-package tests;
+package com.msia.cp.tests;
 
-import java.util.Date;
 import java.util.HashMap;
 
-import util.PointXY;
+import com.msia.cp.util.PointXY;
 
 public class Test {
 	public static void main(String[] args) {
-		util.CalculPrevisionnel CalculPrevisionnel = new util.CalculPrevisionnel();
+		com.msia.cp.util.CalculPrevisionnel CalculPrevisionnel = new com.msia.cp.util.CalculPrevisionnel();
 		HashMap<Integer, PointXY> liste_PointXY = new HashMap<Integer, PointXY>();
 		
 		//Instantiation du hashmap pour test

@@ -1,4 +1,4 @@
-package util;
+package com.msia.cp.util;
 
 public class PointXY {
 	public int X;
