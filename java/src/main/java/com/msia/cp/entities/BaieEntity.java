@@ -181,4 +181,22 @@ public class BaieEntity {
         result = 31 * result + (dateReleve != null ? dateReleve.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "BaieEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", role='" + role + '\'' +
+                ", situationsi='" + situationsi + '\'' +
+                ", localisation='" + localisation + '\'' +
+                ", ville='" + ville + '\'' +
+                ", model='" + model + '\'' +
+                ", systemstatus='" + systemstatus + '\'' +
+                ", nombreluns=" + nombreluns +
+                ", nombreclients=" + nombreclients +
+                ", version='" + version + '\'' +
+                ", dateReleve=" + dateReleve +
+                '}';
+    }
 }

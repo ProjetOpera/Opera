@@ -42,7 +42,7 @@ public class Main {
                 final Query query = session.createQuery("from " + entityName);
                 System.out.println("executing: " + query.getQueryString());
                 for (Object o : query.list()) {
-                    System.out.println("  " + o);
+                    System.out.println("  " + o.toString());
                 }
             }
         } finally {
