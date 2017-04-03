@@ -1,16 +1,34 @@
 package com.msia.cp.util;
 
+import com.msia.cp.dao.VueGlobaleDaoImpl;
+import com.msia.cp.entities.VueGlobaleEntity;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class CalculPrevisionnel {
-	public PointXY PointXY_suivant(HashMap<Integer, PointXY> liste_PointXY) {
+	public void PointXY_suivant() {
 		float coef = 0;
 		float ponderation = 0;		
 		float total = 0;
 		float total_ponderation_inverse = 0;
 		int PointXYSuivantX = 0;
 		float PointXYSuivantY = 0;
+
+		HashMap<Integer, PointXY> liste_PointXY = new HashMap<Integer, PointXY>();
+		VueGlobaleDaoImpl vueG = new VueGlobaleDaoImpl();
+
+		//Instantiation du hashmap pour test
+		ArrayList liste_vueG = new ArrayList();
+		liste_vueG = vueG.findAllVueGlobale();
+
+		for (int i = 0; i < liste_vueG.size(); i++) {
+			VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+			//liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+			liste_PointXY.put(i, new PointXY((int) vueG_entity.getDate().getTime(), Float.parseFloat(vueG_entity.getCustom1())));
+		}
 		
 		if (liste_PointXY.size() < 30)
 		{
@@ -42,7 +60,14 @@ public class CalculPrevisionnel {
 		PointXYSuivantY = PointXYSuivantY+total/total_ponderation_inverse;
 		
 		PointXY PointXYSuivant = new PointXY(PointXYSuivantX, PointXYSuivantY);
-		
-		return PointXYSuivant;
+
+		VueGlobaleEntity vue = new VueGlobaleEntity();
+		vue.setPrevision(1);
+		Timestamp date = new Timestamp(PointXYSuivant.X);
+		vue.setDate(date);
+		vue.setEnv("TSM");
+		vue.setSite("Ampère");
+		vue.setCustom1(String.valueOf(PointXYSuivant.Y));
+		vueG.createVueGloable(vue);
 	}
 }
