@@ -4,7 +4,7 @@
 	///////////////////////////
 	
 	/*
-	$sql_recup_app="SELECT name, role, localisation FROM inv_san.baie WHERE date_releve = (SELECT MAX(date_releve) FROM inv_san.baie) ORDER BY name;";
+	$sql_recup_app="SELECT Module_concerne, Label, Alerte, Seuil, Pourcentage FROM capacityplanning;
 
 	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
 	
@@ -16,9 +16,11 @@
 	
 	while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
 	{
-		$recup_name=$row_recup_app['name'];
-		$recup_role=  $row_recup_app['role'];
-		$recup_localisation=$row_recup_app['localisation'];
+		$recup_module=$row_recup_app['Module_concerne'];
+		$recup_label=  $row_recup_app['Label'];
+		$recup_alerte=$row_recup_app['Alerte'];
+		$recup_seuil=$row_recup_app['Seuil'];
+		$recup_pourcentage=$row_recup_app['Pourcentage'];
 		
 		$contenu_tab_app .= "<tr class='line".(($nb_ligne+1)%2)."'>\n";
 			$contenu_tab_app .= "<td>".$recup_name."</td>\n";
