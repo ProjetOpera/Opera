@@ -16,7 +16,7 @@ public class VueGlobaleTest {
 
         VueGlobaleEntity vue = new VueGlobaleEntity();
         vue.setPrevision(0);
-        vue.setEnv("TSM");
+        vue.setEnv("VEEAM");
         Timestamp date = new Timestamp(System.currentTimeMillis());
         vue.setDate(date);
         vue.setSite("Ampère");
@@ -28,6 +28,13 @@ public class VueGlobaleTest {
         vueG.createVueGloable(vue);
 
         System.out.println("Taille de la liste vueG : " + vueG.findAllVueGlobale().size());
+        System.out.println("Ampère : " + vueG.findAllBySite("Ampère").size());
+        System.out.println("Franklin : " + vueG.findAllBySite("Franklin").size());
+
+        System.out.println("Environnement Veeam : " + vueG.findAllByEnv("VEEAM").size());
+        System.out.println("Environnement TSM : " + vueG.findAllByEnv("TSM").size());
+
+        System.out.println("Environnement TSM + site Franklin: " + vueG.findAllBySiteAndEnv("Franklin", "TSM").size());
 
     }
 

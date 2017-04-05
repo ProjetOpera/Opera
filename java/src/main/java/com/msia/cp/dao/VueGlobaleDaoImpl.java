@@ -44,4 +44,53 @@ public class VueGlobaleDaoImpl implements IVueGlobaleDAO {
         }
 
     }
+
+    public ArrayList findAllBySite(String site) {
+        ArrayList vueGlobaleList = new ArrayList();
+        try {
+            session = sessionFactory.openSession();
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("from VueGlobaleEntity as v where v.site = :site");
+            query.setParameter("site", site);
+            vueGlobaleList =  (ArrayList) query.list();
+            transaction.commit();
+            session.close();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        return vueGlobaleList;
+    }
+
+    public ArrayList findAllByEnv(String env) {
+        ArrayList vueGlobaleList = new ArrayList();
+        try {
+            session = sessionFactory.openSession();
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("from VueGlobaleEntity as v where v.env = :env");
+            query.setParameter("env", env);
+            vueGlobaleList =  (ArrayList) query.list();
+            transaction.commit();
+            session.close();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        return vueGlobaleList;
+    }
+
+    public ArrayList findAllBySiteAndEnv(String site, String env) {
+        ArrayList vueGlobaleList = new ArrayList();
+        try {
+            session = sessionFactory.openSession();
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("from VueGlobaleEntity as v where v.site = :site and v.env = :env");
+            query.setParameter("site", site);
+            query.setParameter("env", env);
+            vueGlobaleList =  (ArrayList) query.list();
+            transaction.commit();
+            session.close();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        return vueGlobaleList;
+    }
 }

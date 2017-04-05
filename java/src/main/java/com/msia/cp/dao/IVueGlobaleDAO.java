@@ -10,4 +10,8 @@ import java.util.ArrayList;
 public interface IVueGlobaleDAO {
     public ArrayList findAllVueGlobale();
     public void createVueGloable(VueGlobaleEntity vue);
+    public ArrayList findAllBySite(String site);
+    public ArrayList findAllByEnv(String env);
+    public ArrayList findAllBySiteAndEnv(String site, String env);
+
 }
