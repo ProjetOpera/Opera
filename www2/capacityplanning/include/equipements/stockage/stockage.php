@@ -79,7 +79,6 @@
 
 <?php
 	$type = "SI";
-	//$target = "SNP1";
 
 	if (isset($_GET['type'])) {
 		$type = $_GET['type'];
@@ -87,26 +86,6 @@
 	
 	if (isset($_GET['target'])) {
 		$target = $_GET['target'];
-	}
-	
-	if ($target == "SNP1") {
-		$select_SNP1 = "selected";
-	}
-
-	if ($target == "SNP2") {
-		$select_SNP2 = "selected";
-	}
-
-	if ($type == "SI") {
-		$select_SI = "selected";
-	}
-
-	if ($type == "data_center") {
-		$select_data_center = "selected";
-	}
-
-	if ($type == "baie_ipstor") {
-		$select_baie_ipstor = "selected";
 	}
 ?>
 
@@ -123,13 +102,13 @@
 ?>
 	<table class="tableau_meteo">
 	  	<tr>
-			<th></th><th></th><th></th><th></th>
+			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Ampère</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
+	  		<td style="color: black;" colspan=2>Vue globale</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=235&type=data_center&target=SNP1" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=235&type=data_center&target=SNP2" target="_self">Stockage</a></td><td><img src="images/nuageux.png"></td>
+			<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=data_center" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
 	
@@ -143,20 +122,16 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Clusters</td><td style="color: black;" colspan=2>SNP2 - Clusters</td>
+	  		<td style="color: black;" colspan=2>SNP1 - Ampère</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-	  		<td>NUTAMPPRD</td><td><img src="images/soleil.png"></td><td>NUTAMPPRD</td><td><img src="images/soleil.png"></td>
-	  	</tr>
-	  	<tr>
-			<td>ORAAMPPRD</td><td><img src="images/pluvieux.png"></td><td>ORAAMPPRD</td><td><img src="images/nuageux.png"></td>
-	  	<tr>
-			<td>VSPAMPRD</td><td><img src="images/nuageux.png"></td><td>VSPAMPRD</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP1" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP2" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
-	  	<tr>
-			<td>VSPPRDSII</td><td><img src="images/pluvieux.png"></td><td>VSPPRDSII</td><td><img src="images/pluvieux.png"></td>
+		<tr>
+			<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP1" target="_self">IPSTOR</a></td><td><img src="images/pluvieux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP2" target="_self">IPSTOR</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
+	<a href="http://localhost/capacityplanning/id_menu=241" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -169,20 +144,22 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Clusters</td>
+	  		<td style="color: black;" colspan=2>SNP1 - Baies</td>
 	  	</tr>
 	  	<tr>
-	  		<td>NUTAMPPRD</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP1_axiom1" target="_self">AXIOM600BENAMP</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 	  	<tr>
-			<td>ORAAMPPRD</td><td><img src="images/pluvieux.png"></td>
-	  	<tr>
-			<td>VSPAMPRD</td><td><img src="images/nuageux.png"></td>
+			<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP1_fsone1" target="_self">FSONE316AMP</td><td><img src="images/pluvieux.png"></td>
 		</tr>
-	  	<tr>
-			<td>VSPPRDSII</td><td><img src="images/pluvieux.png"></td>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - IPSTOR</td>
+	  	</tr>
+		<tr>
+			<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP1_falcon1" target="_self">FALCONV8_AMP</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
+	<a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -195,46 +172,22 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP2 - Clusters</td>
+	  		<td style="color: black;" colspan=2>SNP2 - Baies</td>
 	  	</tr>
 	  	<tr>
-	  		<td>NUTAMPPRD</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP2_axiom1" target="_self">AXIOM600BENFKL</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 	  	<tr>
-			<td>ORAAMPPRD</td><td><img src="images/nuageux.png"></td>
-	  	<tr>
-			<td>VSPAMPRD</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP2_fsone1" target="_self">FSONE316FKL</td><td><img src="images/pluvieux.png"></td>
 		</tr>
-	  	<tr>
-			<td>VSPPRDSII</td><td><img src="images/pluvieux.png"></td>
-		</tr>
-	</table>
-<?php
-	}
-?>
-
-<?php
-	if ($type == "baie_ipstor") {
-?>
-	<table class="tableau_meteo">
-	  	<tr>
-			<th></th><th></th><th></th><th></th>
-		</tr>
-	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Baies</td><td style="color: black;" colspan=2>SNP2 - Baies</td>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP2 - IPSTOR</td>
 	  	</tr>
-	  	<tr>
-	  		<td>AXIOM600BENAMP</td><td><img src="images/soleil.png"></td><td>AXIOM600BENAMP</td><td><img src="images/pluvieux.png"></td>
-	  	</tr>
-	  	<tr>
-			<td>FSONE316AMP</td><td><img src="images/pluvieux.png"></td><td>FSONE316AMP</td><td><img src="images/nuageux.png"></td>
-		</tr>
-	  		<td style="color: black;" colspan=2>SNP1 - IPSTOR</td><td style="color: black;" colspan=2>SNP2 - IPSTOR</td>
-	  	</tr>
-	  	<tr>
-			<td>FALCONV8_AMP</td><td><img src="images/nuageux.png"></td><td>FALCONV8_AMP</td><td><img src="images/pluvieux.png"></td>
+		<tr>
+			<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP2_falcon1" target="_self">FALCONV8_FKL</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
+	<a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>

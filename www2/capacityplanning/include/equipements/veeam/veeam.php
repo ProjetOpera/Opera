@@ -79,7 +79,6 @@
 
 <?php
 	$type = "SI";
-	//$target = "SNP1";
 
 	if (isset($_GET['type'])) {
 		$type = $_GET['type'];
@@ -87,26 +86,6 @@
 	
 	if (isset($_GET['target'])) {
 		$target = $_GET['target'];
-	}
-	
-	if ($target == "SNP1") {
-		$select_SNP1 = "selected";
-	}
-
-	if ($target == "SNP2") {
-		$select_SNP2 = "selected";
-	}
-
-	if ($type == "SI") {
-		$select_SI = "selected";
-	}
-
-	if ($type == "data_center") {
-		$select_data_center = "selected";
-	}
-
-	if ($type == "baie_ipstor") {
-		$select_baie_ipstor = "selected";
 	}
 ?>
 
@@ -123,16 +102,83 @@
 ?>
 	<table class="tableau_meteo">
 	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>Vue globale</td>
+	  	</tr>
+	  	<tr>
+			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=data_center" target="_self">Sauvegarde des VMs</a></td><td><img src="images/pluvieux.png"></td>
+		</tr>
+	</table>
+	
+<?php
+	}
+
+	if ($type == "data_center" && $target == "data_center") {
+?>
+	<table class="tableau_meteo">
+	  	<tr>
 			<th></th><th></th><th></th><th></th>
 		</tr>
 	  	<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Ampère</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="http://localhost/capacityplanning/id_menu=235&type=veeam&target=SNP1" target="_self">Veeam</a></td><td><img src="images/nuageux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=228&type=veeam&target=SNP2" target="_self">Veeam</a></td><td><img src="images/soleil.png">
+			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP1" target="_self">Sauvegarde des VMs</a></td><td><img src="images/pluvieux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP2" target="_self">Sauvegarde des VMs</a></td><td><img src="images/pluvieux.png"></td>
+		</tr>
+	</table>
+	<a href="http://localhost/capacityplanning/id_menu=240" target="_self">Retour</a>
+<?php
+	}
+?>
+
+<?php
+	if ($type == "data_center" && $target == "SNP1") {
+?>
+	<table class="tableau_meteo">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>SNP1</td>
 	  	</tr>
-	</table>	
-	
+	  	<tr>
+	  		<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP1_veeam1" target="_self">Serveur VEEAM 1</td><td><img src="images/soleil.png"></td>
+	  	</tr>
+	  	<tr>
+			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP1_veeam2" target="_self">Serveur VEEAM 2</td><td><img src="images/pluvieux.png"></td>
+		</tr>
+		<tr>
+			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP1_veeam3" target="_self">Serveur VEEAM 3</td><td><img src="images/pluvieux.png"></td>
+		</tr>
+	</table>
+	<a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=data_center" target="_self">Retour</a>
+<?php
+	}
+?>
+
+<?php
+	if ($type == "data_center" && $target == "SNP2") {
+?>
+	<table class="tableau_meteo">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>SNP2</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP2_veeam1" target="_self">Serveur VEEAM 1</td><td><img src="images/soleil.png"></td>
+	  	</tr>
+	  	<tr>
+			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP2_veeam2" target="_self">Serveur VEEAM 2</td><td><img src="images/pluvieux.png"></td>
+		</tr>
+		<tr>
+			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP2_veeam3" target="_self">Serveur VEEAM 3</td><td><img src="images/pluvieux.png"></td>
+		</tr>
+	</table>
+	<a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
