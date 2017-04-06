@@ -2,6 +2,7 @@ package com.msia.cp.tests;
 
 import com.msia.cp.dao.VueGlobaleDaoImpl;
 import com.msia.cp.entities.VueGlobaleEntity;
+import com.msia.cp.util.EnregistrementBdd;
 
 import java.sql.Timestamp;
 
@@ -12,9 +13,13 @@ public class VueGlobaleTest {
 
     public static void main(String[] args) {
         VueGlobaleDaoImpl vueG = new VueGlobaleDaoImpl();
-        System.out.println("Taille de la liste vueG : " + vueG.findAllVueGlobale().size());
+        System.out.println("Taille de la liste vueG avant : " + vueG.findAllVueGlobale().size());
+        EnregistrementBdd.tsmVersVueGlobale();
+        System.out.println("Taille de la liste vueG après : " + vueG.findAllVueGlobale().size());
 
-        VueGlobaleEntity vue = new VueGlobaleEntity();
+
+
+        /*VueGlobaleEntity vue = new VueGlobaleEntity();
         vue.setPrevision(0);
         vue.setEnv("VEEAM");
         Timestamp date = new Timestamp(System.currentTimeMillis());
@@ -35,7 +40,7 @@ public class VueGlobaleTest {
         System.out.println("Environnement TSM : " + vueG.findAllByEnv("TSM").size());
 
         System.out.println("Environnement TSM + site Franklin: " + vueG.findAllBySiteAndEnv("Franklin", "TSM").size());
-
+*/
     }
 
 }

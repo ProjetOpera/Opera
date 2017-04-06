@@ -1,5 +1,6 @@
 package com.msia.cp.dao;
 
+import com.msia.cp.entities.TSMEntity;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

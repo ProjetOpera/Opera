@@ -1,5 +1,7 @@
 package com.msia.cp.dao;
 
+import com.msia.cp.entities.TSMEntity;
+
 import java.util.ArrayList;
 
 /**

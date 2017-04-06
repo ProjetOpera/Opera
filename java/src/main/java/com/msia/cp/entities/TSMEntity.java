@@ -75,4 +75,16 @@ public class TSMEntity {
     public void setDate(Timestamp date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "TSMEntity{" +
+                "site='" + site + '\'' +
+                ", scratchtape=" + scratchtape +
+                ", dbpctutil=" + dbpctutil +
+                ", libpctutil=" + libpctutil +
+                ", stockscratchtape=" + stockscratchtape +
+                ", date=" + date +
+                '}';
+    }
 }

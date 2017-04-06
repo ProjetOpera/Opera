@@ -219,4 +219,29 @@ public class VueGlobaleEntity {
     public void setCustom14(String custom14) {
         this.custom14 = custom14;
     }
+
+    @Override
+    public String toString() {
+        return "VueGlobaleEntity{" +
+                "prevision=" + prevision +
+                ", env='" + env + '\'' +
+                ", date=" + date +
+                ", site='" + site + '\'' +
+                ", id=" + id +
+                ", custom1='" + custom1 + '\'' +
+                ", custom2='" + custom2 + '\'' +
+                ", custom3='" + custom3 + '\'' +
+                ", custom4='" + custom4 + '\'' +
+                ", custom5='" + custom5 + '\'' +
+                ", custom6='" + custom6 + '\'' +
+                ", custom7='" + custom7 + '\'' +
+                ", custom8='" + custom8 + '\'' +
+                ", custom9='" + custom9 + '\'' +
+                ", custom10='" + custom10 + '\'' +
+                ", custom11='" + custom11 + '\'' +
+                ", custom12='" + custom12 + '\'' +
+                ", custom13='" + custom13 + '\'' +
+                ", custom14='" + custom14 + '\'' +
+                '}';
+    }
 }
