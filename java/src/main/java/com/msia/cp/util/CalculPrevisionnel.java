@@ -23,6 +23,7 @@ public class CalculPrevisionnel {
 		liste_vueG = vueG.findAllBySiteAndEnv(Site_util, Environnement_util);
 
 		//Calcul Custom1 Debut
+		total = 0;
 		HashMap<Integer, PointXY> liste_PointXY = new HashMap<Integer, PointXY>();
 
 		for (int i = 0; i < liste_vueG.size(); i++) {
@@ -63,6 +64,7 @@ public class CalculPrevisionnel {
 
 		//Calcul Custom2 Debut
 		HashMap<Integer, PointXY> liste_PointXY2 = new HashMap<Integer, PointXY>();
+		total = 0;
 
 		for (int i = 0; i < liste_vueG.size(); i++) {
 			VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
@@ -98,8 +100,6 @@ public class CalculPrevisionnel {
 
 		PointXYSuivantDate = PointXYSuivantDate+86400;
 		PointXYSuivantCustom2 = PointXYSuivantCustom2+total/total_ponderation_inverse;
-		System.out.println(total);
-		System.out.println(total_ponderation_inverse);
 		//Calcul Custom2 Fin
 
 		//Instentiation vue
