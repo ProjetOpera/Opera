@@ -17,9 +17,8 @@ public class EnregistrementBdd {
 
         TsmDaoImpl tsm = new TsmDaoImpl();
         VueGlobaleDaoImpl vueG = new VueGlobaleDaoImpl();
-        ArrayList tsmList = new ArrayList();
+        ArrayList tsmList = tsm.findAllTsm();
 
-        tsmList = tsm.findAllTsm();
         // TSMEntity{site='TSMAMPERE', scratchtape=146, dbpctutil=26, libpctutil=97,
         // stockscratchtape=75, date=2017-02-13 18:00:07.0}
         // Données obligatoire pour VG :
@@ -47,5 +46,7 @@ public class EnregistrementBdd {
 
             vueG.createVueGloable(vue);
         }
+
+        System.out.println("Fin de l'enregistrement de TSM vers Vue Globale");
     }
 }
