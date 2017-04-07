@@ -1,6 +1,5 @@
 package com.msia.cp.dao;
 
-import com.msia.cp.entities.TSMEntity;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,25 +10,26 @@ import org.hibernate.query.Query;
 import java.util.ArrayList;
 
 /**
- * Created by Cendri on 03/04/2017.
+ * Created by A618735 on 07/04/2017.
  */
-public class TsmDaoImpl implements ITsmDAO {
-    SessionFactory sessionFactory = new Configuration().configure("tsm.cfg.xml").buildSessionFactory();
+public class BaieDaoImpl implements IBaieDAO{
+    SessionFactory sessionFactory = new Configuration().configure("baie.cfg.xml").buildSessionFactory();
     Session session = null;
     Transaction transaction = null;
 
-    public ArrayList findAllTsm() {
-        ArrayList tsmList = new ArrayList();
+    public ArrayList findAllBaie() {
+        ArrayList baieList = new ArrayList();
         try {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from TSMEntity");
-            tsmList =  (ArrayList) query.list();
+            Query query = session.createQuery("from BaieEntity");
+            baieList =  (ArrayList) query.list();
             transaction.commit();
             session.close();
         } catch (HibernateException e) {
             e.printStackTrace();
         }
-        return tsmList;
+        return baieList;
     }
 }
+
