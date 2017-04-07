@@ -4,45 +4,17 @@
 	///////////////////////////
 	
 	
-	/*$sql_recup_app="SELECT name, role, localisation FROM inv_san.baie WHERE date_releve = (SELECT MAX(date_releve) FROM inv_san.baie) ORDER BY name;";
+	$sql_recup_app="SELECT name, role, localisation FROM inv_san.baie WHERE date_releve = (SELECT MAX(date_releve) FROM inv_san.baie) ORDER BY name;";
 
 	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
 	
-	echo "<br/>\n";
-	echo "<br/>\n";
+	//echo "<br/>\n";
+	//echo "<br/>\n";
 	
 	$contenu_tab_app = "";
 	$nb_ligne=0;
 	
-	while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
-	{
-		$recup_name=$row_recup_app['name'];
-		$recup_role=  $row_recup_app['role'];
-		$recup_localisation=$row_recup_app['localisation'];
-		
-		$contenu_tab_app .= "<tr class='line".(($nb_ligne+1)%2)."'>\n";
-			$contenu_tab_app .= "<td>".$recup_name."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_role."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_localisation."</td>\n";			
-		$contenu_tab_app .= "</tr>\n";
-		$nb_ligne++;
-	}
-	if($nb_ligne!=0)
-	{	
-		echo "<table class='display_list2' cellpadding=0 cellspacing=0 border=0>\n";
-		
-		echo "<tr class='table_line'>\n";
-		
-			echo "<td>Nom</td>\n";
-			echo "<td>Role</td>\n";
-			echo "<td>Localisation</td>\n";
-			
-		echo "</tr>\n";
-		
-		echo $contenu_tab_app;	
-		
-		echo "</table>\n";
-	}*/
+	
 	
 ?>
 <style type="text/css">
@@ -140,13 +112,45 @@
 	if ($type == "data_center" && $target == "SNP1") {
 ?>
 	<table class="tableau_meteo">
-	  	<tr>
-			<th></th><th></th>
-		</tr>
+	  	
 	  	<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Baies</td>
 	  	</tr>
-	  	<tr>
+		<?php
+		while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
+	{
+		$recup_name=$row_recup_app['name'];
+		$recup_role=  $row_recup_app['role'];
+		$recup_localisation=$row_recup_app['localisation'];
+		
+		$contenu_tab_app .= "<tr>";
+			if (substr($recup_name, -3) == "AMP")
+				$contenu_tab_app .= "<td>"."<a href='http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP1_" . $recup_name . "' target='_self'>".$recup_name."</td>";
+			//$contenu_tab_app .= "<td>".$recup_role."</td>\n";
+			//$contenu_tab_app .= "<td>".$recup_localisation."</td>\n";			
+		$contenu_tab_app .= "</tr>";
+		
+		$nb_ligne++;
+	}
+		?>
+		
+		<!--<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - IPSTOR</td>
+	  	</tr>-->
+		
+		<?php
+		
+
+	if($nb_ligne!=0)
+	{	
+		echo "<table class='tableau_meteo'";
+		
+		echo $contenu_tab_app;	
+		
+		echo "</table>";
+	}
+	?>
+	  	<!--<tr>
 	  		<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP1_axiom1" target="_self">AXIOM600BENAMP</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 	  	<tr>
@@ -158,7 +162,7 @@
 		<tr>
 			<td><a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=SNP1_falcon1" target="_self">FALCONV8_AMP</td><td><img src="images/pluvieux.png"></td>
 		</tr>
-	</table>
+	</table>-->
 	<a href="http://localhost/capacityplanning/id_menu=241&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}

@@ -16,7 +16,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 DROP TABLE IF EXISTS `parametres`;
-CREATE TABLE IF NOT EXISTS `parametres` (
+CREATE TABLE `parametres` (
+  `id` int(11) NOT NULL,
   `Module_concerne` varchar(50) NOT NULL,
   `Seuil` int(11) NOT NULL,
   `Alerte` int(11) NOT NULL,
@@ -27,8 +28,13 @@ CREATE TABLE IF NOT EXISTS `parametres` (
   `Custom3` varchar(100) DEFAULT NULL,
   `Custom4` varchar(100) DEFAULT NULL,
   `Custom5` varchar(100) DEFAULT NULL
-  PRIMARY KEY (`Module_concerne`, `Label`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+ALTER TABLE `parametres`
+  ADD PRIMARY KEY (`id`);
+  
+ALTER TABLE `parametres`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

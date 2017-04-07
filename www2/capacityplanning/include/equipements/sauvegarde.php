@@ -4,7 +4,7 @@
 	///////////////////////////
 	
 	
-	/*$sql_recup_app="SELECT name, role, localisation FROM inv_san.baie WHERE date_releve = (SELECT MAX(date_releve) FROM inv_san.baie) ORDER BY name;";
+	/*$sql_recup_app="SELECT * FROM capacityplanning.vueglobale WHERE Rate_Releve = (SELECT MAX(Date_Releve) FROM capacityplanning.vueglobale) ORDER BY Environnement;";
 
 	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
 	
@@ -51,10 +51,22 @@
 	  	font-size: 16px;
 	  	font-weight: bold;
 	}
-
+	
 	.tableau_meteo {
 		width: 50%;
 		margin-left: 25%;
+		background-color: #66A3C7;
+	}
+
+	.tableau_meteo2 {
+		width: 40%;
+		margin-left: 5%;
+		background-color: #66A3C7;
+	}
+	
+	.tableau_graph {
+		width: 45%;
+		margin-left: 45%;
 		background-color: #66A3C7;
 	}
 
@@ -141,16 +153,25 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1</td>
+	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_TSM" target="_self">TSM</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
+	  	</tr>
+		<tr>
+	  		<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><img src="images/soleil.png"></td>
+	  	</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_lib" target="_self">Librairie</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_stock" target="_self">Stock</td><td><img src="images/pluvieux.png"></td>
+	  		<td style="color: black;" colspan=2>SNP1 - Stock</td>
+	  	</tr>
+		<tr>
+			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
 	<a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
@@ -169,13 +190,22 @@
 	  		<td style="color: black;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_TSM" target="_self">TSM</td><td><img src="images/pluvieux.png"></td>
+	  		<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
+	  	</tr>
+		<tr>
+	  		<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><img src="images/soleil.png"></td>
+	  	</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_lib" target="_self">Librairie</td><td><img src="images/soleil.png"></td>
+			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_stock" target="_self">Stock</td><td><img src="images/pluvieux.png"></td>
+	  		<td style="color: black;" colspan=2>SNP2 - Stock</td>
+	  	</tr>
+		<tr>
+			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
 	<a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>

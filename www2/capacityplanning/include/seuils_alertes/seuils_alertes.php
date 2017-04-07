@@ -3,8 +3,8 @@
 	// Affichage tableau app //
 	///////////////////////////
 	
-	/*
-	$sql_recup_app="SELECT Module_concerne, Label, Alerte, Seuil, Pourcentage FROM capacityplanning;
+	
+	$sql_recup_app="SELECT Module_concerne, Label, Alerte, Seuil FROM capacityplanning;";
 
 	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
 	
@@ -20,12 +20,15 @@
 		$recup_label=  $row_recup_app['Label'];
 		$recup_alerte=$row_recup_app['Alerte'];
 		$recup_seuil=$row_recup_app['Seuil'];
-		$recup_pourcentage=$row_recup_app['Pourcentage'];
 		
-		$contenu_tab_app .= "<tr class='line".(($nb_ligne+1)%2)."'>\n";
-			$contenu_tab_app .= "<td>".$recup_name."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_role."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_localisation."</td>\n";			
+		$contenu_tab_app .= "<tr id='row<?php echo $row_recup_app['id'];?>' class='line".(($nb_ligne+1)%2)."'>\n";
+			$contenu_tab_app .= "<td>".$recup_module."</td>\n";
+			$contenu_tab_app .= "<td>".$recup_label."</td>\n";
+			$contenu_tab_app .= "<td>".$recup_alerte."</td>\n";
+			$contenu_tab_app .= "<td>".$recup_seuil."</td>\n";
+			$contenu_tab_app .= "<td><input type='button' id='edit_button1' value='Edit' class='edit' onclick='edit_row('1')'>
+										<input type='button' id='save_button1' value='Save' class='save' onclick='save_row('1')'>
+										<input type='button' value='Delete' class='delete' onclick='delete_row('1')'>"
 		$contenu_tab_app .= "</tr>\n";
 		$nb_ligne++;
 	}
@@ -35,17 +38,18 @@
 		
 		echo "<tr class='table_line'>\n";
 		
-			echo "<td>Nom</td>\n";
-			echo "<td>Role</td>\n";
-			echo "<td>Localisation</td>\n";
+			echo "<td>Module</td>\n";
+			echo "<td>Equipement</td>\n";
+			echo "<td>Alerte</td>\n";
+			echo "<td>Seuil</td>\n";
 			
 		echo "</tr>\n";
 		
-		echo $contenu_tab_app;	
+		echo $contenu_tab_app;
 		
 		echo "</table>\n";
 	}
-	*/
+	
 ?>
 
 <table class='display_list2' cellpadding=0 cellspacing=0 border=0>
