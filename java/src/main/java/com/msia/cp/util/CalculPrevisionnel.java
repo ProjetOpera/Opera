@@ -9,27 +9,28 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class CalculPrevisionnel {
-	public void PointXY_suivant() {
+	public void PointXY_suivant(String Environnement_util, String Site_util) {
+		//Variables
 		float coef = 0;
 		float ponderation = 0;		
 		float total = 0;
 		float total_ponderation_inverse = 0;
-		int PointXYSuivantX = 0;
-		float PointXYSuivantY = 0;
-
-		HashMap<Integer, PointXY> liste_PointXY = new HashMap<Integer, PointXY>();
+		int PointXYSuivantDate = 0;
+		float PointXYSuivantCustom1 = 0;
+		float PointXYSuivantCustom2 = 0;
 		VueGlobaleDaoImpl vueG = new VueGlobaleDaoImpl();
-
-		//Instantiation du hashmap pour test
 		ArrayList liste_vueG = new ArrayList();
-		liste_vueG = vueG.findAllVueGlobale();
+		liste_vueG = vueG.findAllBySiteAndEnv(Site_util, Environnement_util);
+
+		//Calcul Custom1 Debut
+		HashMap<Integer, PointXY> liste_PointXY = new HashMap<Integer, PointXY>();
 
 		for (int i = 0; i < liste_vueG.size(); i++) {
 			VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
 			//liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
 			liste_PointXY.put(i, new PointXY((int) vueG_entity.getDate().getTime(), Float.parseFloat(vueG_entity.getCustom1())));
 		}
-		
+
 		if (liste_PointXY.size() < 30)
 		{
 			coef = (float) 1/liste_PointXY.size();
@@ -40,13 +41,13 @@ public class CalculPrevisionnel {
 			coef = (float) 1/30;
 			ponderation = (float) 1/30;
 		}
-		
+
 		for(Entry<Integer, PointXY> liste_PointXY_temp : liste_PointXY.entrySet()) {
 			Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
 			PointXY liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
-			PointXYSuivantX = liste_PointXY_temp_valeur.X;
-			PointXYSuivantY = liste_PointXY_temp_valeur.Y;
-			
+			PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+			PointXYSuivantCustom1 = liste_PointXY_temp_valeur.Y;
+
 			if (liste_PointXY_temp_cle > 1 && liste_PointXY_temp_cle > liste_PointXY.size()-29)
 			{
 				PointXY point_temp = liste_PointXY.get(liste_PointXY_temp_cle.intValue()-1);
@@ -56,18 +57,62 @@ public class CalculPrevisionnel {
 			}
 		}
 
-		PointXYSuivantX = PointXYSuivantX+86400;
-		PointXYSuivantY = PointXYSuivantY+total/total_ponderation_inverse;
-		
-		PointXY PointXYSuivant = new PointXY(PointXYSuivantX, PointXYSuivantY);
+		PointXYSuivantDate = PointXYSuivantDate+86400;
+		PointXYSuivantCustom1 = PointXYSuivantCustom1+total/total_ponderation_inverse;
+		//Calcul Custom1 Fin
 
+		//Calcul Custom2 Debut
+		HashMap<Integer, PointXY> liste_PointXY2 = new HashMap<Integer, PointXY>();
+
+		for (int i = 0; i < liste_vueG.size(); i++) {
+			VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+			//liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+			liste_PointXY2.put(i, new PointXY((int) vueG_entity.getDate().getTime(), Float.parseFloat(vueG_entity.getCustom2())));
+		}
+
+		if (liste_PointXY2.size() < 30)
+		{
+			coef = (float) 1/liste_PointXY2.size();
+			ponderation = (float) 1/liste_PointXY2.size();
+		}
+		else
+		{
+			coef = (float) 1/30;
+			ponderation = (float) 1/30;
+		}
+
+		for(Entry<Integer, PointXY> liste_PointXY_temp : liste_PointXY2.entrySet()) {
+			Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
+			PointXY liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
+			PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+			PointXYSuivantCustom2 = liste_PointXY_temp_valeur.Y;
+
+			if (liste_PointXY_temp_cle > 1 && liste_PointXY_temp_cle > liste_PointXY2.size()-29)
+			{
+				PointXY point_temp = liste_PointXY2.get(liste_PointXY_temp_cle.intValue()-1);
+				total = total + (liste_PointXY_temp_valeur.Y - point_temp.Y) * ponderation;
+				total_ponderation_inverse = total_ponderation_inverse + (1-ponderation);
+				ponderation = ponderation + coef;
+			}
+		}
+
+		PointXYSuivantDate = PointXYSuivantDate+86400;
+		PointXYSuivantCustom2 = PointXYSuivantCustom2+total/total_ponderation_inverse;
+		System.out.println(total);
+		System.out.println(total_ponderation_inverse);
+		//Calcul Custom2 Fin
+
+		//Instentiation vue
 		VueGlobaleEntity vue = new VueGlobaleEntity();
 		vue.setPrevision(1);
-		Timestamp date = new Timestamp(PointXYSuivant.X);
+		vue.setEnv(Environnement_util);
+		vue.setSite(Site_util);
+		Timestamp date = new Timestamp(PointXYSuivantDate);
 		vue.setDate(date);
-		vue.setEnv("TSM");
-		vue.setSite("Ampère");
-		vue.setCustom1(String.valueOf(PointXYSuivant.Y));
+		vue.setCustom1(String.valueOf(PointXYSuivantCustom1));
+		vue.setCustom2(String.valueOf(PointXYSuivantCustom2));
+
+		//Create vue
 		vueG.createVueGloable(vue);
 	}
 }

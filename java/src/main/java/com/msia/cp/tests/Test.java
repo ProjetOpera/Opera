@@ -14,7 +14,7 @@ public class Test {
 
 		for(int i = 1; i <= 5; i++)
 		{
-			CalculPrevisionnel.PointXY_suivant();
+			CalculPrevisionnel.PointXY_suivant("TSM", "AMPERE");
 		}
 	}
 }
