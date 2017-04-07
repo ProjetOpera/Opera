@@ -4,14 +4,11 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/inv_san</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/inv_datacenter</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">opera</property>
-        <mapping class="com.msia.cp.entities.BaieEntity"/>
+        <mapping class="com.msia.cp.entities.VirtualEntity"/>
 
-
-        <!-- DB schema will be updated if needed -->
-        <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
 </hibernate-configuration>

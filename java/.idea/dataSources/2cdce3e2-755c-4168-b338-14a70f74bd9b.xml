@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="inv_datacenter@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="inv_datacenter">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="capacityplanning"/>
+    <schema id="4" parent="1" name="commun"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="inv_san"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="portailv2"/>
+    <schema id="10" parent="1" name="sys"/>
+    <table id="11" parent="2" name="cp_tsm"/>
+    <table id="12" parent="2" name="inv_vcenter_cp"/>
+    <column id="13" parent="11" name="tsmsite">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="14" parent="11" name="tsmscratchtape">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="11" name="tsmdbpctutil_percent">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="11" name="libpctutil_percent">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="11" name="stockscratchtape">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="11" name="date_releve">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="19" parent="11" name="index_releve_jour">
+      <ColNames>tsmsite
+date_releve</ColNames>
+    </index>
+    <column id="20" parent="12" name="vcenter">
+      <Position>1</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="12" name="DataCenter">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="12" name="Cluster">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="12" name="NbrHosts">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="24" parent="12" name="NbrVMs">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="25" parent="12" name="NbrVMsOn">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="26" parent="12" name="VMsOnHosts">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="27" parent="12" name="vCPUpCPU">
+      <Position>8</Position>
+      <DataType>decimal(1)|0</DataType>
+    </column>
+    <column id="28" parent="12" name="Total_memory_phy_gb">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="29" parent="12" name="used_memory_gb">
+      <Position>10</Position>
+      <DataType>decimal(3)|0</DataType>
+    </column>
+    <column id="30" parent="12" name="total_cpu_mhz">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="31" parent="12" name="used_cpu_mhz">
+      <Position>12</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="32" parent="12" name="total_diskspace_gb">
+      <Position>13</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="33" parent="12" name="used_diskspace_gb">
+      <Position>14</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="34" parent="12" name="date_releve">
+      <Position>15</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="35" parent="12" name="P_index_cluster">
+      <ColNames>vcenter
+DataCenter
+Cluster
+date_releve</ColNames>
+    </index>
+  </database-model>
+</dataSource>
