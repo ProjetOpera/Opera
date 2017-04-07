@@ -12,24 +12,24 @@ import java.util.ArrayList;
 /**
  * Created by A618735 on 07/04/2017.
  */
-public class BaieDaoImpl implements IBaieDAO{
-    SessionFactory sessionFactory = new Configuration().configure("baie.cfg.xml").buildSessionFactory();
+public class VirtualDaoImpl implements IVirtualDAO{
+    SessionFactory sessionFactory = new Configuration().configure("virtual.cfg.xml").buildSessionFactory();
     Session session = null;
     Transaction transaction = null;
 
-    public ArrayList findAllBaie() {
-        ArrayList baieList = new ArrayList();
+    public ArrayList findAllVirtual() {
+        ArrayList virtualList = new ArrayList();
         try {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from BaieEntity");
-            baieList =  (ArrayList) query.list();
+            Query query = session.createQuery("from VirtualEntity");
+            virtualList =  (ArrayList) query.list();
             transaction.commit();
             session.close();
         } catch (HibernateException e) {
             e.printStackTrace();
         }
-        return baieList;
+        return virtualList;
     }
 }
 
