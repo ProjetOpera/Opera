@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 29 Mars 2017 à 10:08
+-- Généré le :  Ven 31 Mars 2017 à 10:00
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -30,8 +30,6 @@ DROP TABLE IF EXISTS `vueglobale`;
 CREATE TABLE `vueglobale` (
   `Prevision` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 = n''est pas une prévision / 1 = prévision',
   `Environnement` varchar(50) NOT NULL,
-  `Label` varchar(50) NOT NULL,
-  `Valeur` varchar(250) DEFAULT NULL,
   `Date_Releve` date NOT NULL,
   `Site` varchar(50) NOT NULL,
   `id_reference` int(11) NOT NULL,
@@ -52,6 +50,15 @@ CREATE TABLE `vueglobale` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
+-- Contenu de la table `vueglobale`
+--
+
+INSERT INTO `vueglobale` (`Prevision`, `Environnement`, `Date_Releve`, `Site`, `id_reference`, `Custom1`, `Custom2`, `Custom3`, `Custom4`, `Custom5`, `Custom6`, `Custom7`, `Custom8`, `Custom9`, `Custom10`, `Custom11`, `Custom12`, `Custom13`, `Custom14`) VALUES
+(0, 'TSM', '2017-03-31', 'Ampère', 2, '52', '68', '254', '26', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(0, 'TSM', '2017-03-31', 'Ampère', 3, '56', '78', '256', '89', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(0, 'TSM', '2017-03-31', 'Ampère', 4, '56', '78', '256', '89', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+--
 -- Index pour les tables exportées
 --
 
@@ -69,7 +76,7 @@ ALTER TABLE `vueglobale`
 -- AUTO_INCREMENT pour la table `vueglobale`
 --
 ALTER TABLE `vueglobale`
-  MODIFY `id_reference` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_reference` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
