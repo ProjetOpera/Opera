@@ -1,10 +1,8 @@
-<?php
-	///////////////////////////
-	// Affichage tableau app //
-	///////////////////////////
+<script type="text/javascript" src="modify_records.js"></script>
+
+<?php	
 	
-	
-	$sql_recup_app="SELECT Module_concerne, Label, Alerte, Seuil FROM capacityplanning;";
+	$sql_recup_app="SELECT id, Module_concerne, Label, Alerte, Seuil FROM capacityplanning.parametres;";
 
 	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
 	
@@ -21,20 +19,29 @@
 		$recup_alerte=$row_recup_app['Alerte'];
 		$recup_seuil=$row_recup_app['Seuil'];
 		
-		$contenu_tab_app .= "<tr id='row<?php echo $row_recup_app['id'];?>' class='line".(($nb_ligne+1)%2)."'>\n";
-			$contenu_tab_app .= "<td>".$recup_module."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_label."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_alerte."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_seuil."</td>\n";
-			$contenu_tab_app .= "<td><input type='button' id='edit_button1' value='Edit' class='edit' onclick='edit_row('1')'>
-										<input type='button' id='save_button1' value='Save' class='save' onclick='save_row('1')'>
-										<input type='button' value='Delete' class='delete' onclick='delete_row('1')'>"
+		$contenu_tab_app .= "<tr id='row" . $row_recup_app['id'] . "' class='line" . (($nb_ligne+1)%2) . "'>\n";
+			$contenu_tab_app .= "<td id=module_val". $row_recup_app['id'] . ">".$recup_module."</td>\n";
+			$contenu_tab_app .= "<td id=label_val" . $row_recup_app['id'] . ">".$recup_label."</td>\n";
+			$contenu_tab_app .= "<td id=alerte_val" . $row_recup_app['id'] . ">".$recup_alerte."</td>\n";
+			$contenu_tab_app .= "<td id=seuil_val" . $row_recup_app['id'] . ">".$recup_seuil."</td>\n";
+			$contenu_tab_app .= "<td><input type='button' id='edit_button".$row_recup_app['id']."' value='Edit' class='edit' onclick='edit_row(".$row_recup_app['id'].")'>
+										<input type='button' id='save_button".$row_recup_app['id']."' value='Save' class='save' onclick='save_row(".$row_recup_app['id'].")'>
+										<input type='button' value='Delete' class='delete' onclick='delete_row(".$row_recup_app['id'].")'></td>";
 		$contenu_tab_app .= "</tr>\n";
 		$nb_ligne++;
 	}
+	
+	$contenu_tab_app .= "<tr id='new_row'>
+ <td><input type='text' id='new_module'></td>
+ <td><input type='text' id='new_label'></td>
+ <td><input type='text' id='new_seuil'></td>
+ <td><input type='text' id='new_alerte'></td>
+ <td><input type='button' value='Insert Row' onclick='insert_row();'></td>
+</tr>";
+	
 	if($nb_ligne!=0)
 	{	
-		echo "<table class='display_list2' cellpadding=0 cellspacing=0 border=0>\n";
+		echo "<table class='display_list2' id='user_table' cellpadding=0 cellspacing=0 border=0>\n";
 		
 		echo "<tr class='table_line'>\n";
 		
@@ -42,6 +49,7 @@
 			echo "<td>Equipement</td>\n";
 			echo "<td>Alerte</td>\n";
 			echo "<td>Seuil</td>\n";
+			echo "<td>Actions</td>\n";
 			
 		echo "</tr>\n";
 		
@@ -52,7 +60,7 @@
 	
 ?>
 
-<table class='display_list2' cellpadding=0 cellspacing=0 border=0>
+<!--<table class='display_list2' cellpadding=0 cellspacing=0 border=0>
 	<tr class='table_line'>
 		<td>Module</td>
 		<td>Equipement</td>
@@ -68,7 +76,7 @@
 		<td style="text-align: center;"><img src='../commun/images/save.png'/></td>
 		<td style="text-align: center;"><a class='various1 delete' href=''></a></td>
 	</tr>
-</table>
+</table>-->
 
 <br><br>
 <style>
