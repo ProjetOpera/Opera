@@ -82,7 +82,11 @@ public class VueGlobaleDaoImpl implements IVueGlobaleDAO {
         try {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from VueGlobaleEntity as v where v.site = :site and v.env = :env");
+            // VueGlobaleEntity{prevision=0, env='TSM', date=2017-02-13 00:00:00.0,
+            // site='AMPERE', id=248, custom1='146', custom2='26', custom3='97', custom4='75'
+            // select disctint date mais afficher toutes les valeurs...
+            // select v2.* from vueglobale as v2 where v2.id_reference in (select max(v.id_reference) from vueglobale as v where v.Site = 'AMPERE' and v.Environnement = 'TSM' group by v.Date_Releve)
+            Query query = session.createQuery("from VueGlobaleEntity as v2 where v2.id in (select max(v.id) from VueGlobaleEntity as v where v.site = :site and v.env = :env)");
             query.setParameter("site", site);
             query.setParameter("env", env);
             vueGlobaleList =  (ArrayList) query.list();

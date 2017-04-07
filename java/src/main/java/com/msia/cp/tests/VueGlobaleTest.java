@@ -14,7 +14,7 @@ public class VueGlobaleTest {
     public static void main(String[] args) {
         VueGlobaleDaoImpl vueG = new VueGlobaleDaoImpl();
         System.out.println("Taille de la liste vueG avant : " + vueG.findAllVueGlobale().size());
-        EnregistrementBdd.tsmVersVueGlobale();
+        //EnregistrementBdd.tsmVersVueGlobale();
         System.out.println("Taille de la liste vueG après : " + vueG.findAllVueGlobale().size());
 
 
@@ -30,7 +30,7 @@ public class VueGlobaleTest {
         vue.setCustom3("256");
         vue.setCustom4("89");
 
-        vueG.createVueGloable(vue);
+        vueG.createVueGloable(vue);*/
 
         System.out.println("Taille de la liste vueG : " + vueG.findAllVueGlobale().size());
         System.out.println("Ampère : " + vueG.findAllBySite("Ampère").size());
@@ -39,8 +39,12 @@ public class VueGlobaleTest {
         System.out.println("Environnement Veeam : " + vueG.findAllByEnv("VEEAM").size());
         System.out.println("Environnement TSM : " + vueG.findAllByEnv("TSM").size());
 
-        System.out.println("Environnement TSM + site Franklin: " + vueG.findAllBySiteAndEnv("Franklin", "TSM").size());
-*/
+        System.out.println("Environnement TSM + site Franklin: " + vueG.findAllBySiteAndEnv("AMPERE", "TSM").size());
+
+        for (Object o : vueG.findAllBySiteAndEnv("AMPERE", "TSM")) {
+            System.out.println("  " + o.toString());
+        }
+
     }
 
 }
