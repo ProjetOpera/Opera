@@ -12,9 +12,9 @@ import java.util.ArrayList;
  */
 
 public class VueGlobaleDaoImpl implements IVueGlobaleDAO {
-    SessionFactory sessionFactory = new Configuration().configure("vueglobale.cfg.xml").buildSessionFactory();
-    Session session = null;
-    Transaction transaction = null;
+    private SessionFactory sessionFactory = new Configuration().configure("vueglobale.cfg.xml").buildSessionFactory();
+    private Session session = null;
+    private Transaction transaction = null;
 
     public ArrayList findAllVueGlobale() {
         ArrayList vueGlobaleList = new ArrayList();

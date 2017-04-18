@@ -9,6 +9,7 @@
         <property name="connection.username">root</property>
         <property name="connection.password">opera</property>
         <mapping class="com.msia.cp.entities.TSMEntity"/>
+        <mapping class="com.msia.cp.entities.VirtualEntity"/>
 
     </session-factory>
 </hibernate-configuration>
