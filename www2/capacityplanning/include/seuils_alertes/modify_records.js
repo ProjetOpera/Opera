@@ -18,8 +18,8 @@ function save_row(id)
 {
  var module=document.getElementById("module_val"+id).value;
  var label=document.getElementById("label_val"+id).value;
- var seuil=document.getElementById("seuil_val"+id).value;
  var alerte=document.getElementById("alerte_val"+id).value;
+ var seuil=document.getElementById("seuil_val"+id).value;
 	
  $.ajax
  ({
@@ -30,16 +30,16 @@ function save_row(id)
    row_id:id,
    module_val:module,
    label_val:label,
-   seuil_val:seuil,
-   alerte_val:alerte
+   alerte_val:alerte,
+   seuil_val:seuil
   },
   success:function(response) {
    if(response=="success")
    {
     document.getElementById("module_val"+id).innerHTML=module;
     document.getElementById("label_val"+id).innerHTML=label;
+	document.getElementById("alerte_val"+id).innerHTML=alerte;
 	document.getElementById("seuil_val"+id).innerHTML=seuil;
-    document.getElementById("alerte_val"+id).innerHTML=alerte;
     document.getElementById("edit_button"+id).style.display="block";
     document.getElementById("save_button"+id).style.display="none";
    }
@@ -71,8 +71,8 @@ function insert_row()
 {
  var module=document.getElementById("new_module").value;
  var label=document.getElementById("new_label").value;
-  var seuil=document.getElementById("new_seuil").value;
  var alerte=document.getElementById("new_alerte").value;
+ var seuil=document.getElementById("new_seuil").value;
 
  $.ajax
  ({
@@ -82,8 +82,8 @@ function insert_row()
    insert_row:'insert_row',
    module_val:module,
    label_val:label,
-   seuil_val:seuil,
-   alerte_val:alerte
+   alerte_val:alerte,
+   seuil_val:seuil
   },
   success:function(response) {
    if(response!="")
@@ -95,8 +95,8 @@ function insert_row()
 
     document.getElementById("new_module").value="";
     document.getElementById("new_label").value="";
+	document.getElementById("new_alerte").value="";
 	document.getElementById("new_seuil").value="";
-    document.getElementById("new_alerte").value="";
    }
   }
  });
