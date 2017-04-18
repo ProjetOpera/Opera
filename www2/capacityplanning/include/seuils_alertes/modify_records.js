@@ -7,8 +7,8 @@ function edit_row(id)
 
  document.getElementById("module_val"+id).innerHTML="<input type='text' id='module_text"+id+"' value='"+module+"'>";
  document.getElementById("label_val"+id).innerHTML="<input type='text' id='label_text"+id+"' value='"+label+"'>";
- document.getElementById("seuil_val"+id).innerHTML="<input type='text' id='seuil_text"+id+"' value='"+seuil+"'>";
  document.getElementById("alerte_val"+id).innerHTML="<input type='text' id='alerte_text"+id+"' value='"+alerte+"'>";
+ document.getElementById("seuil_val"+id).innerHTML="<input type='text' id='seuil_text"+id+"' value='"+seuil+"'>";
 	
  document.getElementById("edit_button"+id).style.display="none";
  document.getElementById("save_button"+id).style.display="block";
