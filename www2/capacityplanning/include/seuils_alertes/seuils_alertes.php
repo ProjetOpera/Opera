@@ -1,7 +1,7 @@
 <html>
 <head>
-<script type="text/javascript" src="./include/seuils_alertes/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="./include/seuils_alertes/modify_records.js"></script>
+<script type="text/javascript" src="./javascript/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="./javascript/modify_records.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -38,7 +38,15 @@
 	}
 	
 	$contenu_tab_app .= "<tr id='new_row'>
- <td><input type='text' id='new_module'></td>
+ <td><select name='module' id='new_module'>";
+
+$sql = $ressourceBDD_appli->query("SELECT Environnement, MIN(id_reference) FROM capacityplanning.vueglobale GROUP BY Environnement");
+while ($row = $sql->fetch(PDO::FETCH_ASSOC))
+{
+	$contenu_tab_app .= "<option value='" . $row['Environnement'] . "'>" . $row['Environnement'] . "</option>";
+}
+
+$contenu_tab_app .= "</select></td>
  <td><input type='text' id='new_label'></td>
  <td><input type='text' id='new_alerte'></td>
  <td><input type='text' id='new_seuil'></td>
