@@ -108,7 +108,7 @@
 	  		<td style="color: black;" colspan=2>Vue globale</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=data_center" target="_self">Sauvegarde des VMs</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=240&type=data_center&target=data_center" target="_self">Sauvegarde des VMs</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
 	
@@ -125,10 +125,10 @@
 	  		<td style="color: black;" colspan=2>SNP1 - Ampère</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP1" target="_self">Sauvegarde des VMs</a></td><td><img src="images/pluvieux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP2" target="_self">Sauvegarde des VMs</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=240&type=data_center&target=SNP1" target="_self">Sauvegarde des VMs</a></td><td><img src="images/pluvieux.png"></td><td><a href="./id_menu=240&type=data_center&target=SNP2" target="_self">Sauvegarde des VMs</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="http://localhost/capacityplanning/id_menu=240" target="_self">Retour</a>
+	<a href="./id_menu=240" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -144,16 +144,16 @@
 	  		<td style="color: black;" colspan=2>SNP1</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP1_veeam1" target="_self">Serveur VEEAM 1</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=240&type=data_center&target=SNP1_veeam1" target="_self">Serveur VEEAM 1</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP1_veeam2" target="_self">Serveur VEEAM 2</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=240&type=data_center&target=SNP1_veeam2" target="_self">Serveur VEEAM 2</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP1_veeam3" target="_self">Serveur VEEAM 3</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=240&type=data_center&target=SNP1_veeam3" target="_self">Serveur VEEAM 3</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="./id_menu=240&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -169,16 +169,16 @@
 	  		<td style="color: black;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP2_veeam1" target="_self">Serveur VEEAM 1</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=240&type=data_center&target=SNP2_veeam1" target="_self">Serveur VEEAM 1</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP2_veeam2" target="_self">Serveur VEEAM 2</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=240&type=data_center&target=SNP2_veeam2" target="_self">Serveur VEEAM 2</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=SNP2_veeam3" target="_self">Serveur VEEAM 3</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=240&type=data_center&target=SNP2_veeam3" target="_self">Serveur VEEAM 3</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="http://localhost/capacityplanning/id_menu=240&type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="./id_menu=240&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>

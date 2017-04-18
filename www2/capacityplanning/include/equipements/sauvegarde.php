@@ -120,7 +120,7 @@
 	  		<td style="color: black;" colspan=2>Vue globale</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=data_center" target="_self">Sauvegarde TSM</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=243&type=data_center&target=data_center" target="_self">Sauvegarde TSM</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
 	
@@ -137,10 +137,10 @@
 	  		<td style="color: black;" colspan=2>SNP1 - Ampère</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1" target="_self">Sauvegarde TSM</a></td><td><img src="images/pluvieux.png"></td><td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2" target="_self">Sauvegarde TSM</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1" target="_self">Sauvegarde TSM</a></td><td><img src="images/pluvieux.png"></td><td><a href="./id_menu=243&type=data_center&target=SNP2" target="_self">Sauvegarde TSM</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="http://localhost/capacityplanning/id_menu=243" target="_self">Retour</a>
+	<a href="./id_menu=243" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -156,25 +156,25 @@
 	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -190,25 +190,25 @@
 	  		<td style="color: black;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="http://localhost/capacityplanning/id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
