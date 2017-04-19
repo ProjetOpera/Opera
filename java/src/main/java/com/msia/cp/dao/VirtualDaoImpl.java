@@ -22,7 +22,8 @@ public class VirtualDaoImpl implements IVirtualDAO{
         try {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from VirtualEntity");
+            //Appel de la requête présente dans le fichier Requete_InvDatacenter.hbm.xml
+            Query query = session.getNamedQuery("VirtualSelect");
             virtualList =  (ArrayList) query.list();
             transaction.commit();
             session.close();

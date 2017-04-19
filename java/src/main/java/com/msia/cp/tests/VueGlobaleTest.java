@@ -39,7 +39,7 @@ public class VueGlobaleTest {
         System.out.println("Environnement Veeam : " + vueG.findAllByEnv("VEEAM").size());
         System.out.println("Environnement TSM : " + vueG.findAllByEnv("TSM").size());
 
-        System.out.println("Environnement TSM + site Franklin: " + vueG.findAllBySiteAndEnv("AMPERE", "TSM").size());
+        System.out.println("Environnement TSM + site Ampère: " + vueG.findAllBySiteAndEnv("AMPERE", "TSM").size());
 
         for (Object o : vueG.findAllBySiteAndEnv("AMPERE", "TSM")) {
             System.out.println("  " + o.toString());

@@ -22,7 +22,8 @@ public class TsmDaoImpl implements ITsmDAO {
         try {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from TSMEntity");
+            //Appel de la requête présente dans le fichier Requete_InvDatacenter.hbm.xml
+            Query query = session.getNamedQuery("TSMSelect");
             tsmList =  (ArrayList) query.list();
             transaction.commit();
             session.close();

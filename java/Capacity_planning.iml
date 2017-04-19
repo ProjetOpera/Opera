@@ -5,6 +5,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="hibernate.cfg.xml" />
+          <unit-entry name="inv_datacenter.cfg.xml" />
           <unit-entry name="tsm.cfg.xml" />
           <unit-entry name="virtualisation.cfg.xml" value="2cdce3e2-755c-4168-b338-14a70f74bd9b" />
           <unit-entry name="vueglobale.cfg.xml" />

@@ -17,7 +17,7 @@ public class TsmTest {
 //        for (Object o : tsm.findAllTsm())
 //            System.out.println("  " + o.toString());
 
-        EnregistrementBdd.tsmVersVueGlobale();
+       // EnregistrementBdd.tsmVersVueGlobale();
 
 
     }
