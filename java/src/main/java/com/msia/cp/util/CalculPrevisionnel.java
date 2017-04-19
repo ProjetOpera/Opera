@@ -16,6 +16,7 @@ public class CalculPrevisionnel {
 		float total = 0;
 		float total_ponderation_inverse = 0;
 		int PointXYSuivantDate = 0;
+		long DerniereDateBD = 0;
 		VueGlobaleDaoImpl vueG = new VueGlobaleDaoImpl();
 		ArrayList liste_vueG = new ArrayList();
 		liste_vueG = vueG.findAllBySiteAndEnv(Site_util, Environnement_util);
@@ -28,7 +29,7 @@ public class CalculPrevisionnel {
 		for (int i = 0; i < liste_vueG.size(); i++) {
 			VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
 			//liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
-			liste_PointXY.put(i, new PointXY((int) vueG_entity.getDate().getTime(), Float.parseFloat(vueG_entity.getCustom1())));
+			liste_PointXY.put(i, new PointXY((int) vueG_entity.getDate().getTime()/1000, Float.parseFloat(vueG_entity.getCustom1())));
 		}
 
 		if (liste_PointXY.size() < 30)
@@ -69,7 +70,7 @@ public class CalculPrevisionnel {
 		for (int i = 0; i < liste_vueG.size(); i++) {
 			VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
 			//liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
-			liste_PointXY2.put(i, new PointXY((int) vueG_entity.getDate().getTime(), Float.parseFloat(vueG_entity.getCustom2())));
+			liste_PointXY2.put(i, new PointXY((int) vueG_entity.getDate().getTime()/1000, Float.parseFloat(vueG_entity.getCustom2())));
 		}
 
 		if (liste_PointXY2.size() < 30)
@@ -110,7 +111,7 @@ public class CalculPrevisionnel {
 		for (int i = 0; i < liste_vueG.size(); i++) {
 			VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
 			//liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
-			liste_PointXY3.put(i, new PointXY((int) vueG_entity.getDate().getTime(), Float.parseFloat(vueG_entity.getCustom3())));
+			liste_PointXY3.put(i, new PointXY((int) vueG_entity.getDate().getTime()/1000, Float.parseFloat(vueG_entity.getCustom3())));
 		}
 
 		if (liste_PointXY3.size() < 30)
@@ -151,7 +152,8 @@ public class CalculPrevisionnel {
 		for (int i = 0; i < liste_vueG.size(); i++) {
 			VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
 			//liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
-			liste_PointXY4.put(i, new PointXY((int) vueG_entity.getDate().getTime(), Float.parseFloat(vueG_entity.getCustom4())));
+			liste_PointXY4.put(i, new PointXY((int) vueG_entity.getDate().getTime()/1000, Float.parseFloat(vueG_entity.getCustom4())));
+			DerniereDateBD = vueG_entity.getDate().getTime()/1000;
 		}
 
 		if (liste_PointXY4.size() < 30)
@@ -180,7 +182,7 @@ public class CalculPrevisionnel {
 			}
 		}
 
-		PointXYSuivantDate = PointXYSuivantDate+86400;
+		DerniereDateBD = DerniereDateBD+86400;
 		PointXYSuivantCustom4 = PointXYSuivantCustom4+total/total_ponderation_inverse;
 		//Calcul Custom3 Fin
 
@@ -189,7 +191,7 @@ public class CalculPrevisionnel {
 		vue.setPrevision(1);
 		vue.setEnv(Environnement_util);
 		vue.setSite(Site_util);
-		Timestamp date = new Timestamp(PointXYSuivantDate);
+		Timestamp date = new Timestamp(DerniereDateBD*1000);
 		vue.setDate(date);
 		vue.setCustom1(String.valueOf(PointXYSuivantCustom1));
 		vue.setCustom2(String.valueOf(PointXYSuivantCustom2));
