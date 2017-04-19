@@ -156,10 +156,10 @@
 	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM" target="_self">BD</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td>
@@ -190,10 +190,10 @@
 	  		<td style="color: black;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM" target="_self">BD</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP2 - Librairie</td>
@@ -211,8 +211,44 @@
 	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
+	if ($type == "data_center" && $target == "SNP2_TSM") {
+		$environnement = "TSM"; // module
+		$label1 = "bandes"; // comme dans les maquettes de Chloé, bandes utilisées
+		$label2 = "bd";     // et bd dans le même graphe
+		$site = "franklin"; // le site
+	}
+	else if ($type == "data_center" && $target == "SNP2_lib_util")
+	{
+		$environnement = "TSM";
+		$site = "franklin";
+		$label1 = $target; // on se base sur le libellé du $_GET
+	}
+	else if ($type == "data_center" && $target == "SNP2_stock_vierges")
+	{
+		$environnement = "TSM";
+		$site = "franklin";
+		$label1 = $target;
+	}
+	else if ($type == "data_center" && $target == "SNP1_TSM") {
+		$environnement = "TSM";
+		$site = "ampere";
+		$label1 = "bandes";
+		$label2 = "bd";
+	}
+	else if ($type == "data_center" && $target == "SNP1_lib_util")
+	{
+		$environnement = "TSM";
+		$site = "franklin";
+		$label1 = $target;
+	}
+	else if ($type == "data_center" && $target == "SNP1_stock_vierges")
+	{
+		$environnement = "TSM";
+		$site = "franklin";
+		$label1 = $target;
+	}
+	include 'amchart_sauvegarde.php';
 ?>
-
 <?php
 	if ($type == "data_center" && $target == "SNP1_TSM_Bandes") {
 ?>

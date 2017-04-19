@@ -120,14 +120,10 @@
 		while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
 	{
 		$recup_name=$row_recup_app['name'];
-		$recup_role=  $row_recup_app['role'];
-		$recup_localisation=$row_recup_app['localisation'];
 		
 		$contenu_tab_app .= "<tr>";
 			if (substr($recup_name, -3) == "AMP")
-				$contenu_tab_app .= "<td>"."<a href='./id_menu=241&type=data_center&target=SNP1_" . $recup_name . "' target='_self'>".$recup_name."</td>";
-			//$contenu_tab_app .= "<td>".$recup_role."</td>\n";
-			//$contenu_tab_app .= "<td>".$recup_localisation."</td>\n";			
+				$contenu_tab_app .= "<td>"."<a href='./id_menu=241&type=data_center&target=SNP1_" . $recup_name . "' target='_self'>".$recup_name."</td>";	
 		$contenu_tab_app .= "</tr>";
 		
 		$nb_ligne++;
