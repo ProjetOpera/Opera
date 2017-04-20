@@ -36,19 +36,19 @@ CREATE TABLE `parametres` (
   `Alerte` int(11) NOT NULL,
   `Label` varchar(250) NOT NULL,
   `Pourcentage` tinyint(1) NOT NULL,
+  `Site` varchar(100) DEFAULT NULL,
   `Custom1` varchar(100) DEFAULT NULL,
   `Custom2` varchar(100) DEFAULT NULL,
   `Custom3` varchar(100) DEFAULT NULL,
-  `Custom4` varchar(100) DEFAULT NULL,
-  `Custom5` varchar(100) DEFAULT NULL
+  `Custom4` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `parametres`
 --
 
-INSERT INTO `parametres` (`id`, `Module_concerne`, `Seuil`, `Alerte`, `Label`, `Pourcentage`, `Custom1`, `Custom2`, `Custom3`, `Custom4`, `Custom5`) VALUES
-(2, 'TSM', 40, 30, 'BD', 0, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `parametres` (`id`, `Module_concerne`, `Seuil`, `Alerte`, `Label`, `Pourcentage`, `Site`, `Custom1`, `Custom2`, `Custom3`, `Custom4`) VALUES
+(2, 'TSM', 40, 30, 'BD', 0, 'AMPERE', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
