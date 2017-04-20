@@ -48,7 +48,14 @@ CREATE TABLE `parametres` (
 --
 
 INSERT INTO `parametres` (`id`, `Module_concerne`, `Seuil`, `Alerte`, `Label`, `Pourcentage`, `Site`, `Custom1`, `Custom2`, `Custom3`, `Custom4`) VALUES
-(2, 'TSM', 40, 30, 'BD', 0, 'AMPERE', NULL, NULL, NULL, NULL);
+(2, 'TSM', 80, 70, 'BD', 1, 'AMPERE', NULL, NULL, NULL, NULL),
+(3, 'TSM', 30, 60, 'Bandes', 0, 'AMPERE', NULL, NULL, NULL, NULL),
+(4, 'TSM', 95, 85, 'Lib_util', 1, 'AMPERE', NULL, NULL, NULL, NULL),
+(5, 'TSM', 50, 70, 'Stock_vierges', 0, 'AMPERE', NULL, NULL, NULL, NULL),
+(6, 'TSM', 80, 70, 'BD', 1, 'FRANKLIN', NULL, NULL, NULL, NULL),
+(7, 'TSM', 30, 60, 'Bandes', 0, 'FRANKLIN', NULL, NULL, NULL, NULL),
+(8, 'TSM', 95, 85, 'Lib_util', 1, 'FRANKLIN', NULL, NULL, NULL, NULL),
+(9, 'TSM', 50, 70, 'Stock_vierges', 0, 'FRANKLIN', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
