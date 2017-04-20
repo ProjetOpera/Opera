@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../connect.php");
+require_once("connect.php");
 	///////////////////////////
 	// Affichage tableau app //
 	///////////////////////////
@@ -220,93 +220,94 @@ require_once("../../connect.php");
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "bandes";
-		$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Seuil'];
-		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
 	}
 	if ($type == "data_center" && $target == "SNP1_TSM_BD") {
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "bd";
-		$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Seuil'];
-		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
 	}
 	if ($type == "data_center" && $target == "SNP1_lib_util")
 	{
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "lib_util";
-		$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Seuil'];
-		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
 	}
 	if ($type == "data_center" && $target == "SNP1_stock_vierges")
 	{
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "stock_vierges";
-		$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Seuil'];
-		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
 	}
 	if ($type == "data_center" && $target == "SNP2_TSM_Bandes") {
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "bandes";
-		$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Seuil'];
-		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
 	}
 	if ($type == "data_center" && $target == "SNP2_TSM_BD") {
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "bd";
-		$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Seuil'];
-		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
+		$alerte = $temp['Alerte'];
 	}
 	if ($type == "data_center" && $target == "SNP2_lib_util")
 	{
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "lib_util";
-		$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Seuil'];
-		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
 	}
 	if ($type == "data_center" && $target == "SNP2_stock_vierges")
 	{
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "stock_vierges";
-		$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Seuil'];
-		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
-		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
 	}
 
 	include 'amchart_sauvegarde.php';

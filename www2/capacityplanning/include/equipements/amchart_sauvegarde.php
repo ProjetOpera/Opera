@@ -21,15 +21,24 @@
 			    "theme": "light",
 			    "dataProvider": [
 			    <?php
-					$sql = "SELECT DISTINCT(Date_Releve), Custom1 FROM capacityplanning.vueglobale WHERE Site = '".$site."'";
+					$sql = "SELECT DISTINCT(Date_Releve), Custom1 FROM capacityplanning.vueglobale WHERE Site = '".$site."' ORDER BY Date_Releve";
 
 					$result = $ressourceBDD_appli->query($sql);
 		
 					while ($row = $result->fetch(PDO::FETCH_ASSOC))
 					{
+						if ($row['Custom1'] < $seuil) {
+							$color = '#2980b9';
+						}
+						if ($row['Custom1'] >= $seuil) {
+							$color = '#e67e22';
+						}
+						if ($row['Custom1'] >= $alerte) {
+							$color = '#c0392b';
+						}
 				?>
 					{
-	    				"lineColor": "#2980b9",
+	    				"lineColor": "<?=$color?>",
 	    				"date": "<?=$row['Date_Releve']?>",
 	    				"value": <?=$row['Custom1']?>
 					},
@@ -43,19 +52,19 @@
 			        "guides": [{
 			            "dashLength": 6,
 			            "inside": true,
-			            "label": "Seuil alerte",
+			            "label": "Seuil",
 			            "lineAlpha": 1,
 			            "color": "#e67e22",
 			            "lineColor": "#e67e22",
-			            "value": 70
+			            "value": <?=$seuil?>
 			        },{
 			            "dashLength": 6,
 			            "inside": true,
-			            "label": "Seuil critique",
+			            "label": "Alerte",
 			            "lineAlpha": 1,
 			            "color": "#c0392b",
 			            "lineColor": "#c0392b",
-			            "value": 80
+			            "value": <?=$alerte?>
 			        }],
 			    }],
 			    "graphs": [{
@@ -132,15 +141,24 @@
 			    "theme": "light",
 			    "dataProvider": [
 			    <?php
-					$sql = "SELECT DISTINCT(Date_Releve), Custom2 FROM capacityplanning.vueglobale WHERE Site = '".$site."'";
+					$sql = "SELECT DISTINCT(Date_Releve), Custom2 FROM capacityplanning.vueglobale WHERE Site = '".$site."' ORDER BY Date_Releve";
 
 					$result = $ressourceBDD_appli->query($sql);
 		
 					while ($row = $result->fetch(PDO::FETCH_ASSOC))
 					{
+						if ($row['Custom2'] < $seuil) {
+							$color = '#2980b9';
+						}
+						if ($row['Custom2'] >= $seuil) {
+							$color = '#e67e22';
+						}
+						if ($row['Custom2'] >= $alerte) {
+							$color = '#c0392b';
+						}
 				?>
 					{
-	    				"lineColor": "#2980b9",
+	    				"lineColor": "<?=$color?>",
 	    				"date": "<?=$row['Date_Releve']?>",
 	    				"value": <?=$row['Custom2']?>
 					},
@@ -154,19 +172,19 @@
 			        "guides": [{
 			            "dashLength": 6,
 			            "inside": true,
-			            "label": "Seuil alerte",
+			            "label": "Seuil",
 			            "lineAlpha": 1,
 			            "color": "#e67e22",
 			            "lineColor": "#e67e22",
-			            "value": 70
+			            "value": <?=$seuil?>
 			        },{
 			            "dashLength": 6,
 			            "inside": true,
-			            "label": "Seuil critique",
+			            "label": "Alerte",
 			            "lineAlpha": 1,
 			            "color": "#c0392b",
 			            "lineColor": "#c0392b",
-			            "value": 80
+			            "value": <?=$alerte?>
 			        }],
 			    }],
 			    "graphs": [{
@@ -243,15 +261,24 @@
 			    "theme": "light",
 			    "dataProvider": [
 			    <?php
-					$sql = "SELECT DISTINCT(Date_Releve), Custom3 FROM capacityplanning.vueglobale WHERE Site = '".$site."'";
+					$sql = "SELECT DISTINCT(Date_Releve), Custom3 FROM capacityplanning.vueglobale WHERE Site = '".$site."' ORDER BY Date_Releve";
 
 					$result = $ressourceBDD_appli->query($sql);
 		
 					while ($row = $result->fetch(PDO::FETCH_ASSOC))
 					{
+						if ($row['Custom3'] < $seuil) {
+							$color = '#2980b9';
+						}
+						if ($row['Custom3'] >= $seuil) {
+							$color = '#e67e22';
+						}
+						if ($row['Custom3'] >= $alerte) {
+							$color = '#c0392b';
+						}
 				?>
 					{
-	    				"lineColor": "#2980b9",
+	    				"lineColor": "<?=$color?>",
 	    				"date": "<?=$row['Date_Releve']?>",
 	    				"value": <?=$row['Custom3']?>
 					},
@@ -265,19 +292,19 @@
 			        "guides": [{
 			            "dashLength": 6,
 			            "inside": true,
-			            "label": "Seuil alerte",
+			            "label": "Seuil",
 			            "lineAlpha": 1,
 			            "color": "#e67e22",
 			            "lineColor": "#e67e22",
-			            "value": 70
+			            "value": <?=$seuil?>
 			        },{
 			            "dashLength": 6,
 			            "inside": true,
-			            "label": "Seuil critique",
+			            "label": "Alerte",
 			            "lineAlpha": 1,
 			            "color": "#c0392b",
 			            "lineColor": "#c0392b",
-			            "value": 80
+			            "value": <?=$alerte?>
 			        }],
 			    }],
 			    "graphs": [{
@@ -354,15 +381,24 @@
 			    "theme": "light",
 			    "dataProvider": [
 			    <?php
-					$sql = "SELECT DISTINCT(Date_Releve), Custom4 FROM capacityplanning.vueglobale WHERE Site = '".$site."'";
+					$sql = "SELECT DISTINCT(Date_Releve), Custom4 FROM capacityplanning.vueglobale WHERE Site = '".$site."' ORDER BY Date_Releve";
 
 					$result = $ressourceBDD_appli->query($sql);
 		
 					while ($row = $result->fetch(PDO::FETCH_ASSOC))
 					{
+						if ($row['Custom4'] < $seuil) {
+							$color = '#2980b9';
+						}
+						if ($row['Custom4'] >= $seuil) {
+							$color = '#e67e22';
+						}
+						if ($row['Custom4'] >= $alerte) {
+							$color = '#c0392b';
+						}
 				?>
 					{
-	    				"lineColor": "#2980b9",
+	    				"lineColor": "<?=$color?>",
 	    				"date": "<?=$row['Date_Releve']?>",
 	    				"value": <?=$row['Custom4']?>
 					},
@@ -376,19 +412,19 @@
 			        "guides": [{
 			            "dashLength": 6,
 			            "inside": true,
-			            "label": "Seuil alerte",
+			            "label": "Seuil",
 			            "lineAlpha": 1,
 			            "color": "#e67e22",
 			            "lineColor": "#e67e22",
-			            "value": 70
+			            "value": <?=$seuil?>
 			        },{
 			            "dashLength": 6,
 			            "inside": true,
-			            "label": "Seuil critique",
+			            "label": "Alerte",
 			            "lineAlpha": 1,
 			            "color": "#c0392b",
 			            "lineColor": "#c0392b",
-			            "value": 80
+			            "value": <?=$alerte?>
 			        }],
 			    }],
 			    "graphs": [{
