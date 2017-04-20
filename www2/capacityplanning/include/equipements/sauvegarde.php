@@ -112,6 +112,16 @@ require_once("../../connect.php");
 </center></br></br>-->
 
 <?php
+	$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
+	$temp = $sql->fetch();
+	$seuil = $temp['Seuil'];
+	$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
+	$temp = $sql->fetch();
+	$alerte = $temp['Alerte'];
+
+?>
+
+<?php
 	if ($type == "SI") {
 ?>
 	<table class="tableau_meteo">
@@ -225,7 +235,7 @@ require_once("../../connect.php");
 		$seuil = $temp['Seuil'];
 		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
 		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$alerte = $temp['Alerte'];
 	}
 	if ($type == "data_center" && $target == "SNP1_TSM_BD") {
 		$environnement = "TSM";
@@ -236,7 +246,7 @@ require_once("../../connect.php");
 		$seuil = $temp['Seuil'];
 		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
 		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$alerte = $temp['Alerte'];
 	}
 	if ($type == "data_center" && $target == "SNP1_lib_util")
 	{
@@ -248,7 +258,7 @@ require_once("../../connect.php");
 		$seuil = $temp['Seuil'];
 		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
 		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$alerte = $temp['Alerte'];
 	}
 	if ($type == "data_center" && $target == "SNP1_stock_vierges")
 	{
@@ -260,7 +270,7 @@ require_once("../../connect.php");
 		$seuil = $temp['Seuil'];
 		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
 		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$alerte = $temp['Alerte'];
 	}
 	if ($type == "data_center" && $target == "SNP2_TSM_Bandes") {
 		$environnement = "TSM";
@@ -271,7 +281,7 @@ require_once("../../connect.php");
 		$seuil = $temp['Seuil'];
 		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
 		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$alerte = $temp['Alerte'];
 	}
 	if ($type == "data_center" && $target == "SNP2_TSM_BD") {
 		$environnement = "TSM";
@@ -282,7 +292,7 @@ require_once("../../connect.php");
 		$seuil = $temp['Seuil'];
 		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
 		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$alerte = $temp['Alerte'];
 	}
 	if ($type == "data_center" && $target == "SNP2_lib_util")
 	{
@@ -294,7 +304,7 @@ require_once("../../connect.php");
 		$seuil = $temp['Seuil'];
 		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
 		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$alerte = $temp['Alerte'];
 	}
 	if ($type == "data_center" && $target == "SNP2_stock_vierges")
 	{
@@ -306,7 +316,7 @@ require_once("../../connect.php");
 		$seuil = $temp['Seuil'];
 		$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
 		$temp = $sql->fetch();
-		$seuil = $temp['Alerte'];
+		$alerte = $temp['Alerte'];
 	}
 
 	include 'amchart_sauvegarde.php';
