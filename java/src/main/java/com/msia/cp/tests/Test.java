@@ -4,7 +4,7 @@ public class Test {
 	public static void main(String[] args) {
 		com.msia.cp.util.CalculPrevisionnel CalculPrevisionnel = new com.msia.cp.util.CalculPrevisionnel();
 
-		for(int i = 1; i <= 10; i++)
+		for(int i = 1; i <= 90; i++)
 		{
 			CalculPrevisionnel.PointXY_suivant("TSM", "AMPERE");
 		}
