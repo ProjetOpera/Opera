@@ -156,10 +156,10 @@
 	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM" target="_self">BD</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td>
@@ -190,10 +190,10 @@
 	  		<td style="color: black;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM" target="_self">BD</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP2 - Librairie</td>
@@ -214,10 +214,15 @@
 ?>
 
 <?php
-	if ($type == "data_center" && $target == "SNP1_TSM") {
+	if ($type == "data_center" && $target == "SNP1_TSM_Bandes") {
 		$environnement = "TSM";
 		$site = "AMPERE";
-		$type = "bandes_bd";
+		$type = "bandes";
+	}
+	if ($type == "data_center" && $target == "SNP1_TSM_BD") {
+		$environnement = "TSM";
+		$site = "AMPERE";
+		$type = "bd";
 	}
 	if ($type == "data_center" && $target == "SNP1_lib_util")
 	{
@@ -231,10 +236,15 @@
 		$site = "AMPERE";
 		$type = "stock_vierges";
 	}
-	if ($type == "data_center" && $target == "SNP2_TSM") {
+	if ($type == "data_center" && $target == "SNP2_TSM_Bandes") {
 		$environnement = "TSM";
-		$label1 = "bandes";
-		$type = "bandes_bd";
+		$site = "FRANKLIN";
+		$type = "bandes";
+	}
+	if ($type == "data_center" && $target == "SNP2_TSM_BD") {
+		$environnement = "TSM";
+		$site = "FRANKLIN";
+		$type = "bd";
 	}
 	if ($type == "data_center" && $target == "SNP2_lib_util")
 	{
