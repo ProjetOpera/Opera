@@ -97,13 +97,13 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=239&type=data_center&target=data_center" target="_self">Virtualisation</td><td><img src="images/nuageux.png">
+	  		<td><a href="./id_menu=239&type=data_center&target=data_center" target="_self">Virtualisation</td><td><img src="images/croix.png">
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=240&type=data_center&target=data_center" target="_self">VEEAM</td><td><img src="images/soleil.png"></td>
+			<td><a href="./id_menu=240&type=data_center&target=data_center" target="_self">VEEAM</td><td><img src="images/croix.png"></td>
 		</tr>
 	  	<tr>
-			<td><a href="./id_menu=241&type=data_center&target=data_center" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./id_menu=241&type=data_center&target=data_center" target="_self">Stockage</a></td><td><img src="images/croix.png"></td>
 		</tr>
 	  	<tr>
 			<td><a href="./id_menu=243&type=data_center&target=data_center" target="_self">Sauvegarde</td><td><img src="images/nuageux.png"></td>
