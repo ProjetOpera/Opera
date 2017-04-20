@@ -126,7 +126,7 @@ require_once("connect.php");
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Bandes' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Bandes' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom2'];
@@ -153,7 +153,7 @@ require_once("connect.php");
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='BD' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='BD' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom3'];
@@ -180,7 +180,7 @@ require_once("connect.php");
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Lib_util' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Lib_util' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom3'];
@@ -200,8 +200,6 @@ require_once("connect.php");
 		$meteoTSMLib_Ampere = "<img src='images/pluvieux.png'>";
 		$test_meteoTSM_AmpereN2++;
 	}
-
-	// Je ne sais pas où est indiqué le stock de bandes vierges hors TSM donc je met Custom2 en attendant
 	
 	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
@@ -209,10 +207,10 @@ require_once("connect.php");
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Stock_vierges' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $connexion->query("SELECT Custom4 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Stock_vierges' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
-		$capacity = $temp['Custom2'];
+		$capacity = $temp['Custom4'];
 	}
 	
 	if ($capacity > $alerte)
@@ -236,7 +234,7 @@ require_once("connect.php");
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Bandes' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Bandes' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom2'];
@@ -263,7 +261,7 @@ require_once("connect.php");
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='BD' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='BD' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom3'];
@@ -290,7 +288,7 @@ require_once("connect.php");
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Lib_util' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Lib_util' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom3'];
@@ -310,8 +308,6 @@ require_once("connect.php");
 		$meteoTSMLib_Franklin = "<img src='images/pluvieux.png'>";
 		$test_meteoTSM_FranklinN2++;
 	}
-	
-	// Je ne sais pas où est indiqué le stock de bandes vierges hors TSM donc je met Custom2 en attendant
 
 	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
@@ -319,10 +315,10 @@ require_once("connect.php");
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Stock_vierges' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $connexion->query("SELECT Custom4 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Stock_vierges' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
-		$capacity = $temp['Custom2'];
+		$capacity = $temp['Custom4'];
 	}
 	
 	if ($capacity > $alerte)
