@@ -120,13 +120,13 @@ require_once("connect.php");
 ?>
 
 <?php
-	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
+	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Bandes' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom2'];
@@ -147,13 +147,13 @@ require_once("connect.php");
 		$test_meteoTSM_AmpereN2++;
 	}
 	
-	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
+	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='BD' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom3'];
@@ -174,13 +174,13 @@ require_once("connect.php");
 		$test_meteoTSM_AmpereN2++;
 	}
 
-	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
+	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Lib_util' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom3'];
@@ -203,13 +203,13 @@ require_once("connect.php");
 
 	// Je ne sais pas où est indiqué le stock de bandes vierges hors TSM donc je met Custom2 en attendant
 	
-	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
+	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Stock_vierges' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom2'];
@@ -230,13 +230,13 @@ require_once("connect.php");
 		$test_meteoTSM_AmpereN2++;
 	}
 
-	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
+	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Bandes' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom2'];
@@ -257,13 +257,13 @@ require_once("connect.php");
 		$test_meteoTSM_FranklinN2++;
 	}
 
-	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
+	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='BD' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom3'];
@@ -284,13 +284,13 @@ require_once("connect.php");
 		$test_meteoTSM_FranklinN2++;
 	}
 
-	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
+	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Lib_util' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom3'];
@@ -313,13 +313,13 @@ require_once("connect.php");
 	
 	// Je ne sais pas où est indiqué le stock de bandes vierges hors TSM donc je met Custom2 en attendant
 
-	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
+	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$seuil = $temp['Seuil'];
 		$alerte = $temp['Alerte'];
 	}
-	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Stock_vierges' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
+	$sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=NOW()");
 	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 	{
 		$capacity = $temp['Custom2'];
@@ -818,7 +818,6 @@ require_once("connect.php");
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
