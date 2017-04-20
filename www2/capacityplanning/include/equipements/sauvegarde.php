@@ -120,15 +120,17 @@ require_once("connect.php");
 ?>
 
 <?php
-	$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$seuil = $temp['Seuil'];
-	$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$alerte = $temp['Alerte'];
+	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$seuil = $temp['Seuil'];
+		$alerte = $temp['Alerte'];
+	}
 	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Bandes' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$capacity = $temp['Custom2'];
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$capacity = $temp['Custom2'];
+	}
 	
 	if ($capacity > $alerte)
 	{
@@ -145,15 +147,17 @@ require_once("connect.php");
 		$test_meteoTSM_AmpereN2++;
 	}
 	
-	$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$seuil = $temp['Seuil'];
-	$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$alerte = $temp['Alerte'];
+	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$seuil = $temp['Seuil'];
+		$alerte = $temp['Alerte'];
+	}
 	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='BD' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$capacity = $temp['Custom3'];
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$capacity = $temp['Custom3'];
+	}
 	
 	if ($capacity < $alerte)
 	{
@@ -170,15 +174,17 @@ require_once("connect.php");
 		$test_meteoTSM_AmpereN2++;
 	}
 
-	$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$seuil = $temp['Seuil'];
-	$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$alerte = $temp['Alerte'];
+	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$seuil = $temp['Seuil'];
+		$alerte = $temp['Alerte'];
+	}
 	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Lib_util' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$capacity = $temp['Custom3'];
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$capacity = $temp['Custom3'];
+	}
 	
 	if ($capacity < $alerte)
 	{
@@ -197,15 +203,17 @@ require_once("connect.php");
 
 	// Je ne sais pas où est indiqué le stock de bandes vierges hors TSM donc je met Custom2 en attendant
 	
-	$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$seuil = $temp['Seuil'];
-	$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$alerte = $temp['Alerte'];
+	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$seuil = $temp['Seuil'];
+		$alerte = $temp['Alerte'];
+	}
 	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Label='Stock_vierges' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$capacity = $temp['Custom2'];
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$capacity = $temp['Custom2'];
+	}
 	
 	if ($capacity > $alerte)
 	{
@@ -222,15 +230,17 @@ require_once("connect.php");
 		$test_meteoTSM_AmpereN2++;
 	}
 
-	$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$seuil = $temp['Seuil'];
-	$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$alerte = $temp['Alerte'];
+	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$seuil = $temp['Seuil'];
+		$alerte = $temp['Alerte'];
+	}
 	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Bandes' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$capacity = $temp['Custom2'];
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$capacity = $temp['Custom2'];
+	}
 	
 	if ($capacity > $alerte)
 	{
@@ -247,15 +257,17 @@ require_once("connect.php");
 		$test_meteoTSM_FranklinN2++;
 	}
 
-	$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$seuil = $temp['Seuil'];
-	$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$alerte = $temp['Alerte'];
+	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$seuil = $temp['Seuil'];
+		$alerte = $temp['Alerte'];
+	}
 	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='BD' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$capacity = $temp['Custom3'];
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$capacity = $temp['Custom3'];
+	}
 	
 	if ($capacity < $alerte)
 	{
@@ -272,15 +284,17 @@ require_once("connect.php");
 		$test_meteoTSM_FranklinN2++;
 	}
 
-	$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$seuil = $temp['Seuil'];
-	$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$alerte = $temp['Alerte'];
+	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$seuil = $temp['Seuil'];
+		$alerte = $temp['Alerte'];
+	}
 	$sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Lib_util' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$capacity = $temp['Custom3'];
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$capacity = $temp['Custom3'];
+	}
 	
 	if ($capacity < $alerte)
 	{
@@ -299,15 +313,17 @@ require_once("connect.php");
 	
 	// Je ne sais pas où est indiqué le stock de bandes vierges hors TSM donc je met Custom2 en attendant
 
-	$sql = $connexion->query("SELECT Seuil from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$seuil = $temp['Seuil'];
-	$sql = $connexion->query("SELECT Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$alerte = $temp['Alerte'];
+	$sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$seuil = $temp['Seuil'];
+		$alerte = $temp['Alerte'];
+	}
 	$sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Label='Stock_vierges' AND Date_Releve=TO_CHAR(SYSDATE, 'YYYY-MM-DD')");
-	$temp = $sql->fetch(PDO::FETCH_ASSOC);
-	$capacity = $temp['Custom2'];
+	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	{
+		$capacity = $temp['Custom2'];
+	}
 	
 	if ($capacity > $alerte)
 	{
@@ -484,6 +500,36 @@ require_once("connect.php");
 			$seuil = $row['Seuil'];
 			$alerte = $row['Alerte'];
 		}
+?>
+	<table class="tableau_meteo">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
+	  	</tr>
+		<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td>
+	  	</tr>
+	  	<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Stock</td>
+	  	</tr>
+		<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
+		</tr>
+	</table>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+<?php
+	include 'amchart_sauvegarde.php';
 	}
 	if ($type == "data_center" && $target == "SNP1_TSM_BD") {
 		$environnement = "TSM";
@@ -495,6 +541,36 @@ require_once("connect.php");
 			$seuil = $row['Seuil'];
 			$alerte = $row['Alerte'];
 		}
+?>
+	<table class="tableau_meteo">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
+	  	</tr>
+		<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td>
+	  	</tr>
+	  	<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Stock</td>
+	  	</tr>
+		<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
+		</tr>
+	</table>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+<?php
+	include 'amchart_sauvegarde.php';
 	}
 	if ($type == "data_center" && $target == "SNP1_lib_util")
 	{
@@ -507,6 +583,36 @@ require_once("connect.php");
 			$seuil = $row['Seuil'];
 			$alerte = $row['Alerte'];
 		}
+?>
+	<table class="tableau_meteo">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
+	  	</tr>
+		<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td>
+	  	</tr>
+	  	<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Stock</td>
+	  	</tr>
+		<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
+		</tr>
+	</table>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+<?php
+	include 'amchart_sauvegarde.php';
 	}
 	if ($type == "data_center" && $target == "SNP1_stock_vierges")
 	{
@@ -519,6 +625,36 @@ require_once("connect.php");
 			$seuil = $row['Seuil'];
 			$alerte = $row['Alerte'];
 		}
+?>
+	<table class="tableau_meteo">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
+	  	</tr>
+		<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td>
+	  	</tr>
+	  	<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Stock</td>
+	  	</tr>
+		<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
+		</tr>
+	</table>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+<?php
+	include 'amchart_sauvegarde.php';
 	}
 	if ($type == "data_center" && $target == "SNP2_TSM_Bandes") {
 		$environnement = "TSM";
@@ -530,6 +666,36 @@ require_once("connect.php");
 			$seuil = $row['Seuil'];
 			$alerte = $row['Alerte'];
 		}
+?>
+	<table class="tableau_meteo">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>SNP2</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  	</tr>
+		<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP2 - Librairie</td>
+	  	</tr>
+	  	<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP2 - Stock</td>
+	  	</tr>
+		<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+		</tr>
+	</table>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+<?php
+	include 'amchart_sauvegarde.php';
 	}
 	if ($type == "data_center" && $target == "SNP2_TSM_BD") {
 		$environnement = "TSM";
@@ -541,6 +707,36 @@ require_once("connect.php");
 			$seuil = $row['Seuil'];
 			$alerte = $row['Alerte'];
 		}
+?>
+	<table class="tableau_meteo">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>SNP2</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  	</tr>
+		<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP2 - Librairie</td>
+	  	</tr>
+	  	<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP2 - Stock</td>
+	  	</tr>
+		<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+		</tr>
+	</table>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+<?php
+	include 'amchart_sauvegarde.php';
 	}
 	if ($type == "data_center" && $target == "SNP2_lib_util")
 	{
@@ -553,6 +749,36 @@ require_once("connect.php");
 			$seuil = $row['Seuil'];
 			$alerte = $row['Alerte'];
 		}
+?>
+	<table class="tableau_meteo">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>SNP2</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  	</tr>
+		<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP2 - Librairie</td>
+	  	</tr>
+	  	<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP2 - Stock</td>
+	  	</tr>
+		<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+		</tr>
+	</table>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+<?php
+	include 'amchart_sauvegarde.php';
 	}
 	if ($type == "data_center" && $target == "SNP2_stock_vierges")
 	{
@@ -565,7 +791,35 @@ require_once("connect.php");
 			$seuil = $row['Seuil'];
 			$alerte = $row['Alerte'];
 		}
-	}
-
+?>
+	<table class="tableau_meteo">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black;" colspan=2>SNP2</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  	</tr>
+		<tr>
+	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP2 - Librairie</td>
+	  	</tr>
+	  	<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP2 - Stock</td>
+	  	</tr>
+		<tr>
+			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+		</tr>
+	</table>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+<?php
 	include 'amchart_sauvegarde.php';
+	}
 ?>
