@@ -1,82 +1,44 @@
 <?php
-
-require_once("connect.php");
-	///////////////////////////
-	// Affichage tableau app //
-	///////////////////////////
-	
-	
-	/*$sql_recup_app="SELECT * FROM capacityplanning.vueglobale WHERE Rate_Releve = (SELECT MAX(Date_Releve) FROM capacityplanning.vueglobale) ORDER BY Environnement;";
-
-	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
-	
-	echo "<br/>\n";
-	echo "<br/>\n";
-	
-	$contenu_tab_app = "";
-	$nb_ligne=0;
-	
-	while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
-	{
-		$recup_name=$row_recup_app['name'];
-		$recup_role=  $row_recup_app['role'];
-		$recup_localisation=$row_recup_app['localisation'];
-		
-		$contenu_tab_app .= "<tr class='line".(($nb_ligne+1)%2)."'>\n";
-			$contenu_tab_app .= "<td>".$recup_name."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_role."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_localisation."</td>\n";			
-		$contenu_tab_app .= "</tr>\n";
-		$nb_ligne++;
-	}
-	if($nb_ligne!=0)
-	{	
-		echo "<table class='display_list2' cellpadding=0 cellspacing=0 border=0>\n";
-		
-		echo "<tr class='table_line'>\n";
-		
-			echo "<td>Nom</td>\n";
-			echo "<td>Role</td>\n";
-			echo "<td>Localisation</td>\n";
-			
-		echo "</tr>\n";
-		
-		echo $contenu_tab_app;	
-		
-		echo "</table>\n";
-	}*/
-	
+	require_once("connect.php");
 ?>
+
 <style type="text/css">
 	.date_jour {
 	  	text-align: right;
 	  	font-size: 16px;
 	  	font-weight: bold;
+	  	margin-bottom: 2%;
 	}
 	
-	.tableau_meteo {
+	.tableau_meteo_middle {
 		width: 50%;
 		margin-left: 25%;
 		background-color: #66A3C7;
 	}
 
-	.tableau_meteo2 {
-		width: 40%;
-		margin-left: 5%;
-		background-color: #66A3C7;
-	}
-	
-	.tableau_graph {
-		width: 45%;
-		margin-left: 45%;
-		background-color: #66A3C7;
-	}
-
-	.tableau_meteo td {
+	.tableau_meteo_middle td {
 	  	font-size: 16px;
 	 	font-weight: bold;
 		text-align: center;
 		color: white;
+	}
+	
+	.tableau_meteo_graph {
+		width: 39%;
+		margin-left: 1%;
+		background-color: #66A3C7;
+		float: left;
+	}
+
+	.tableau_meteo_graph td {
+	  	font-size: 16px;
+	 	font-weight: bold;
+		text-align: center;
+		color: white;
+	}
+
+	.tableau_meteo_graph a {
+		color:#FFFFFF;
 	}
 </style>
 
@@ -103,17 +65,7 @@ require_once("connect.php");
 	}
 ?>
 
-<!--<center>
-	<select name="menu_deroulant" id="menu_deroulant" onChange="redirection();">
-		<option value="SI" <?//=$select_SI?>>SI</option>
-		<option value="data_center" <?//=$select_data_center?>>Data Center</option>
-		<option value="baie_ipstor" <?//=$select_baie_ipstor?>>Baie/IPSTOR</option>
-	</select>
-</center></br></br>-->
-
 <?php
-	// Variables pour tester dans les niveau 1 et 2 si on affiche Soleil, Nuage ou Pluie
-	
 	$test_meteoTSM_AmpereN2 = 0;
 	$test_meteoTSM_FranklinN2 = 0;
 	$test_meteoTSM_N3 = 0;
@@ -341,7 +293,7 @@ require_once("connect.php");
 <?php
 	if ($type == "SI") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -371,7 +323,7 @@ require_once("connect.php");
 
 	if ($type == "data_center" && $target == "data_center") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
 			<th></th><th></th><th></th><th></th>
 		</tr>
@@ -420,7 +372,7 @@ require_once("connect.php");
 <?php
 	if ($type == "data_center" && $target == "SNP1") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -446,7 +398,6 @@ require_once("connect.php");
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -454,7 +405,7 @@ require_once("connect.php");
 <?php
 	if ($type == "data_center" && $target == "SNP2") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -480,7 +431,6 @@ require_once("connect.php");
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -497,7 +447,7 @@ require_once("connect.php");
 			$alerte = $row['Alerte'];
 		}
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_graph">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -505,7 +455,7 @@ require_once("connect.php");
 	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
+	  		<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
 	  	</tr>
 		<tr>
 	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
@@ -523,7 +473,6 @@ require_once("connect.php");
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -538,7 +487,7 @@ require_once("connect.php");
 			$alerte = $row['Alerte'];
 		}
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_graph">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -549,7 +498,7 @@ require_once("connect.php");
 	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
+	  		<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td>
@@ -564,7 +513,6 @@ require_once("connect.php");
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -580,7 +528,7 @@ require_once("connect.php");
 			$alerte = $row['Alerte'];
 		}
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_graph">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -597,7 +545,7 @@ require_once("connect.php");
 	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
+			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Stock</td>
@@ -606,7 +554,6 @@ require_once("connect.php");
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -622,7 +569,7 @@ require_once("connect.php");
 			$alerte = $row['Alerte'];
 		}
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_graph">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -645,10 +592,9 @@ require_once("connect.php");
 	  		<td style="color: black;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
+			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -663,7 +609,7 @@ require_once("connect.php");
 			$alerte = $row['Alerte'];
 		}
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_graph">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -671,7 +617,7 @@ require_once("connect.php");
 	  		<td style="color: black;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  		<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
 	  	</tr>
 		<tr>
 	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
@@ -689,7 +635,6 @@ require_once("connect.php");
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -704,7 +649,7 @@ require_once("connect.php");
 			$alerte = $row['Alerte'];
 		}
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_graph">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -715,7 +660,7 @@ require_once("connect.php");
 	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  		<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP2 - Librairie</td>
@@ -730,7 +675,6 @@ require_once("connect.php");
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -746,7 +690,7 @@ require_once("connect.php");
 			$alerte = $row['Alerte'];
 		}
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_graph">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -763,7 +707,7 @@ require_once("connect.php");
 	  		<td style="color: black;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP2 - Stock</td>
@@ -772,7 +716,6 @@ require_once("connect.php");
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -788,7 +731,7 @@ require_once("connect.php");
 			$alerte = $row['Alerte'];
 		}
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_graph">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
@@ -811,7 +754,7 @@ require_once("connect.php");
 	  		<td style="color: black;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
 <?php

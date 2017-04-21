@@ -2,10 +2,13 @@
 	if ($type == "bandes") {	
 ?>
 	<style>
-	#chartdiv {
-		width	: 100%;
-		height	: 500px;
-	}																		
+		#chartdiv {
+			width	: 59%;
+			margin-left: 1%;
+			margin-top: 1%;
+			float: left;
+			height: 350px;
+		}																		
 	</style>
 
 	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -122,10 +125,14 @@
 	if ($type == "bd") {	
 ?>
 	<style>
-	#chartdiv {
-		width	: 100%;
-		height	: 500px;
-	}																		
+		#chartdiv {
+			width	: 59%;
+			margin-left: 1%;
+			margin-top: 1%;
+			float: left;
+			height: 350px;
+		}																		
+	</style>															
 	</style>
 
 	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -242,10 +249,13 @@
 	if ($type == "lib_util") {	
 ?>
 	<style>
-	#chartdiv {
-		width	: 100%;
-		height	: 500px;
-	}																		
+		#chartdiv {
+			width	: 59%;
+			margin-left: 1%;
+			margin-top: 1%;
+			float: left;
+			height: 350px;
+		}																		
 	</style>
 
 	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -362,10 +372,13 @@
 	if ($type == "stock_vierges") {	
 ?>
 	<style>
-	#chartdiv {
-		width	: 100%;
-		height	: 500px;
-	}																		
+		#chartdiv {
+			width	: 59%;
+			margin-left: 1%;
+			margin-top: 1%;
+			float: left;
+			height: 350px;
+		}																		
 	</style>
 
 	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
