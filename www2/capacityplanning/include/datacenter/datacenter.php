@@ -1,50 +1,3 @@
-<?php
-	///////////////////////////
-	// Affichage tableau app //
-	///////////////////////////
-	
-	
-	/*$sql_recup_app="SELECT name, role, localisation FROM inv_san.baie WHERE date_releve = (SELECT MAX(date_releve) FROM inv_san.baie) ORDER BY name;";
-
-	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
-	
-	echo "<br/>\n";
-	echo "<br/>\n";
-	
-	$contenu_tab_app = "";
-	$nb_ligne=0;
-	
-	while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
-	{
-		$recup_name=$row_recup_app['name'];
-		$recup_role=  $row_recup_app['role'];
-		$recup_localisation=$row_recup_app['localisation'];
-		
-		$contenu_tab_app .= "<tr class='line".(($nb_ligne+1)%2)."'>\n";
-			$contenu_tab_app .= "<td>".$recup_name."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_role."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_localisation."</td>\n";			
-		$contenu_tab_app .= "</tr>\n";
-		$nb_ligne++;
-	}
-	if($nb_ligne!=0)
-	{	
-		echo "<table class='display_list2' cellpadding=0 cellspacing=0 border=0>\n";
-		
-		echo "<tr class='table_line'>\n";
-		
-			echo "<td>Nom</td>\n";
-			echo "<td>Role</td>\n";
-			echo "<td>Localisation</td>\n";
-			
-		echo "</tr>\n";
-		
-		echo $contenu_tab_app;	
-		
-		echo "</table>\n";
-	}*/
-	
-?>
 <style type="text/css">
 	.date_jour {
 	  	text-align: right;
@@ -63,6 +16,10 @@
 	 	font-weight: bold;
 		text-align: center;
 		color: white;
+	}
+
+	.tableau_meteo a {
+		color: #FFFFFF;
 	}
 </style>
 
@@ -110,14 +67,6 @@
 	}
 ?>
 
-<!--<center>
-	<select name="menu_deroulant" id="menu_deroulant" onChange="redirection();">
-		<option value="SI" <?//=$select_SI?>>SI</option>
-		<option value="data_center" <?//=$select_data_center?>>Data Center</option>
-		<option value="baie_ipstor" <?//=$select_baie_ipstor?>>Baie/IPSTOR</option>
-	</select>
-</center></br></br>-->
-
 <?php
 	if ($type == "SI") {
 ?>
@@ -126,7 +75,7 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Ampère</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
+	  		<td style="color: black;" colspan=2>SNP1 - Ampere</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
 	  		<td>Virtualisation</td><td><img src="images/nuageux.png"></td><td>Virtualisation</td><td><img src="images/soleil.png"></td>

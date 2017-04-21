@@ -38,7 +38,11 @@
 	}
 
 	.tableau_meteo_graph a {
-		color:#FFFFFF;
+		color: #FFFFFF;
+	}
+
+	.tableau_meteo_middle a {
+		color: #FFFFFF;
 	}
 </style>
 
@@ -328,7 +332,7 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Ampère</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
+	  		<td style="color: black;" colspan=2>SNP1 - Ampere</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
 			<td><a href="./id_menu=243&type=data_center&target=SNP1" target="_self">Sauvegarde TSM</a></td><td>
