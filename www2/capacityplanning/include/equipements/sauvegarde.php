@@ -368,7 +368,6 @@
 			</td>
 		</tr>
 	</table>
-	<a href="./id_menu=243" target="_self">Retour</a>
 <?php
 	}
 ?>

@@ -3,6 +3,7 @@
 	  	text-align: right;
 	  	font-size: 16px;
 	  	font-weight: bold;
+	  	margin-bottom: 2%;
 	}
 
 	.tableau_meteo {
@@ -74,6 +75,7 @@
 	  	<tr>
 			<th></th><th></th><th></th><th></th>
 		</tr>
+		<!--
 	  	<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Ampere</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
@@ -86,6 +88,7 @@
 	  	<tr>
 			<td>Sauvegarde des VMs</td><td><img src="images/soleil.png"></td><td>Sauvegarde des VMs</td><td><img src="images/soleil.png"></td>
 		</tr>
+		-->
 	  	<tr>
 			<td>Sauvegarde</td><td><img src="images/nuageux.png"></td><td>Sauvegarde</td><td><img src="images/pluvieux.png"></td>
 		</tr>

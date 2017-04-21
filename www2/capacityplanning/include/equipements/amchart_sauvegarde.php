@@ -39,11 +39,13 @@
 						if ($row['Custom1'] >= $alerte) {
 							$color = '#c0392b';
 						}
+
+						$date = date_create($row['Date_Releve']);
 				?>
 					{
 	    				"lineColor": "<?=$color?>",
-	    				"date": "<?=$row['Date_Releve']?>",
-	    				"value": <?=$row['Custom1']?>
+	    				"date": "<?=date_format($date, 'd-m-Y')?>",
+	    				"value": <?=round($row['Custom1'])?>
 					},
 				<?php
 					}
@@ -73,7 +75,6 @@
 			    "graphs": [{
 			        "id":"g1",
 			        "balloonText": "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>",
-			        "bullet": "round",
 			        "bulletSize": 8,
 			        "lineColorField": "lineColor",
 			        "lineThickness": 2,
@@ -81,14 +82,14 @@
 			        "valueField": "value"
 			    }],
 			    "chartCursor": {
-			        "categoryBalloonDateFormat": "YYYY-MM-DD",
+			        "categoryBalloonDateFormat": "DD/MM/YYYY",
 			        "cursorAlpha": 0,
 			        "valueLineEnabled":true,
 			        "valueLineBalloonEnabled":true,
 			        "valueLineAlpha":0.5,
 			        "fullWidth":true
 			    },
-			    "dataDateFormat": "YYYY-MM-DD",
+			    "dataDateFormat": "DD/MM/YYYY",
 			    "categoryField": "date",
 			    "categoryAxis": {
 			        "dateFormats": [{
@@ -105,7 +106,7 @@
 			            "format": "YYYY"
 			        }],
 			        "parseDates": true,
-			        "autoGridCount": false,
+			        "autoGridCount": true,
 			        "axisColor": "#555555",
 			        "gridAlpha": 0,
 			        "gridCount": 50
@@ -163,10 +164,12 @@
 						if ($row['Custom2'] >= $alerte) {
 							$color = '#c0392b';
 						}
+
+						$date = date_create($row['Date_Releve']);
 				?>
 					{
 	    				"lineColor": "<?=$color?>",
-	    				"date": "<?=$row['Date_Releve']?>",
+	    				"date": "<?=date_format($date, 'd-m-Y')?>",
 	    				"value": <?=$row['Custom2']?>
 					},
 				<?php
@@ -197,7 +200,6 @@
 			    "graphs": [{
 			        "id":"g1",
 			        "balloonText": "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>",
-			        "bullet": "round",
 			        "bulletSize": 8,
 			        "lineColorField": "lineColor",
 			        "lineThickness": 2,
@@ -205,14 +207,14 @@
 			        "valueField": "value"
 			    }],
 			    "chartCursor": {
-			        "categoryBalloonDateFormat": "YYYY-MM-DD",
+			        "categoryBalloonDateFormat": "DD/MM/YYYY",
 			        "cursorAlpha": 0,
 			        "valueLineEnabled":true,
 			        "valueLineBalloonEnabled":true,
 			        "valueLineAlpha":0.5,
 			        "fullWidth":true
 			    },
-			    "dataDateFormat": "YYYY-MM-DD",
+			    "dataDateFormat": "DD/MM/YYYY",
 			    "categoryField": "date",
 			    "categoryAxis": {
 			        "dateFormats": [{
@@ -229,7 +231,7 @@
 			            "format": "YYYY"
 			        }],
 			        "parseDates": true,
-			        "autoGridCount": false,
+			        "autoGridCount": true,
 			        "axisColor": "#555555",
 			        "gridAlpha": 0,
 			        "gridCount": 50
@@ -286,10 +288,12 @@
 						if ($row['Custom3'] >= $alerte) {
 							$color = '#c0392b';
 						}
+
+						$date = date_create($row['Date_Releve']);
 				?>
 					{
 	    				"lineColor": "<?=$color?>",
-	    				"date": "<?=$row['Date_Releve']?>",
+	    				"date": "<?=date_format($date, 'd-m-Y')?>",
 	    				"value": <?=$row['Custom3']?>
 					},
 				<?php
@@ -320,7 +324,6 @@
 			    "graphs": [{
 			        "id":"g1",
 			        "balloonText": "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>",
-			        "bullet": "round",
 			        "bulletSize": 8,
 			        "lineColorField": "lineColor",
 			        "lineThickness": 2,
@@ -328,14 +331,14 @@
 			        "valueField": "value"
 			    }],
 			    "chartCursor": {
-			        "categoryBalloonDateFormat": "YYYY-MM-DD",
+			        "categoryBalloonDateFormat": "DD/MM/YYYY",
 			        "cursorAlpha": 0,
 			        "valueLineEnabled":true,
 			        "valueLineBalloonEnabled":true,
 			        "valueLineAlpha":0.5,
 			        "fullWidth":true
 			    },
-			    "dataDateFormat": "YYYY-MM-DD",
+			    "dataDateFormat": "DD/MM/YYYY",
 			    "categoryField": "date",
 			    "categoryAxis": {
 			        "dateFormats": [{
@@ -352,7 +355,7 @@
 			            "format": "YYYY"
 			        }],
 			        "parseDates": true,
-			        "autoGridCount": false,
+			        "autoGridCount": true,
 			        "axisColor": "#555555",
 			        "gridAlpha": 0,
 			        "gridCount": 50
@@ -409,10 +412,12 @@
 						if ($row['Custom4'] >= $alerte) {
 							$color = '#c0392b';
 						}
+
+						$date = date_create($row['Date_Releve']);
 				?>
 					{
 	    				"lineColor": "<?=$color?>",
-	    				"date": "<?=$row['Date_Releve']?>",
+	    				"date": "<?=date_format($date, 'd-m-Y')?>",
 	    				"value": <?=$row['Custom4']?>
 					},
 				<?php
@@ -443,7 +448,6 @@
 			    "graphs": [{
 			        "id":"g1",
 			        "balloonText": "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>",
-			        "bullet": "round",
 			        "bulletSize": 8,
 			        "lineColorField": "lineColor",
 			        "lineThickness": 2,
@@ -451,14 +455,14 @@
 			        "valueField": "value"
 			    }],
 			    "chartCursor": {
-			        "categoryBalloonDateFormat": "YYYY-MM-DD",
+			        "categoryBalloonDateFormat": "DD/MM/YYYY",
 			        "cursorAlpha": 0,
 			        "valueLineEnabled":true,
 			        "valueLineBalloonEnabled":true,
 			        "valueLineAlpha":0.5,
 			        "fullWidth":true
 			    },
-			    "dataDateFormat": "YYYY-MM-DD",
+			    "dataDateFormat": "DD/MM/YYYY",
 			    "categoryField": "date",
 			    "categoryAxis": {
 			        "dateFormats": [{
@@ -475,7 +479,7 @@
 			            "format": "YYYY"
 			        }],
 			        "parseDates": true,
-			        "autoGridCount": false,
+			        "autoGridCount": true,
 			        "axisColor": "#555555",
 			        "gridAlpha": 0,
 			        "gridCount": 50
