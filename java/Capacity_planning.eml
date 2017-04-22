@@ -22,5 +22,7 @@
 		<level name="Maven: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1" value="project"/>
 		<level name="Maven: javax.annotation:jsr250-api:1.0" value="project"/>
 		<level name="Maven: javax.inject:javax.inject:1" value="project"/>
+		<level name="Maven: org.apache.logging.log4j:log4j-api:2.8.2" value="project"/>
+		<level name="Maven: org.apache.logging.log4j:log4j-core:2.8.2" value="project"/>
 	</levels>
 </component>
