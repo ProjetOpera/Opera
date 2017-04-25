@@ -14,6 +14,5 @@ import javax.persistence.metamodel.EntityType;
 public class Main {
 
     public static void main(String[] args) {
-
     }
 }
