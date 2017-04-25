@@ -91,18 +91,18 @@
 	{
 		$capacity = $temp['Custom2'];
 	}
-	if ($alerte != null || $seuil != null)
+	if ($alerte != null || $seuil != null || $capacity != null)
 	{
-		if ($capacity < $seuil)
+		if ($capacity > $seuil)
 		{
 			$meteoTSMBandes_Ampere = "<img src='images/soleil.png'>";
 		}
-		if ($capacity >= $seuil && $capacity < $alerte)
+		if ($capacity <= $seuil && $capacity > $alerte)
 		{
 			$meteoTSMBandes_Ampere = "<img src='images/nuageux.png'>";
 			$test_meteoTSM_AmpereN2++;
 		}
-		if ($capacity >= $alerte)
+		if ($capacity <= $alerte)
 		{
 			$meteoTSMBandes_Ampere = "<img src='images/pluvieux.png'>";
 			$test_meteoTSM_AmpereN2++;
@@ -128,7 +128,7 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	if ($alerte != null || $seuil != null)
+	if ($alerte != null || $seuil != null || $capacity != null)
 	{
 		if ($capacity < $seuil)
 		{
@@ -165,7 +165,7 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	if ($alerte != null || $seuil != null)
+	if ($alerte != null || $seuil != null || $capacity != null)
 	{
 		if ($capacity < $seuil)
 		{
@@ -187,7 +187,7 @@
 		$meteoTSMLib_Ampere = "<img src='images/soleil.png'>";
 	}
 	
-	//Calcul Lib
+	//Calcul Stock vierges
 	$capacity = 99999;
 	$seuil = 0;
 	$alerte = 0;	
@@ -202,18 +202,18 @@
 	{
 		$capacity = $temp['Custom4'];
 	}
-	if ($alerte != null || $seuil != null)
+	if ($alerte != null || $seuil != null || $capacity != null)
 	{
-		if ($capacity < $seuil)
+		if ($capacity > $seuil)
 		{
 			$meteoTSMStock_Ampere = "<img src='images/soleil.png'>";
 		}
-		if ($capacity >= $seuil && $capacity < $alerte)
+		if ($capacity <= $seuil && $capacity > $alerte)
 		{
 			$meteoTSMStock_Ampere = "<img src='images/nuageux.png'>";
 			$test_meteoTSM_AmpereN2++;
 		}
-		if ($capacity >= $alerte)
+		if ($capacity <= $alerte)
 		{
 			$meteoTSMStock_Ampere = "<img src='images/pluvieux.png'>";
 			$test_meteoTSM_AmpereN2++;
@@ -239,18 +239,18 @@
 	{
 		$capacity = $temp['Custom2'];
 	}
-	if ($alerte != null || $seuil != null)
+	if ($alerte != null || $seuil != null || $capacity != null)
 	{
-		if ($capacity < $seuil)
+		if ($capacity > $seuil)
 		{
 			$meteoTSMBandes_Franklin = "<img src='images/soleil.png'>";
 		}
-		if ($capacity >= $seuil && $capacity < $alerte)
+		if ($capacity <= $seuil && $capacity > $alerte)
 		{
 			$meteoTSMBandes_Franklin = "<img src='images/nuageux.png'>";
 			$test_meteoTSM_FranklinN2++;
 		}
-		if ($capacity >= $alerte)
+		if ($capacity <= $alerte)
 		{
 			$meteoTSMBandes_Franklin = "<img src='images/pluvieux.png'>";
 			$test_meteoTSM_FranklinN2++;
@@ -276,7 +276,7 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	if ($alerte != null || $seuil != null)
+	if ($alerte != null || $seuil != null || $capacity != null)
 	{
 		if ($capacity < $seuil)
 		{
@@ -313,7 +313,7 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	if ($alerte != null || $seuil != null)
+	if ($alerte != null || $seuil != null || $capacity != null)
 	{
 		if ($capacity < $seuil)
 		{
@@ -335,7 +335,7 @@
 		$meteoTSMLib_Franklin = "<img src='images/soleil.png'>";
 	}
 	
-	//Calcul Lib
+	//Calcul Stock vierges
 	$capacity = 99999;
 	$seuil = 0;
 	$alerte = 0;	
@@ -350,18 +350,18 @@
 	{
 		$capacity = $temp['Custom4'];
 	}
-	if ($alerte != null || $seuil != null)
+	if ($alerte != null || $seuil != null || $capacity != null)
 	{
-		if ($capacity < $seuil)
+		if ($capacity > $seuil)
 		{
 			$meteoTSMStock_Franklin = "<img src='images/soleil.png'>";
 		}
-		if ($capacity >= $seuil && $capacity < $alerte)
+		if ($capacity <= $seuil && $capacity > $alerte)
 		{
 			$meteoTSMStock_Franklin = "<img src='images/nuageux.png'>";
 			$test_meteoTSM_FranklinN2++;
 		}
-		if ($capacity >= $alerte)
+		if ($capacity <= $alerte)
 		{
 			$meteoTSMStock_Franklin = "<img src='images/pluvieux.png'>";
 			$test_meteoTSM_FranklinN2++;
@@ -439,7 +439,7 @@
 				echo "<img src='images/nuageux.png'>";
 				$test_meteoTSM_N3++;
 			}
-			else
+			else if ($test_meteoTSM_FranklinN2 >= 2)
 			{
 				echo "<img src='images/pluvieux.png'>";
 				$test_meteoTSM_N3++;

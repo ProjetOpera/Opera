@@ -8,7 +8,7 @@
 
 <?php	
 	
-	$sql_recup_app="SELECT id, Module_concerne, Label, Alerte, Seuil FROM capacityplanning.parametres;";
+	$sql_recup_app="SELECT id, Module_concerne, Label, Site, Alerte, Seuil FROM capacityplanning.parametres;";
 
 	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
 	
@@ -21,13 +21,15 @@
 	while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
 	{
 		$recup_module=$row_recup_app['Module_concerne'];
-		$recup_label=  $row_recup_app['Label'];
+		$recup_label= $row_recup_app['Label'];
+		$recup_site = $row_recup_app['Site'];
 		$recup_alerte=$row_recup_app['Alerte'];
 		$recup_seuil=$row_recup_app['Seuil'];
 		
 		$contenu_tab_app .= "<tr id='row" . $row_recup_app['id'] . "' class='line" . (($nb_ligne+1)%2) . "'>\n";
 			$contenu_tab_app .= "<td id=module_val". $row_recup_app['id'] . ">".$recup_module."</td>\n";
 			$contenu_tab_app .= "<td id=label_val" . $row_recup_app['id'] . ">".$recup_label."</td>\n";
+			$contenu_tab_app .= "<td id=site_val" . $row_recup_app['id'] . ">".$recup_site."</td>\n";
 			$contenu_tab_app .= "<td id=alerte_val" . $row_recup_app['id'] . ">".$recup_alerte."</td>\n";
 			$contenu_tab_app .= "<td id=seuil_val" . $row_recup_app['id'] . ">".$recup_seuil."</td>\n";
 			$contenu_tab_app .= "<td><input type='button' id='edit_button".$row_recup_app['id']."' value='Editer' class='edit' onclick='edit_row(".$row_recup_app['id'].")'>
@@ -40,14 +42,31 @@
 	$contenu_tab_app .= "<tr id='new_row'>
  <td><select name='module' id='new_module'>";
 
-$sql = $ressourceBDD_appli->query("SELECT Environnement, MIN(id_reference) FROM capacityplanning.vueglobale GROUP BY Environnement");
+$sql = $ressourceBDD_appli->query("SELECT module FROM capacityplanning.modules GROUP BY module");
 while ($row = $sql->fetch(PDO::FETCH_ASSOC))
 {
-	$contenu_tab_app .= "<option value='" . $row['Environnement'] . "'>" . $row['Environnement'] . "</option>";
+	$contenu_tab_app .= "<option value='" . $row['module'] . "'>" . $row['module'] . "</option>";
 }
 
 $contenu_tab_app .= "</select></td>
- <td><input type='text' id='new_label'></td>
+ <td><select name='label' id='new_label'>";
+
+$sql = $ressourceBDD_appli->query("SELECT label FROM capacityplanning.modules GROUP BY label");
+while ($row = $sql->fetch(PDO::FETCH_ASSOC))
+{
+	$contenu_tab_app .= "<option value='" . $row['label'] . "'>" . $row['label'] . "</option>";
+}
+
+$contenu_tab_app .= "</select></td>
+ <td><select name='site' id='new_site'>";
+
+$sql = $ressourceBDD_appli->query("SELECT site FROM capacityplanning.modules GROUP BY site");
+while ($row = $sql->fetch(PDO::FETCH_ASSOC))
+{
+	$contenu_tab_app .= "<option value='" . $row['site'] . "'>" . $row['site'] . "</option>";
+}
+
+$contenu_tab_app .= "</select></td>
  <td><input type='text' id='new_alerte'></td>
  <td><input type='text' id='new_seuil'></td>
  <td><input type='button' value='Insérer ligne' onclick='insert_row();'></td>
@@ -61,6 +80,7 @@ $contenu_tab_app .= "</select></td>
 		
 			echo "<td>Module</td>\n";
 			echo "<td>Equipement</td>\n";
+			echo "<td>Site</td>\n";
 			echo "<td>Alerte</td>\n";
 			echo "<td>Seuil</td>\n";
 			echo "<td>Actions</td>\n";
