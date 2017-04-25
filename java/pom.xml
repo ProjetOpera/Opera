@@ -48,11 +48,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-<<<<<<< HEAD
             <version>5.1.41</version>
-=======
-            <version>6.0.6</version>
->>>>>>> origin/master
         </dependency>
 
         <dependency>
@@ -73,7 +69,6 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.25</version>
-<<<<<<< HEAD
         </dependency>
 
         <dependency>
@@ -82,15 +77,5 @@
             <version>1.7.25</version>
         </dependency>
 
-=======
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.25</version>
-        </dependency>
-
->>>>>>> origin/master
     </dependencies>
 </project>

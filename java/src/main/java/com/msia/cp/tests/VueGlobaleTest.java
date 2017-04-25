@@ -1,23 +1,22 @@
 package com.msia.cp.tests;
 
 import com.msia.cp.dao.VueGlobaleDaoImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.msia.cp.entities.VueGlobaleEntity;
+import com.msia.cp.util.EnregistrementBdd;
+
+import java.sql.Timestamp;
 
 /**
  * Created by Cendri on 30/03/2017.
  */
 public class VueGlobaleTest {
 
-    private static Logger logger = LoggerFactory.getLogger(VueGlobaleTest.class);
-
     public static void main(String[] args) {
-
-        logger.info("coucou");
         VueGlobaleDaoImpl vueG = new VueGlobaleDaoImpl();
         System.out.println("Taille de la liste vueG avant : " + vueG.findAllVueGlobale().size());
         //EnregistrementBdd.tsmVersVueGlobale();
         System.out.println("Taille de la liste vueG après : " + vueG.findAllVueGlobale().size());
+
 
 
         /*VueGlobaleEntity vue = new VueGlobaleEntity();
@@ -46,7 +45,6 @@ public class VueGlobaleTest {
             System.out.println("  " + o.toString());
         }
 
-        logger.info("pouet");
     }
 
 }
