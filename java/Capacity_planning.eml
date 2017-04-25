@@ -6,7 +6,7 @@
 	</contentEntry>
 	<levels>
 		<level name="Hibernate 5.2.3-5.2.3" value="project"/>
-		<level name="Maven: mysql:mysql-connector-java:5.1.12" value="project"/>
+		<level name="Maven: mysql:mysql-connector-java:5.1.41" value="project"/>
 		<level name="Maven: org.hibernate:hibernate-core:5.2.5.Final" value="project"/>
 		<level name="Maven: org.jboss.logging:jboss-logging:3.3.0.Final" value="project"/>
 		<level name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" value="project"/>
@@ -22,7 +22,10 @@
 		<level name="Maven: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1" value="project"/>
 		<level name="Maven: javax.annotation:jsr250-api:1.0" value="project"/>
 		<level name="Maven: javax.inject:javax.inject:1" value="project"/>
-		<level name="Maven: org.apache.logging.log4j:log4j-api:2.8.2" value="project"/>
 		<level name="Maven: org.apache.logging.log4j:log4j-core:2.8.2" value="project"/>
+		<level name="Maven: org.apache.logging.log4j:log4j-api:2.8.2" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-api:1.7.25" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-log4j12:1.7.25" value="project"/>
+		<level name="Maven: log4j:log4j:1.2.17" value="project"/>
 	</levels>
 </component>
