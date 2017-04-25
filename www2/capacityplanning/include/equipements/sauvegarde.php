@@ -91,20 +91,26 @@
 	{
 		$capacity = $temp['Custom2'];
 	}
-	
-	if ($capacity < $alerte)
+	if ($alerte != null || $seuil != null)
+	{
+		if ($capacity < $seuil)
+		{
+			$meteoTSMBandes_Ampere = "<img src='images/soleil.png'>";
+		}
+		if ($capacity >= $seuil && $capacity < $alerte)
+		{
+			$meteoTSMBandes_Ampere = "<img src='images/nuageux.png'>";
+			$test_meteoTSM_AmpereN2++;
+		}
+		if ($capacity >= $alerte)
+		{
+			$meteoTSMBandes_Ampere = "<img src='images/pluvieux.png'>";
+			$test_meteoTSM_AmpereN2++;
+		}
+	}
+	else
 	{
 		$meteoTSMBandes_Ampere = "<img src='images/soleil.png'>";
-	}
-	if ($capacity >= $seuil)
-	{
-		$meteoTSMBandes_Ampere = "<img src='images/nuageux.png'>";
-		$test_meteoTSM_AmpereN2++;
-	}
-	if ($capacity >= $alerte)
-	{
-		$meteoTSMBandes_Ampere = "<img src='images/pluvieux.png'>";
-		$test_meteoTSM_AmpereN2++;
 	}
 	
 	//Calcul BD
@@ -122,20 +128,26 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	
-	if ($capacity < $alerte)
+	if ($alerte != null || $seuil != null)
+	{
+		if ($capacity < $seuil)
+		{
+			$meteoTSMBD_Ampere = "<img src='images/soleil.png'>";
+		}
+		if ($capacity >= $seuil && $capacity < $alerte)
+		{
+			$meteoTSMBD_Ampere = "<img src='images/nuageux.png'>";
+			$test_meteoTSM_AmpereN2++;
+		}
+		if ($capacity >= $alerte)
+		{
+			$meteoTSMBD_Ampere = "<img src='images/pluvieux.png'>";
+			$test_meteoTSM_AmpereN2++;
+		}
+	}
+	else
 	{
 		$meteoTSMBD_Ampere = "<img src='images/soleil.png'>";
-	}
-	if ($capacity >= $seuil)
-	{
-		$meteoTSMBD_Ampere = "<img src='images/nuageux.png'>";
-		$test_meteoTSM_AmpereN2++;
-	}
-	if ($capacity >= $alerte)
-	{
-		$meteoTSMBD_Ampere = "<img src='images/pluvieux.png'>";
-		$test_meteoTSM_AmpereN2++;
 	}
 	
 	//Calcul Lib
@@ -153,20 +165,26 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	
-	if ($capacity < $alerte)
+	if ($alerte != null || $seuil != null)
+	{
+		if ($capacity < $seuil)
+		{
+			$meteoTSMLib_Ampere = "<img src='images/soleil.png'>";
+		}
+		if ($capacity >= $seuil && $capacity < $alerte)
+		{
+			$meteoTSMLib_Ampere = "<img src='images/nuageux.png'>";
+			$test_meteoTSM_AmpereN2++;
+		}
+		if ($capacity >= $alerte)
+		{
+			$meteoTSMLib_Ampere = "<img src='images/pluvieux.png'>";
+			$test_meteoTSM_AmpereN2++;
+		}
+	}
+	else
 	{
 		$meteoTSMLib_Ampere = "<img src='images/soleil.png'>";
-	}
-	if ($capacity >= $seuil)
-	{
-		$meteoTSMLib_Ampere = "<img src='images/nuageux.png'>";
-		$test_meteoTSM_AmpereN2++;
-	}
-	if ($capacity >= $alerte)
-	{
-		$meteoTSMLib_Ampere = "<img src='images/pluvieux.png'>";
-		$test_meteoTSM_AmpereN2++;
 	}
 	
 	//Calcul Lib
@@ -184,20 +202,26 @@
 	{
 		$capacity = $temp['Custom4'];
 	}
-	
-	if ($capacity < $alerte)
+	if ($alerte != null || $seuil != null)
+	{
+		if ($capacity < $seuil)
+		{
+			$meteoTSMStock_Ampere = "<img src='images/soleil.png'>";
+		}
+		if ($capacity >= $seuil && $capacity < $alerte)
+		{
+			$meteoTSMStock_Ampere = "<img src='images/nuageux.png'>";
+			$test_meteoTSM_AmpereN2++;
+		}
+		if ($capacity >= $alerte)
+		{
+			$meteoTSMStock_Ampere = "<img src='images/pluvieux.png'>";
+			$test_meteoTSM_AmpereN2++;
+		}
+	}
+	else
 	{
 		$meteoTSMStock_Ampere = "<img src='images/soleil.png'>";
-	}
-	if ($capacity >= $seuil)
-	{
-		$meteoTSMStock_Ampere = "<img src='images/nuageux.png'>";
-		$test_meteoTSM_AmpereN2++;
-	}
-	if ($capacity >= $alerte)
-	{
-		$meteoTSMStock_Ampere = "<img src='images/pluvieux.png'>";
-		$test_meteoTSM_AmpereN2++;
 	}
 
 	//Calcul Bandes
@@ -215,20 +239,26 @@
 	{
 		$capacity = $temp['Custom2'];
 	}
-	
-	if ($capacity < $alerte)
+	if ($alerte != null || $seuil != null)
+	{
+		if ($capacity < $seuil)
+		{
+			$meteoTSMBandes_Franklin = "<img src='images/soleil.png'>";
+		}
+		if ($capacity >= $seuil && $capacity < $alerte)
+		{
+			$meteoTSMBandes_Franklin = "<img src='images/nuageux.png'>";
+			$test_meteoTSM_FranklinN2++;
+		}
+		if ($capacity >= $alerte)
+		{
+			$meteoTSMBandes_Franklin = "<img src='images/pluvieux.png'>";
+			$test_meteoTSM_FranklinN2++;
+		}
+	}
+	else
 	{
 		$meteoTSMBandes_Franklin = "<img src='images/soleil.png'>";
-	}
-	if ($capacity >= $seuil)
-	{
-		$meteoTSMBandes_Franklin = "<img src='images/nuageux.png'>";
-		$test_meteoTSM_FranklinN2++;
-	}
-	if ($capacity >= $alerte)
-	{
-		$meteoTSMBandes_Franklin = "<img src='images/pluvieux.png'>";
-		$test_meteoTSM_FranklinN2++;
 	}
 	
 	//Calcul BD
@@ -246,20 +276,26 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	
-	if ($capacity < $alerte)
+	if ($alerte != null || $seuil != null)
+	{
+		if ($capacity < $seuil)
+		{
+			$meteoTSMBD_Franklin = "<img src='images/soleil.png'>";
+		}
+		if ($capacity >= $seuil && $capacity < $alerte)
+		{
+			$meteoTSMBD_Franklin = "<img src='images/nuageux.png'>";
+			$test_meteoTSM_FranklinN2++;
+		}
+		if ($capacity >= $alerte)
+		{
+			$meteoTSMBD_Franklin = "<img src='images/pluvieux.png'>";
+			$test_meteoTSM_FranklinN2++;
+		}
+	}
+	else
 	{
 		$meteoTSMBD_Franklin = "<img src='images/soleil.png'>";
-	}
-	if ($capacity >= $seuil)
-	{
-		$meteoTSMBD_Franklin = "<img src='images/nuageux.png'>";
-		$test_meteoTSM_FranklinN2++;
-	}
-	if ($capacity >= $alerte)
-	{
-		$meteoTSMBD_Franklin = "<img src='images/pluvieux.png'>";
-		$test_meteoTSM_FranklinN2++;
 	}
 	
 	//Calcul Lib
@@ -277,20 +313,26 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	
-	if ($capacity < $alerte)
+	if ($alerte != null || $seuil != null)
+	{
+		if ($capacity < $seuil)
+		{
+			$meteoTSMLib_Franklin = "<img src='images/soleil.png'>";
+		}
+		if ($capacity >= $seuil && $capacity < $alerte)
+		{
+			$meteoTSMLib_Franklin = "<img src='images/nuageux.png'>";
+			$test_meteoTSM_FranklinN2++;
+		}
+		if ($capacity >= $alerte)
+		{
+			$meteoTSMLib_Franklin = "<img src='images/pluvieux.png'>";
+			$test_meteoTSM_FranklinN2++;
+		}
+	}
+	else
 	{
 		$meteoTSMLib_Franklin = "<img src='images/soleil.png'>";
-	}
-	if ($capacity >= $seuil)
-	{
-		$meteoTSMLib_Franklin = "<img src='images/nuageux.png'>";
-		$test_meteoTSM_FranklinN2++;
-	}
-	if ($capacity >= $alerte)
-	{
-		$meteoTSMLib_Franklin = "<img src='images/pluvieux.png'>";
-		$test_meteoTSM_FranklinN2++;
 	}
 	
 	//Calcul Lib
@@ -308,20 +350,26 @@
 	{
 		$capacity = $temp['Custom4'];
 	}
-	
-	if ($capacity < $alerte)
+	if ($alerte != null || $seuil != null)
+	{
+		if ($capacity < $seuil)
+		{
+			$meteoTSMStock_Franklin = "<img src='images/soleil.png'>";
+		}
+		if ($capacity >= $seuil && $capacity < $alerte)
+		{
+			$meteoTSMStock_Franklin = "<img src='images/nuageux.png'>";
+			$test_meteoTSM_FranklinN2++;
+		}
+		if ($capacity >= $alerte)
+		{
+			$meteoTSMStock_Franklin = "<img src='images/pluvieux.png'>";
+			$test_meteoTSM_FranklinN2++;
+		}
+	}
+	else
 	{
 		$meteoTSMStock_Franklin = "<img src='images/soleil.png'>";
-	}
-	if ($capacity >= $seuil)
-	{
-		$meteoTSMStock_Franklin = "<img src='images/nuageux.png'>";
-		$test_meteoTSM_FranklinN2++;
-	}
-	if ($capacity >= $alerte)
-	{
-		$meteoTSMStock_Franklin = "<img src='images/pluvieux.png'>";
-		$test_meteoTSM_FranklinN2++;
 	}
 ?>
 
