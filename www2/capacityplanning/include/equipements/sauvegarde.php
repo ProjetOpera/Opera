@@ -80,18 +80,31 @@
 	$capacity = 99999;
 	$seuil = 0;
 	$alerte = 0;
-	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'"))
 	{
-		$seuil = $temp['Seuil'];
-		$alerte = $temp['Alerte'];
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $temp['Seuil'];
+			$alerte = $temp['Alerte'];
+		}
 	}
-	$sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	else
 	{
-		$capacity = $temp['Custom2'];
+		$seuil = 0;
+		$alerte = 0;
 	}
-	if ($alerte != false || $seuil != false || $capacity != false)
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom1 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	{
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$capacity = $temp['Custom1'];
+		}
+	}
+	else
+	{
+		$capacity = 0;
+	}
+	if ($alerte != 0 || $seuil != 0 || $capacity != 0)
 	{
 		if ($capacity > $seuil)
 		{
@@ -114,21 +127,35 @@
 	}
 	
 	//Calcul BD
-	$capacity = 99999;
+	$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
-	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'"))
 	{
-		$seuil = $temp['Seuil'];
-		$alerte = $temp['Alerte'];
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $temp['Seuil'];
+			$alerte = $temp['Alerte'];
+		}
 	}
-	$sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	else
 	{
-		$capacity = $temp['Custom3'];
+		$seuil = 0;
+		$alerte = 0;
 	}
-	if ($alerte != false || $seuil != false || $capacity != false)
+	
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	{
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$capacity = $temp['Custom2'];
+		}
+	}
+	else
+	{
+		$capacity = 0;
+	}
+	if ($alerte != 0 || $seuil != 0 || $capacity != 0)
 	{
 		if ($capacity < $seuil)
 		{
@@ -151,21 +178,34 @@
 	}
 	
 	//Calcul Lib
-	$capacity = 99999;
+	$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
-	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'"))
 	{
-		$seuil = $temp['Seuil'];
-		$alerte = $temp['Alerte'];
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $temp['Seuil'];
+			$alerte = $temp['Alerte'];
+		}
 	}
-	$sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	else
 	{
-		$capacity = $temp['Custom3'];
+		$seuil = 0;
+		$alerte = 0;
 	}
-	if ($alerte != false || $seuil != false || $capacity != false)
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	{
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$capacity = $temp['Custom3'];
+		}
+	}
+	else
+	{
+		$capacity = 0;
+	}
+	if ($alerte != 0 || $seuil != 0 || $capacity != 0)
 	{
 		if ($capacity < $seuil)
 		{
@@ -191,18 +231,31 @@
 	$capacity = 99999;
 	$seuil = 0;
 	$alerte = 0;	
-	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'"))
 	{
-		$seuil = $temp['Seuil'];
-		$alerte = $temp['Alerte'];
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $temp['Seuil'];
+			$alerte = $temp['Alerte'];
+		}
 	}
-	$sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	else
 	{
-		$capacity = $temp['Custom4'];
+		$seuil = 0;
+		$alerte = 0;
 	}
-	if ($alerte != false || $seuil != false || $capacity != false)
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom4 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	{
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$capacity = $temp['Custom4'];
+		}
+	}
+	else
+	{
+		$capacity = 0;
+	}
+	if ($alerte != 0 || $seuil != 0 || $capacity != 0)
 	{
 		if ($capacity > $seuil)
 		{
@@ -228,18 +281,31 @@
 	$capacity = 99999;
 	$seuil = 0;
 	$alerte = 0;
-	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'"))
 	{
-		$seuil = $temp['Seuil'];
-		$alerte = $temp['Alerte'];
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $temp['Seuil'];
+			$alerte = $temp['Alerte'];
+		}
 	}
-	$sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	else
 	{
-		$capacity = $temp['Custom2'];
+		$seuil = 0;
+		$alerte = 0;
 	}
-	if ($alerte != false || $seuil != false || $capacity != false)
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom1 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	{
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$capacity = $temp['Custom1'];
+		}
+	}
+	else
+	{
+		$capacity = 0;
+	}
+	if ($alerte != 0 || $seuil != 0 || $capacity != 0)
 	{
 		if ($capacity > $seuil)
 		{
@@ -262,21 +328,34 @@
 	}
 	
 	//Calcul BD
-	$capacity = 99999;
+	$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
-	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'"))
 	{
-		$seuil = $temp['Seuil'];
-		$alerte = $temp['Alerte'];
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $temp['Seuil'];
+			$alerte = $temp['Alerte'];
+		}
 	}
-	$sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	else
 	{
-		$capacity = $temp['Custom3'];
+		$seuil = 0;
+		$alerte = 0;
 	}
-	if ($alerte != false || $seuil != false || $capacity != false)
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	{
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$capacity = $temp['Custom2'];
+		}
+	}
+	else
+	{
+		$capacity = 0;
+	}
+	if ($alerte != 0 || $seuil != 0 || $capacity != 0)
 	{
 		if ($capacity < $seuil)
 		{
@@ -299,21 +378,34 @@
 	}
 	
 	//Calcul Lib
-	$capacity = 99999;
+	$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
-	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'"))
 	{
-		$seuil = $temp['Seuil'];
-		$alerte = $temp['Alerte'];
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $temp['Seuil'];
+			$alerte = $temp['Alerte'];
+		}
 	}
-	$sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	else
 	{
-		$capacity = $temp['Custom3'];
+		$seuil = 0;
+		$alerte = 0;
 	}
-	if ($alerte != false || $seuil != false || $capacity != false)
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	{
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$capacity = $temp['Custom3'];
+		}
+	}
+	else
+	{
+		$capacity = 0;
+	}
+	if ($alerte != 0 || $seuil != 0 || $capacity != 0)
 	{
 		if ($capacity < $seuil)
 		{
@@ -339,18 +431,31 @@
 	$capacity = 99999;
 	$seuil = 0;
 	$alerte = 0;	
-	$sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'"))
 	{
-		$seuil = $temp['Seuil'];
-		$alerte = $temp['Alerte'];
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $temp['Seuil'];
+			$alerte = $temp['Alerte'];
+		}
 	}
-	$sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()");
-	while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+	else
 	{
-		$capacity = $temp['Custom4'];
+		$seuil = 0;
+		$alerte = 0;
 	}
-	if ($alerte != false || $seuil != false || $capacity != false)
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	{
+		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		{
+			$capacity = $temp['Custom4'];
+		}
+	}
+	else
+	{
+		$capacity = 0;
+	}
+	if ($alerte != 0 || $seuil != 0 || $capacity != 0)
 	{
 		if ($capacity > $seuil)
 		{
@@ -373,6 +478,50 @@
 	}
 ?>
 
+<?php if ($test_meteoTSM_AmpereN2 == 0)
+			{
+				$meteoTSM_AMPERE = "<img src='images/soleil.png'>";
+			}
+			else if ($test_meteoTSM_AmpereN2 == 1)
+			{
+				$meteoTSM_AMPERE = "<img src='images/nuageux.png'>";
+				$test_meteoTSM_N3++;
+			}
+			else if ($test_meteoTSM_AmpereN2 >= 2)
+			{
+				$meteoTSM_AMPERE = "<img src='images/pluvieux.png'>";
+				$test_meteoTSM_N3++;
+			}
+			
+			if ($test_meteoTSM_FranklinN2 == 0)
+			{
+				$meteoTSM_FRANKLIN = "<img src='images/soleil.png'>";
+			}
+			else if ($test_meteoTSM_FranklinN2 == 1)
+			{
+				$meteoTSM_FRANKLIN = "<img src='images/nuageux.png'>";
+				$test_meteoTSM_N3++;
+			}
+			else if ($test_meteoTSM_FranklinN2 >= 2)
+			{
+				$meteoTSM_FRANKLIN = "<img src='images/pluvieux.png'>";
+				$test_meteoTSM_N3++;
+			}
+			
+			if ($test_meteoTSM_N3 == 0)
+			{
+				$meteoTSM = "<img src='images/soleil.png'>";
+			}
+			else if ($test_meteoTSM_N3 == 1)
+			{
+				$meteoTSM = "<img src='images/nuageux.png'>";
+			}
+			else if ($test_meteoTSM_N3 >= 2)
+			{
+				$meteoTSM = "<img src='images/pluvieux.png'>";
+			}
+?>
+
 <?php
 	if ($type == "SI") {
 ?>
@@ -384,20 +533,7 @@
 	  		<td style="color: black;" colspan=2>Vue globale</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=data_center" target="_self">Sauvegarde TSM</a></td><td>
-			<?php if ($test_meteoTSM_N3 == 0)
-			{
-				echo "<img src='images/soleil.png'>";
-			}
-			else if ($test_meteoTSM_N3 == 1)
-			{
-				echo "<img src='images/nuageux.png'>";
-			}
-			else
-			{
-				echo "<img src='images/pluvieux.png'>";
-			}?>
-			</td>
+			<td><a href="./id_menu=243&type=data_center&target=data_center" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM ?></td>
 		</tr>
 	</table>
 	
@@ -414,39 +550,12 @@
 	  		<td style="color: black;" colspan=2>SNP1 - Ampere</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1" target="_self">Sauvegarde TSM</a></td><td>
-			<?php if ($test_meteoTSM_AmpereN2 == 0)
-			{
-				echo "<img src='images/soleil.png'>";
-			}
-			else if ($test_meteoTSM_AmpereN2 == 1)
-			{
-				echo "<img src='images/nuageux.png'>";
-				$test_meteoTSM_N3++;
-			}
-			else
-			{
-				echo "<img src='images/pluvieux.png'>";
-				$test_meteoTSM_N3++;
-			}?>
-			</td><td><a href="./id_menu=243&type=data_center&target=SNP2" target="_self">Sauvegarde TSM</a></td><td>
-			<?php if ($test_meteoTSM_FranklinN2 == 0)
-			{
-				echo "<img src='images/soleil.png'>";
-			}
-			else if ($test_meteoTSM_FranklinN2 == 1)
-			{
-				echo "<img src='images/nuageux.png'>";
-				$test_meteoTSM_N3++;
-			}
-			else if ($test_meteoTSM_FranklinN2 >= 2)
-			{
-				echo "<img src='images/pluvieux.png'>";
-				$test_meteoTSM_N3++;
-			}?>
-			</td>
+			<td><a href="./id_menu=243&type=data_center&target=SNP1" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM_AMPERE ?></td>
+			
+			<td><a href="./id_menu=243&type=data_center&target=SNP2" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM_FRANKLIN ?></td>
 		</tr>
 	</table>
+	<a href="./id_menu=243" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -480,6 +589,7 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -513,6 +623,7 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
+	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -555,6 +666,7 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -595,6 +707,7 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -636,6 +749,7 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -677,6 +791,7 @@
 			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -717,6 +832,7 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -757,6 +873,7 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -798,6 +915,7 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -839,6 +957,7 @@
 			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
 <?php
 	include 'amchart_sauvegarde.php';
 	}

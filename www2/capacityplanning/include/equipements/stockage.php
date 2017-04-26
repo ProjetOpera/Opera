@@ -94,7 +94,7 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Ampère</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
+	  		<td style="color: black;" colspan=2>SNP1 - Ampere</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
 			<td><a href="./id_menu=241&type=data_center&target=SNP1" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td><td><a href="./id_menu=241&type=data_center&target=SNP2" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td>
