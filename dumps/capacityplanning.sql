@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 20 Avril 2017 à 10:46
+-- Généré le :  Mer 26 Avril 2017 à 20:40
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -19,8 +19,33 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `capacityplanning`
 --
-CREATE DATABASE IF NOT EXISTS `capacityplanning` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `capacityplanning`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `modules`
+--
+
+CREATE TABLE `modules` (
+  `id` int(11) NOT NULL,
+  `module` varchar(50) NOT NULL,
+  `label` varchar(50) NOT NULL,
+  `site` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `modules`
+--
+
+INSERT INTO `modules` (`id`, `module`, `label`, `site`) VALUES
+(1, 'TSM', 'BD', 'AMPERE'),
+(2, 'TSM', 'Bandes', 'AMPERE'),
+(3, 'TSM', 'Lib_util', 'AMPERE'),
+(4, 'TSM', 'Stock_vierges', 'AMPERE'),
+(5, 'TSM', 'BD', 'FRANKLIN'),
+(6, 'TSM', 'Bandes', 'FRANKLIN'),
+(7, 'TSM', 'Lib_util', 'FRANKLIN'),
+(8, 'TSM', 'Stock_vierges', 'FRANKLIN');
 
 -- --------------------------------------------------------
 
@@ -28,7 +53,6 @@ USE `capacityplanning`;
 -- Structure de la table `parametres`
 --
 
-DROP TABLE IF EXISTS `parametres`;
 CREATE TABLE `parametres` (
   `id` int(11) NOT NULL,
   `Module_concerne` varchar(50) NOT NULL,
@@ -48,14 +72,14 @@ CREATE TABLE `parametres` (
 --
 
 INSERT INTO `parametres` (`id`, `Module_concerne`, `Seuil`, `Alerte`, `Label`, `Pourcentage`, `Site`, `Custom1`, `Custom2`, `Custom3`, `Custom4`) VALUES
-(2, 'TSM', 80, 70, 'BD', 1, 'AMPERE', NULL, NULL, NULL, NULL),
-(3, 'TSM', 30, 60, 'Bandes', 0, 'AMPERE', NULL, NULL, NULL, NULL),
-(4, 'TSM', 95, 85, 'Lib_util', 1, 'AMPERE', NULL, NULL, NULL, NULL),
-(5, 'TSM', 50, 70, 'Stock_vierges', 0, 'AMPERE', NULL, NULL, NULL, NULL),
-(6, 'TSM', 80, 70, 'BD', 1, 'FRANKLIN', NULL, NULL, NULL, NULL),
-(7, 'TSM', 30, 60, 'Bandes', 0, 'FRANKLIN', NULL, NULL, NULL, NULL),
-(8, 'TSM', 95, 85, 'Lib_util', 1, 'FRANKLIN', NULL, NULL, NULL, NULL),
-(9, 'TSM', 50, 70, 'Stock_vierges', 0, 'FRANKLIN', NULL, NULL, NULL, NULL);
+(2, 'TSM', 70, 80, 'BD', 1, 'AMPERE', NULL, NULL, NULL, NULL),
+(10, 'TSM', 60, 30, 'Bandes', 0, 'AMPERE', NULL, NULL, NULL, NULL),
+(4, 'TSM', 85, 95, 'Lib_util', 1, 'AMPERE', NULL, NULL, NULL, NULL),
+(5, 'TSM', 70, 50, 'Stock_vierges', 0, 'AMPERE', NULL, NULL, NULL, NULL),
+(6, 'TSM', 70, 80, 'BD', 1, 'FRANKLIN', NULL, NULL, NULL, NULL),
+(7, 'TSM', 60, 30, 'Bandes', 0, 'FRANKLIN', NULL, NULL, NULL, NULL),
+(8, 'TSM', 85, 95, 'Lib_util', 1, 'FRANKLIN', NULL, NULL, NULL, NULL),
+(9, 'TSM', 70, 50, 'Stock_vierges', 0, 'FRANKLIN', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -63,7 +87,6 @@ INSERT INTO `parametres` (`id`, `Module_concerne`, `Seuil`, `Alerte`, `Label`, `
 -- Structure de la table `vueglobale`
 --
 
-DROP TABLE IF EXISTS `vueglobale`;
 CREATE TABLE `vueglobale` (
   `Prevision` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 = n''est pas une prévision / 1 = prévision',
   `Environnement` varchar(50) NOT NULL,
@@ -149,6 +172,12 @@ INSERT INTO `vueglobale` (`Prevision`, `Environnement`, `Date_Releve`, `Site`, `
 --
 
 --
+-- Index pour la table `modules`
+--
+ALTER TABLE `modules`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `parametres`
 --
 ALTER TABLE `parametres`
@@ -165,15 +194,20 @@ ALTER TABLE `vueglobale`
 --
 
 --
+-- AUTO_INCREMENT pour la table `modules`
+--
+ALTER TABLE `modules`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
 -- AUTO_INCREMENT pour la table `parametres`
 --
 ALTER TABLE `parametres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pour la table `vueglobale`
 --
 ALTER TABLE `vueglobale`
-  MODIFY `id_reference` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=249;
+  MODIFY `id_reference` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
