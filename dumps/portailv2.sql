@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 18 Avril 2017 à 16:22
+-- Généré le :  Mer 26 Avril 2017 à 20:25
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -896,11 +896,11 @@ INSERT INTO `menus` (`id`, `Id_Textuel`, `url`, `lien`, `code_libelle`, `ordre`,
 (203, 'ADMINISTRATION_PORTAIL_CONTACTS', 'commun/contacts.php', NULL, 158, 1, 0, 199, 1, 1),
 (226, 'ADMINISTRATION_PORTAIL_LOV', 'typesvaleurs/typesvaleurs.inc.php', NULL, 178, 4, 0, 199, 1, 1),
 (229, 'MENU_CAPACITYPLANNING_SEUILS_ALERTES', 'seuils_alertes/seuils_alertes.php', NULL, 243, 4, 0, -1, 16, 2),
-(234, 'MENU_CAPACITYPLANNING_SI', 'si/si.php', NULL, 247, 1, 1, -1, 16, 2),
+(234, 'MENU_CAPACITYPLANNING_SI', 'si/si.php', NULL, 247, 1, 0, -1, 16, 2),
 (235, 'MENU_CAPACITYPLANNING_DATACENTER', 'datacenter/datacenter.php', NULL, 248, 2, 0, -1, 16, 2),
 (236, 'MENU_CAPACITYPLANNING_AMPERE', 'datacenter/ampere.php', NULL, 249, 1, 0, 235, 16, 2),
 (237, 'MENU_CAPACITYPLANNING_FRANKLIN', 'datacenter/franklin.php', NULL, 250, 2, 0, 235, 16, 2),
-(238, 'MENU_CAPACITYPLANNING_EQUIPEMENTS', 'equipements/equipements.php', NULL, 251, 3, 0, -1, 16, 2),
+(238, 'MENU_CAPACITYPLANNING_EQUIPEMENTS', 'equipements/equipements.php', NULL, 251, 3, 1, -1, 16, 2),
 (239, 'MENU_CAPACITYPLANNING_VIRTUALISATION', 'equipements/virtualisation.php', NULL, 246, 1, 0, 238, 16, 2),
 (240, 'MENU_CAPACITYPLANNING_VEEAM', 'equipements/veeam.php', NULL, 245, 2, 0, 238, 16, 2),
 (241, 'MENU_CAPACITYPLANNING_STOCKAGE', 'equipements/stockage.php', NULL, 241, 3, 0, 238, 16, 2),
