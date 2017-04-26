@@ -666,7 +666,14 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
+	<?php
+	if ($_GET['origin'] == "238")
+	{
+	?>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<?php } else { ?>
 	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
+	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -707,7 +714,14 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
+	<?php
+	if ($_GET['origin'] == "238")
+	{
+	?>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<?php } else { ?>
 	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
+	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -749,7 +763,14 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
+	<?php
+	if ($_GET['origin'] == "238")
+	{
+	?>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<?php } else { ?>
 	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
+	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -791,7 +812,14 @@
 			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
+	<?php
+	if ($_GET['origin'] == "238")
+	{
+	?>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<?php } else { ?>
 	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
+	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -832,7 +860,14 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
+	<?php
+	if ($_GET['origin'] == "238")
+	{
+	?>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<?php } else { ?>
 	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
+	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -873,7 +908,14 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
+	<?php
+	if ($_GET['origin'] == "238")
+	{
+	?>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<?php } else { ?>
 	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
+	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -915,7 +957,14 @@
 			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
+	<?php
+	if ($_GET['origin'] == "238")
+	{
+	?>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<?php } else { ?>
 	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
+	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
@@ -957,7 +1006,14 @@
 			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
+	<?php
+	if ($_GET['origin'] == "238")
+	{
+	?>
+	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<?php } else { ?>
 	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
+	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
 	}
