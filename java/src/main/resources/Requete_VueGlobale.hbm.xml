@@ -28,4 +28,13 @@
                 group by v.date)
         order by v2.date
     </query>
+
+    <!-- Logs -->
+    <query name="LogsSelect">
+        from VueGlobaleEntity
+    </query>
+        <!-- suppresion des logs date du jour - 7 (donc -8)-->
+    <query name="LogsDeleteAll">
+        delete from LogsEntity as l where (current_date()-8) > l.date
+    </query>
 </hibernate-mapping>

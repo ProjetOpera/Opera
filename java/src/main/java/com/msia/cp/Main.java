@@ -1,5 +1,6 @@
 package com.msia.cp;
 
+import com.msia.cp.dao.LogsDaoImpl;
 import com.msia.cp.dao.VueGlobaleDaoImpl;
 import com.msia.cp.util.CalculPrevisionnel;
 import com.msia.cp.util.EnregistrementBdd;
@@ -15,6 +16,16 @@ public class Main {
 
     public static void main(String[] args) {
 
+        try {
+            LogsDaoImpl logs = new LogsDaoImpl();
+            logger.info("Suppression des données de la table cp_logs : début. " +
+                    "Nombre de données dans la base : " + logs.findAllLogs().size());
+            logs.deleteLogs();
+            logger.info("Suppression des données de la table cp_logs : fin. " +
+                    "Nombre de données restantes dans la base : " + logs.findAllLogs().size());
+        }catch (Exception e) {
+            logger.error("Erreur initialisation des logs. " + e.toString());
+        }
         try {
             VueGlobaleDaoImpl vueG = new VueGlobaleDaoImpl();
             logger.info("Suppression des données de la table Vue_Globale : début. " +
@@ -36,7 +47,7 @@ public class Main {
             }
             logger.info("Phase de calcul : fin");
         } catch (Exception e) {
-            logger.error("erreur lors de l'enregistrement en base ou de la phase de calcul. " + e.toString());
+            logger.error("Erreur enregistrement en base ou calcul. " + e.toString());
         }
     }
 }

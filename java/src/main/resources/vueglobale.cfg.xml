@@ -9,6 +9,7 @@
         <property name="connection.username">capacityplanning</property>
         <property name="connection.password">capacityplanning</property>
         <mapping class="com.msia.cp.entities.VueGlobaleEntity"/>
+        <mapping class="com.msia.cp.entities.LogsEntity"/>
         <mapping resource="Requete_VueGlobale.hbm.xml"/>
 
     </session-factory>

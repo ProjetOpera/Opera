@@ -32,7 +32,7 @@ public class VirtualDaoImpl implements IVirtualDAO{
             transaction.commit();
             session.close();
         } catch (HibernateException e) {
-            logger.error("Erreur lors de l'éxécution de la méthode findAllVirtual. " + e.toString());
+            logger.error("Erreur findAllVirtual. " + e.toString());
         }
         return virtualList;
     }

@@ -191,7 +191,7 @@ public class CalculPrevisionnel {
             //Create vue
             vueG.createVueGloable(vue);
         }catch(Exception e){
-            logger.error("Erreur lors de l'éxécution de la méthode PointXY_suivant. " + e.toString());
+            logger.error("Erreur PointXY_suivant. " + e.toString());
         }
 	}
 }
