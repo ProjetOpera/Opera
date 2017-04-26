@@ -32,7 +32,7 @@ public class TsmDaoImpl implements ITsmDAO {
             transaction.commit();
             session.close();
         } catch (HibernateException e) {
-            logger.error("Erreur lors de l'éxécution de la méthode findAllTsm /n" + e.toString());
+            logger.error("Erreur lors de l'éxécution de la méthode findAllTsm. " + e.toString());
         }
         return tsmList;
     }

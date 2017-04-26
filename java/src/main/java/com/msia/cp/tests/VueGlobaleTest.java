@@ -13,10 +13,12 @@ public class VueGlobaleTest {
 
     public static void main(String[] args) {
         VueGlobaleDaoImpl vueG = new VueGlobaleDaoImpl();
-        System.out.println("Taille de la liste vueG avant : " + vueG.findAllVueGlobale().size());
-        //EnregistrementBdd.tsmVersVueGlobale();
-        System.out.println("Taille de la liste vueG après : " + vueG.findAllVueGlobale().size());
 
+        System.out.println("Taille de la liste vueG avant : " + vueG.findAllVueGlobale().size());
+        //vueG.deleteAllVueGlobale();
+
+        EnregistrementBdd.tsmVersVueGlobale();
+        System.out.println("Taille de la liste vueG après : " + vueG.findAllVueGlobale().size());
 
 
         /*VueGlobaleEntity vue = new VueGlobaleEntity();

@@ -1,5 +1,6 @@
 package com.msia.cp;
 
+import com.msia.cp.dao.VueGlobaleDaoImpl;
 import com.msia.cp.util.CalculPrevisionnel;
 import com.msia.cp.util.EnregistrementBdd;
 import org.slf4j.Logger;
@@ -15,6 +16,13 @@ public class Main {
     public static void main(String[] args) {
 
         try {
+            VueGlobaleDaoImpl vueG = new VueGlobaleDaoImpl();
+            logger.info("Suppression des données de la table Vue_Globale : début. " +
+                    "Nombre de données dans la base : " + vueG.findAllVueGlobale().size());
+            vueG.deleteAllVueGlobale();
+            logger.info("Suppression des données de la table Vue_Globale : fin. " +
+                    "Nombre de données restantes dans la base : " + vueG.findAllVueGlobale().size());
+
             logger.info("Lancement de l'enregistrement TSM vers Vue Globale");
             EnregistrementBdd.tsmVersVueGlobale();
             logger.info("Fin de l'enregistrement TSM vers Vue Globale");
@@ -28,7 +36,7 @@ public class Main {
             }
             logger.info("Phase de calcul : fin");
         } catch (Exception e) {
-            logger.error("erreur lors de l'enregistrement en base ou de la phase de calcul /n" + e.toString());
+            logger.error("erreur lors de l'enregistrement en base ou de la phase de calcul. " + e.toString());
         }
     }
 }

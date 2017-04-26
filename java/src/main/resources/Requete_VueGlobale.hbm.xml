@@ -8,6 +8,9 @@
     <query name="VueGSelect">
         from VueGlobaleEntity
     </query>
+    <query name="VueGDeleteAll">
+        delete from VueGlobaleEntity
+    </query>
     <query name="VGFindAllBySite">
         from VueGlobaleEntity as v
         where v.site = :site

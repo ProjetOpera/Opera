@@ -50,7 +50,7 @@ public class EnregistrementBdd {
                 vueG.createVueGloable(vue);
             }
         } catch (Exception e) {
-            logger.error("Erreur lors de l'éxécution de la méthode tsmVersVueGlobale /n" + e.toString());
+            logger.error("Erreur lors de l'éxécution de la méthode tsmVersVueGlobale. " + e.toString());
         }
     }
 }

@@ -34,7 +34,7 @@ public class VueGlobaleDaoImpl implements IVueGlobaleDAO {
             transaction.commit();
             session.close();
         } catch (HibernateException e) {
-            logger.error("Erreur lors de l'éxécution de la méthode findAllVueGlobale /n" + e.toString());
+            logger.error("Erreur lors de l'éxécution de la méthode findAllVueGlobale. " + e.toString());
         }
         return vueGlobaleList;
     }
@@ -48,7 +48,21 @@ public class VueGlobaleDaoImpl implements IVueGlobaleDAO {
             transaction.commit();
             session.close();
         } catch (HibernateException e) {
-            logger.error("Erreur lors de l'éxécution de la méthode createVueGlobale /n" + e.toString());
+            logger.error("Erreur lors de l'éxécution de la méthode createVueGlobale. " + e.toString());
+        }
+
+    }
+
+    public void deleteAllVueGlobale() {
+        try {
+            session = sessionFactory.openSession();
+            transaction = session.beginTransaction();
+            Query query = session.getNamedQuery("VueGDeleteAll");
+            query.executeUpdate();
+            transaction.commit();
+            session.close();
+        } catch (HibernateException e) {
+            logger.error("Erreur lors de l'éxécution de la méthode deleteAllVueGlobale. " + e.toString());
         }
 
     }
@@ -64,7 +78,7 @@ public class VueGlobaleDaoImpl implements IVueGlobaleDAO {
             transaction.commit();
             session.close();
         } catch (HibernateException e) {
-            logger.error("Erreur lors de l'éxécution de la méthode findAllBySite /n" + e.toString());
+            logger.error("Erreur lors de l'éxécution de la méthode findAllBySite. " + e.toString());
         }
         return vueGlobaleList;
     }
@@ -80,7 +94,7 @@ public class VueGlobaleDaoImpl implements IVueGlobaleDAO {
             transaction.commit();
             session.close();
         } catch (HibernateException e) {
-            logger.error("Erreur lors de l'éxécution de la méthode findAllByEnv /n" + e.toString());
+            logger.error("Erreur lors de l'éxécution de la méthode findAllByEnv. " + e.toString());
         }
         return vueGlobaleList;
     }
@@ -97,7 +111,7 @@ public class VueGlobaleDaoImpl implements IVueGlobaleDAO {
             transaction.commit();
             session.close();
         } catch (HibernateException e) {
-            logger.error("Erreur lors de l'éxécution de la méthode findAllBySiteAndEnv /n" + e.toString());
+            logger.error("Erreur lors de l'éxécution de la méthode findAllBySiteAndEnv. " + e.toString());
         }
         return vueGlobaleList;
     }
