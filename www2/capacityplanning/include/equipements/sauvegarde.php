@@ -91,7 +91,7 @@
 	{
 		$capacity = $temp['Custom2'];
 	}
-	if ($alerte != null || $seuil != null || $capacity != null)
+	if ($alerte != false || $seuil != false || $capacity != false)
 	{
 		if ($capacity > $seuil)
 		{
@@ -128,7 +128,7 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	if ($alerte != null || $seuil != null || $capacity != null)
+	if ($alerte != false || $seuil != false || $capacity != false)
 	{
 		if ($capacity < $seuil)
 		{
@@ -165,7 +165,7 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	if ($alerte != null || $seuil != null || $capacity != null)
+	if ($alerte != false || $seuil != false || $capacity != false)
 	{
 		if ($capacity < $seuil)
 		{
@@ -202,7 +202,7 @@
 	{
 		$capacity = $temp['Custom4'];
 	}
-	if ($alerte != null || $seuil != null || $capacity != null)
+	if ($alerte != false || $seuil != false || $capacity != false)
 	{
 		if ($capacity > $seuil)
 		{
@@ -239,7 +239,7 @@
 	{
 		$capacity = $temp['Custom2'];
 	}
-	if ($alerte != null || $seuil != null || $capacity != null)
+	if ($alerte != false || $seuil != false || $capacity != false)
 	{
 		if ($capacity > $seuil)
 		{
@@ -276,7 +276,7 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	if ($alerte != null || $seuil != null || $capacity != null)
+	if ($alerte != false || $seuil != false || $capacity != false)
 	{
 		if ($capacity < $seuil)
 		{
@@ -313,7 +313,7 @@
 	{
 		$capacity = $temp['Custom3'];
 	}
-	if ($alerte != null || $seuil != null || $capacity != null)
+	if ($alerte != false || $seuil != false || $capacity != false)
 	{
 		if ($capacity < $seuil)
 		{
@@ -350,7 +350,7 @@
 	{
 		$capacity = $temp['Custom4'];
 	}
-	if ($alerte != null || $seuil != null || $capacity != null)
+	if ($alerte != false || $seuil != false || $capacity != false)
 	{
 		if ($capacity > $seuil)
 		{
