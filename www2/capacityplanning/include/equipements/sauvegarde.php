@@ -80,7 +80,7 @@
 	$capacity = 99999;
 	$seuil = 0;
 	$alerte = 0;
-	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'"))
+	if ($sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -93,7 +93,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom1 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	if ($sql = $connexion->query("SELECT Custom1 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -130,7 +130,7 @@
 	$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
-	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'"))
+	if ($sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -144,7 +144,7 @@
 		$alerte = 0;
 	}
 	
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	if ($sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -181,7 +181,7 @@
 	$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
-	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'"))
+	if ($sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -194,7 +194,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	if ($sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -231,7 +231,7 @@
 	$capacity = 99999;
 	$seuil = 0;
 	$alerte = 0;	
-	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'"))
+	if ($sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -244,7 +244,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom4 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	if ($sql = $connexion->query("SELECT Custom4 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -281,7 +281,7 @@
 	$capacity = 99999;
 	$seuil = 0;
 	$alerte = 0;
-	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'"))
+	if ($sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -294,7 +294,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom1 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	if ($sql = $connexion->query("SELECT Custom1 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -331,7 +331,7 @@
 	$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
-	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'"))
+	if ($sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -344,7 +344,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	if ($sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -381,7 +381,7 @@
 	$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
-	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'"))
+	if ($sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -394,7 +394,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	if ($sql = $connexion->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -431,7 +431,7 @@
 	$capacity = 99999;
 	$seuil = 0;
 	$alerte = 0;	
-	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'"))
+	if ($sql = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -444,7 +444,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	if ($sql = $connexion->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -662,7 +662,7 @@
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "bandes";
-		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
+		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -710,7 +710,7 @@
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "bd";
-		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
+		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -759,7 +759,7 @@
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "lib_util";
-		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
+		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -808,7 +808,7 @@
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "stock_vierges";
-		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
+		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -856,7 +856,7 @@
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "bandes";
-		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
+		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -904,7 +904,7 @@
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "bd";
-		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
+		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -953,7 +953,7 @@
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "lib_util";
-		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
+		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -1002,7 +1002,7 @@
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "stock_vierges";
-		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
+		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
