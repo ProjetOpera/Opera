@@ -1,5 +1,5 @@
 <?php
-	require_once("connect.php");
+	require_once("./connect.php");
 ?>
 
 <style type="text/css">
@@ -53,7 +53,7 @@
 <script type="text/javascript">
 	function redirection()
 	{
-		window.location.href = window.location.href + '&type=' + document.getElementById("menu_deroulant").value + '&target=' + document.getElementById("menu_deroulant").value + '&origin=' + document.getElementById("menu_deroulant").value;
+		window.location.href = window.location.href + '?type=' + document.getElementById("menu_deroulant").value + '&target=' + document.getElementById("menu_deroulant").value + '&origin=' + document.getElementById("menu_deroulant").value;
 	}
 </script>
 
@@ -537,22 +537,22 @@
 	  		<td style="color: black;" colspan=2>SNP1 - TSM</td><td style="color: black;" colspan=2>SNP2 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes&origin=238" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td><td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes&origin=238" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_Bandes&origin=238" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Ampere ?></td><td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_Bandes&origin=238" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Franklin ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD&origin=238" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td><td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD&origin=238" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_BD&origin=238" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Ampere ?></td><td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_BD&origin=238" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Librairie</td><td style="color: black;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util&origin=238" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td><td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util&origin=238" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_lib_util&origin=238" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Ampere ?></td><td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_lib_util&origin=238" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - Stock</td><td style="color: black;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges&origin=238" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td><td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges&origin=238" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_stock_vierges&origin=238" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Ampere ?></td><td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_stock_vierges&origin=238" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
 	

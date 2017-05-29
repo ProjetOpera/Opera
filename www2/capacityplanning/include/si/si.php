@@ -66,7 +66,7 @@
 		</tr>
 		-->
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=data_center" target="_self">Sauvegarde</td><td><img src="images/nuageux.png"></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=data_center" target="_self">Sauvegarde</td><td><img src="images/nuageux.png"></td>
 		</tr>
 	</table>
 <?php

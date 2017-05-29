@@ -1,5 +1,5 @@
 <?php
-	require_once("connect.php");
+	require_once("../../connect.php");
 ?>
 
 <style type="text/css">
@@ -53,7 +53,7 @@
 <script type="text/javascript">
 	function redirection()
 	{
-		window.location.href = window.location.href + '&type=' + document.getElementById("menu_deroulant").value + '&target=' + document.getElementById("menu_deroulant").value;
+		window.location.href = window.location.href + '?type=' + document.getElementById("menu_deroulant").value + '&target=' + document.getElementById("menu_deroulant").value;
 	}
 </script>
 
@@ -533,7 +533,7 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>Vue globale</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=data_center" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=data_center" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM ?></td>
 		</tr>
 	</table>
 	
@@ -550,12 +550,12 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Ampere</td><td style="color: black; font-size: 20px;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM_AMPERE ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM_AMPERE ?></td>
 			
-			<td><a href="./id_menu=243&type=data_center&target=SNP2" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM_FRANKLIN ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM_FRANKLIN ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243" target="_self">Retour</a>
+	<a href="./include/equipements/sauvegarde.php" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -571,10 +571,10 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Ampere ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Ampere ?></td>
 	  	</tr>
 	</table>
 
@@ -588,7 +588,7 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Ampere ?></td>
 		</tr>
 	</table>
 
@@ -602,10 +602,10 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="./include/equipements/sauvegarde.php/?type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -621,10 +621,10 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Franklin ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
 	</table>
 
@@ -638,7 +638,7 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
 	</table>
 
@@ -649,10 +649,10 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
-	<a href="./id_menu=243&type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="./include/equipements/sauvegarde.php/?type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -677,31 +677,31 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
+	  		<td><a style="color: #2c3e50;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Ampere ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Ampere ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Ampere ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
 	<?php
 	if ($_GET['origin'] == "238")
 	{
 	?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/equipements.php" target="_self">Retour</a>
 	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -725,31 +725,31 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Ampere ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
+	  		<td><a style="color: #2c3e50;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Ampere ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Ampere ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
 	<?php
 	if ($_GET['origin'] == "238")
 	{
 	?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/equipements.php" target="_self">Retour</a>
 	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -774,31 +774,31 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Ampere ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Ampere ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
+			<td><a style="color: #2c3e50;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Ampere ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
 	<?php
 	if ($_GET['origin'] == "238")
 	{
 	?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/equipements.php" target="_self">Retour</a>
 	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -823,31 +823,31 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Ampere ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Ampere ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP1_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Ampere ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Ampere ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Ampere ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Ampere ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Ampere ?></td>
+			<td><a style="color: #2c3e50;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Ampere ?></td>
 		</tr>
 	</table>
 	<?php
 	if ($_GET['origin'] == "238")
 	{
 	?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/equipements.php" target="_self">Retour</a>
 	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP1" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP1" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -871,31 +871,31 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  		<td><a style="color: #2c3e50;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Franklin ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
 	<?php
 	if ($_GET['origin'] == "238")
 	{
 	?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/equipements.php" target="_self">Retour</a>
 	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -919,31 +919,31 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Franklin ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  		<td><a style="color: #2c3e50;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
 	<?php
 	if ($_GET['origin'] == "238")
 	{
 	?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/equipements.php" target="_self">Retour</a>
 	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -968,31 +968,31 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Franklin ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+			<td><a style="color: #2c3e50;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
 	<?php
 	if ($_GET['origin'] == "238")
 	{
 	?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/equipements.php" target="_self">Retour</a>
 	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -1017,31 +1017,31 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Franklin ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="./id_menu=243&type=data_center&target=SNP2_TSM_BD" target="_self">BD</td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  		<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./id_menu=243&type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</td><td><?php echo $meteoTSMLib_Franklin ?></td>
+			<td><a href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a style="color: #2c3e50;" href="./id_menu=243&type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</td><td><?php echo $meteoTSMStock_Franklin ?></td>
+			<td><a style="color: #2c3e50;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
 	<?php
 	if ($_GET['origin'] == "238")
 	{
 	?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=238" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/equipements.php" target="_self">Retour</a>
 	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="./id_menu=243&type=data_center&target=SNP2" target="_self">Retour</a>
+	<a style="position:absolute;top:600px;left:10px;" href="./include/equipements/sauvegarde.php/?type=data_center&target=SNP2" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
