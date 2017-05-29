@@ -108,7 +108,7 @@
 	  		<td style="color: black;" colspan=2>Vue globale</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/virtualisation.php/?type=data_center&target=data_center" target="_self">Virtualisation</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=data_center" target="_self">Virtualisation</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
 	
@@ -125,10 +125,10 @@
 	  		<td style="color: black;" colspan=2>SNP1 - Ampere</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/virtualisation.php/?type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td><img src="images/pluvieux.png"></td><td><a href="./include/equipements/virtualisation.php/?type=data_center&target=SNP2" target="_self">Virtualisation</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td><img src="images/pluvieux.png"></td><td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP2" target="_self">Virtualisation</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="./id_menu=239" target="_self">Retour</a>
+	<a href="./include/equipements/virtualisation.php" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -144,19 +144,19 @@
 	  		<td style="color: black;" colspan=2>SNP1</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./include/equipements/virtualisation.php/?type=data_center&target=SNP1_clus1" target="_self">NUTAMPPRD</a></td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP1_clus1" target="_self">NUTAMPPRD</a></td><td><img src="images/soleil.png"></td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/virtualisation.php/?type=data_center&target=SNP1_clus2" target="_self">ORAAMPPRD</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP1_clus2" target="_self">ORAAMPPRD</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
-			<td><a href="./include/equipements/virtualisation.php/?type=data_center&target=SNP1_clus3" target="_self">VSPAMPRD</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP1_clus3" target="_self">VSPAMPRD</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
-			<td><a href="./include/equipements/virtualisation.php/?type=data_center&target=SNP1_clus4" target="_self">VSPPRDSII</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP1_clus4" target="_self">VSPPRDSII</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="./include/equipements/virtualisation.php/?type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="./include/equipements/virtualisation.php?type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -172,19 +172,19 @@
 	  		<td style="color: black;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./include/equipements/virtualisation.php/?type=data_center&target=SNP2_clus1" target="_self">NUTAMPPRD</a></td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP2_clus1" target="_self">NUTAMPPRD</a></td><td><img src="images/soleil.png"></td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/virtualisation.php/?type=data_center&target=SNP2_clus2" target="_self">ORAAMPPRD</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP2_clus2" target="_self">ORAAMPPRD</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
-			<td><a href="./include/equipements/virtualisation.php/?type=data_center&target=SNP2_clus3" target="_self">VSPAMPRD</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP2_clus3" target="_self">VSPAMPRD</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
-			<td><a href="./include/equipements/virtualisation.php/?type=data_center&target=SNP2_clus4" target="_self">VSPPRDSII</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP2_clus4" target="_self">VSPPRDSII</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="./include/equipements/virtualisation.php/?type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="./include/equipements/virtualisation.php?type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>

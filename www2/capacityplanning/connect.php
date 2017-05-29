@@ -5,8 +5,8 @@
 *****************************/
 
 define ('DB_SERVER', 'localhost');
-define ('SERVER_USER', 'root');
-define ('SERVER_PASSWORD', 'opera');
+define ('SERVER_USER', 'capacityplanning');
+define ('SERVER_PASSWORD', 'Capacityplanning');
 define ('DB_DATABASE', 'capacityplanning');
 
 /*

@@ -80,7 +80,7 @@
 	  		<td style="color: black;" colspan=2>Vue globale</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/stockage.php/?type=data_center&target=data_center" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/stockage.php?type=data_center&target=data_center" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
 	
@@ -97,13 +97,13 @@
 	  		<td style="color: black;" colspan=2>SNP1 - Ampere</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/stockage.php/?type=data_center&target=SNP1" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td><td><a href="./include/equipements/stockage.php/?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td><td><a href="./include/equipements/stockage.php?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
-			<td><a href="./include/equipements/stockage.php/?type=data_center&target=SNP1" target="_self">IPSTOR</a></td><td><img src="images/pluvieux.png"></td><td><a href="./include/equipements/stockage.php/?type=data_center&target=SNP2" target="_self">IPSTOR</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1" target="_self">IPSTOR</a></td><td><img src="images/pluvieux.png"></td><td><a href="./include/equipements/stockage.php?type=data_center&target=SNP2" target="_self">IPSTOR</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="./id_menu=241" target="_self">Retour</a>
+	<a href="./include/equipements/stockage.php" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -123,7 +123,7 @@
 		
 		$contenu_tab_app .= "<tr>";
 			if (substr($recup_name, -3) == "AMP")
-				$contenu_tab_app .= "<td>"."<a href='./include/equipements/stockage.php/?type=data_center&target=SNP1_" . $recup_name . "' target='_self'>".$recup_name."</td>";	
+				$contenu_tab_app .= "<td>"."<a href='./include/equipements/stockage.php?type=data_center&target=SNP1_" . $recup_name . "' target='_self'>".$recup_name."</td>";	
 		$contenu_tab_app .= "</tr>";
 		
 		$nb_ligne++;
@@ -147,19 +147,19 @@
 	}
 	?>
 	  	<!--<tr>
-	  		<td><a href="./include/equipements/stockage.php/?type=data_center&target=SNP1_axiom1" target="_self">AXIOM600BENAMP</td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1_axiom1" target="_self">AXIOM600BENAMP</td><td><img src="images/soleil.png"></td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/stockage.php/?type=data_center&target=SNP1_fsone1" target="_self">FSONE316AMP</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1_fsone1" target="_self">FSONE316AMP</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - IPSTOR</td>
 	  	</tr>
 		<tr>
-			<td><a href="./include/equipements/stockage.php/?type=data_center&target=SNP1_falcon1" target="_self">FALCONV8_AMP</td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1_falcon1" target="_self">FALCONV8_AMP</td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>-->
-	<a href="./include/equipements/stockage.php/?type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="./include/equipements/stockage.php?type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -175,19 +175,19 @@
 	  		<td style="color: black;" colspan=2>SNP2 - Baies</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="./include/equipements/stockage.php/?type=data_center&target=SNP2_axiom1" target="_self">AXIOM600BENFKL</a></td><td><img src="images/soleil.png"></td>
+	  		<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP2_axiom1" target="_self">AXIOM600BENFKL</a></td><td><img src="images/soleil.png"></td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/stockage.php/?type=data_center&target=SNP2_fsone1" target="_self">FSONE316FKL</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP2_fsone1" target="_self">FSONE316FKL</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 		<tr>
 	  		<td style="color: black;" colspan=2>SNP2 - IPSTOR</td>
 	  	</tr>
 		<tr>
-			<td><a href="./include/equipements/stockage.php/?type=data_center&target=SNP2_falcon1" target="_self">FALCONV8_FKL</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP2_falcon1" target="_self">FALCONV8_FKL</a></td><td><img src="images/pluvieux.png"></td>
 		</tr>
 	</table>
-	<a href="./include/equipements/stockage.php/?type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="./include/equipements/stockage.php?type=data_center&target=data_center" target="_self">Retour</a>
 <?php
 	}
 ?>
