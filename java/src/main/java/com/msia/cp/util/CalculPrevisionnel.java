@@ -195,6 +195,11 @@ public class CalculPrevisionnel {
             }
             //Calcul TSM Fin
 
+            //Calcul Virtualisation Debut (11 Customs)
+            if (Environnement_util == "Virtualisation") {
+
+            }
+
             //Create vue (Enregistrement des resultats)
             vueG.createVueGloable(vue);
         }
