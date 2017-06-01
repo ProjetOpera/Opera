@@ -10,12 +10,12 @@
 			height: 350px;
 		}																		
 	</style>
-
-	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
-	<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-	<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	
+	<script src="javascript/amcharts/amcharts.js"></script>
+	<script src="javascript/amcharts/serial.js"></script>
+	<script src="javascript/amcharts/plugins/export/export.min.js"></script>
+	<script src="javascript/amcharts/themes/light.js"></script>
+	<link rel="stylesheet" href="javascript/amcharts/plugins/export/export.css" type="text/css" media="all" />
 
 	<script>
 		var chart = AmCharts.makeChart(
