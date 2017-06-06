@@ -47,7 +47,7 @@
 </style>
 
 <div class="date_jour">
-	<?php echo date_format($date, 'd-m-Y');?>
+	<?php echo date("d/m/Y");?>
 </div>
 
 <script type="text/javascript">
