@@ -1,45 +1,52 @@
 <?php
-	///////////////////////////
-	// Affichage tableau app //
-	///////////////////////////
-	
-	
-	$sql_recup_app="SELECT name, role, localisation FROM inv_san.baie WHERE date_releve = (SELECT MAX(date_releve) FROM inv_san.baie) ORDER BY name;";
-
-	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
-	
-	//echo "<br/>\n";
-	//echo "<br/>\n";
-	
-	$contenu_tab_app = "";
-	$nb_ligne=0;
-	
-	
-	
+	require_once("connect.php");
 ?>
 <style type="text/css">
 	.date_jour {
 	  	text-align: right;
 	  	font-size: 16px;
 	  	font-weight: bold;
+	  	margin-bottom: 2%;
 	}
-
-	.tableau_meteo {
-		width: 50%;
-		margin-left: 25%;
+	
+	.tableau_meteo_middle {
+		width: 40%;
+		margin-left: 30%;
 		background-color: #66A3C7;
 	}
 
-	.tableau_meteo td {
+	.tableau_meteo_middle td {
 	  	font-size: 16px;
 	 	font-weight: bold;
 		text-align: center;
 		color: white;
 	}
+	
+	.tableau_meteo_graph {
+		width: 39%;
+		margin-left: 1%;
+		background-color: #66A3C7;
+		float: left;
+	}
+
+	.tableau_meteo_graph td {
+	  	font-size: 16px;
+	 	font-weight: bold;
+		text-align: center;
+		color: white;
+	}
+
+	.tableau_meteo_graph a {
+		color: #FFFFFF;
+	}
+
+	.tableau_meteo_middle a {
+		color: #FFFFFF;
+	}
 </style>
 
 <div class="date_jour">
-	<?=date("d/m/Y")?>
+	<? echo date("d/m/Y")?>
 </div>
 
 <script type="text/javascript">
@@ -70,6 +77,11 @@
 </center></br></br>-->
 
 <?php
+	require_once 'calculsMeteoStockage.php';
+?>
+
+<?php
+/*
 	if ($type == "SI") {
 ?>
 	<table class="tableau_meteo">
@@ -85,67 +97,93 @@
 	</table>
 	
 <?php
-	}
+	}*/
+	
+	$sql_recup_app = "SELECT name FROM inv_san.baie WHERE date_releve = (SELECT MAX(date_releve) FROM inv_san.baie) ORDER BY name;";
 
-	if ($type == "data_center" && $target == "data_center") {
+	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
+	
+	$contenu_tab_app = "";
+	$nb_ligne = 0;
+
+	if ($type == "SI") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
 			<th></th><th></th><th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Ampere</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Ampere</td><td style="color: black; font-size: 20px;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td><td><a href="./include/equipements/stockage.php?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><img src="images/pluvieux.png"></td>
-		</tr>
-		<tr>
-			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1" target="_self">IPSTOR</a></td><td><img src="images/pluvieux.png"></td><td><a href="./include/equipements/stockage.php?type=data_center&target=SNP2" target="_self">IPSTOR</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="?type=data_center&target=SNP1" target="_self">Stockage</a></td><td><?php echo $meteoStockage_AMPERE ?></td>
+			<td><a href="?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><?php echo $meteoStockage_FRANKLIN ?></td>
 		</tr>
 	</table>
-	<a href="./include/equipements/stockage.php" target="_self">Retour</a>
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
+	if ($type == "data_center" && $target == "data_center") {
 ?>
+		<table class="tableau_meteo_middle">
+	  	<tr>
+			<th></th><th></th><th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Ampere</td><td style="color: black; font-size: 20px;" colspan=2>SNP2 - Franklin</td>
+	  	</tr>
+	  	<tr>
+			<td><a href="?type=data_center&target=SNP1" target="_self">Stockage</a></td><td><?php echo $meteoStockageStockage_AMPERE ?></td>
+			<td><a href="?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><?php echo $meteoStockageStockage_FRANKLIN ?></td>
+		</tr>
+		
+		</br></br>
+		
+		<tr>
+			<td><a href="?type=data_center&target=SNP1" target="_self">IPSTOR</a></td><td><?php echo $meteoStockageIPSTOR_AMPERE ?></td>
+			<td><a href="?type=data_center&target=SNP2" target="_self">IPSTOR</a></td><td><?php echo $meteoStockageIPSTOR_FRANKLIN ?></td>
+		</tr>
+	</table>
+	<a href="javascript:history.back()" target="_self">Retour</a>
+<?php	} ?>
 
 <?php
 	if ($type == "data_center" && $target == "SNP1") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Baies</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Baies</td>
 	  	</tr>
-		<?php
-		while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
+<?php
+	while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
 	{
-		$recup_name=$row_recup_app['name'];
+		$recup_name = $row_recup_app['name'];
 		
 		$contenu_tab_app .= "<tr>";
 			if (substr($recup_name, -3) == "AMP")
-				$contenu_tab_app .= "<td>"."<a href='./include/equipements/stockage.php?type=data_center&target=SNP1_" . $recup_name . "' target='_self'>".$recup_name."</td>";	
+				$contenu_tab_app .= "<td><a href='?type=data_center&target=SNP1_" . $recup_name . "' target='_self'>" . $recup_name . "</td><td>" . $meteo . "</td>";
+			if (substr($recup_name, -3) == "FKL")
+				$contenu_tab_app .= "<td>"."<a href='?type=data_center&target=SNP2_" . $recup_name . "' target='_self'>" . $recup_name . "</td><td>" . $meteo . "</td>";
 		$contenu_tab_app .= "</tr>";
-		
 		$nb_ligne++;
 	}
-		?>
+?>
 		
 		<!--<tr>
 	  		<td style="color: black;" colspan=2>SNP1 - IPSTOR</td>
 	  	</tr>-->
 		
-		<?php
-		
-
-	if($nb_ligne!=0)
+<?php
+	if($nb_ligne != 0)
 	{	
-		echo "<table class='tableau_meteo'";
+		echo "<table class='tableau_meteo_middle'";
 		
 		echo $contenu_tab_app;	
 		
 		echo "</table>";
 	}
-	?>
+?>
 	  	<!--<tr>
 	  		<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1_axiom1" target="_self">AXIOM600BENAMP</td><td><img src="images/soleil.png"></td>
 	  	</tr>
