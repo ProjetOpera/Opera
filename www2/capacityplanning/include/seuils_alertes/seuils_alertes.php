@@ -51,10 +51,10 @@ while ($row = $sql->fetch(PDO::FETCH_ASSOC))
 $contenu_tab_app .= "</select></td>
  <td><select name='label' id='new_label'>";
 
-$sql = $ressourceBDD_appli->query("SELECT label FROM capacityplanning.modules GROUP BY label");
+$sql = $ressourceBDD_appli->query("SELECT module, label FROM capacityplanning.modules GROUP BY label, module");
 while ($row = $sql->fetch(PDO::FETCH_ASSOC))
 {
-	$contenu_tab_app .= "<option value='" . $row['label'] . "'>" . $row['label'] . "</option>";
+	$contenu_tab_app .= "<option value='" . $row['label'] . "'>" . $row['module'] . " " . $row['label'] . "</option>";
 }
 
 $contenu_tab_app .= "</select></td>

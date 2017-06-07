@@ -24,11 +24,11 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom1, Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='Stockage' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom1 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='Stockage' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
-			$capacity = $temp['Custom1'] / $temp['Custom2'] * 100;
+			$capacity = $temp['Custom1'];
 		}
 	}
 	else
@@ -39,22 +39,22 @@
 	{
 		if ($capacity < $seuil)
 		{
-			$meteoStockageVolume_Ampere = "<img src='images/soleil.png'>";
+			$meteoStockageTaux_Ampere = "<img src='images/soleil.png'>";
 		}
 		if ($capacity >= $seuil && $capacity < $alerte)
 		{
-			$meteoStockageVolume_Ampere = "<img src='images/nuageux.png'>";
+			$meteoStockageTaux_Ampere = "<img src='images/nuageux.png'>";
 			$test_meteoStockage_AmpereN2++;
 		}
 		if ($capacity >= $alerte)
 		{
-			$meteoStockageVolume_Ampere = "<img src='images/pluvieux.png'>";
+			$meteoStockageTaux_Ampere = "<img src='images/pluvieux.png'>";
 			$test_meteoStockage_AmpereN2++;
 		}
 	}
 	else
 	{
-		$meteoStockageVolume_Ampere = "<img src='images/soleil.png'>";
+		$meteoStockageTaux_Ampere = "<img src='images/soleil.png'>";
 	}
 	
 	//Calcul Licences Stockage AMPERE
@@ -139,22 +139,22 @@
 	{
 		if ($capacity < $seuil)
 		{
-			$meteoStockageVolume_Franklin = "<img src='images/soleil.png'>";
+			$meteoStockageTaux_Franklin = "<img src='images/soleil.png'>";
 		}
 		if ($capacity >= $seuil && $capacity < $alerte)
 		{
-			$meteoStockageVolume_Franklin = "<img src='images/nuageux.png'>";
+			$meteoStockageTaux_Franklin = "<img src='images/nuageux.png'>";
 			$test_meteoStockage_FranklinN2++;
 		}
 		if ($capacity >= $alerte)
 		{
-			$meteoStockageVolume_Franklin = "<img src='images/pluvieux.png'>";
+			$meteoStockageTaux_Franklin = "<img src='images/pluvieux.png'>";
 			$test_meteoStockage_FranklinN2++;
 		}
 	}
 	else
 	{
-		$meteoStockageVolume_Franklin = "<img src='images/soleil.png'>";
+		$meteoStockageTaux_Franklin = "<img src='images/soleil.png'>";
 	}
 	
 	//Calcul Licences Stockage FRANKLIN
