@@ -116,6 +116,7 @@
 	  	<tr>
 	  		<td><a href="/<?php echo $url_interne_veeam;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegardes de VMs</a></td><td><?php echo $meteoVEEAM_AMPERE ?></td><td><a href="/<?php echo $url_interne_veeam;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegardes de VMs</a></td><td><?php echo $meteoVEEAM_FRANKLIN ?></td>
 	  	</tr>
+		</table>
 		
 		</br></br>
 		

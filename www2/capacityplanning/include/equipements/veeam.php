@@ -46,7 +46,7 @@
 </style>
 
 <div class="date_jour">
-	<? echo date("d/m/Y")?>
+	<? echo date("d/m/Y");?>
 </div>
 
 <script type="text/javascript">
@@ -73,23 +73,22 @@
 ?>
 
 <?php
-/*
 	if ($type == "SI") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>Vue globale</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>Vue globale</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/veeam.php?type=data_center&target=data_center" target="_self">Sauvegarde des VMs</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="?type=data_center&target=data_center" target="_self">Sauvegarde des VMs</a></td><td><?php echo $meteoVEEAM ?></td>
 		</tr>
 	</table>
 	
 <?php
-	}*/
+	}
 
 	if ($type == "data_center" && $target == "data_center") {
 ?>
@@ -166,7 +165,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - VEEAM</td>
 	  	</tr>
 	  	<tr>
 	  		<td><a href="?type=data_center&target=SNP1_VEEAM_volume" target="_self">Volumétrie</a></td><td><?php echo $meteoVEEAMVolume_Ampere ?></td>
@@ -187,7 +186,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - VEEAM</td>
 	  	</tr>
 	  	<tr>
 	  		<td><a href="?type=data_center&target=SNP1_VEEAM_volume" target="_self">Volumétrie</a></td><td><?php echo $meteoVEEAMVolume_Franklin ?></td>
@@ -218,7 +217,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - VEEAM</td>
 	  	</tr>
 	  	<tr>
 	  		<td><a href="?type=data_center&target=SNP1_VEEAM_volume" target="_self">Volumétrie</a></td><td><?php echo $meteoVEEAMVolume_Ampere ?></td>
@@ -256,7 +255,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - VEEAM</td>
 	  	</tr>
 	  	<tr>
 	  		<td><a href="?type=data_center&target=SNP1_VEEAM_volume" target="_self">Volumétrie</a></td><td><?php echo $meteoVEEAMVolume_Ampere ?></td>
@@ -294,7 +293,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - VEEAM</td>
 	  	</tr>
 	  	<tr>
 	  		<td><a href="?type=data_center&target=SNP2_VEEAM_volume" target="_self">Volumétrie</a></td><td><?php echo $meteoVEEAMVolume_Franklin ?></td>
@@ -332,7 +331,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - VEEAM</td>
 	  	</tr>
 	  	<tr>
 	  		<td><a href="?type=data_center&target=SNP2_VEEAM_volume" target="_self">Volumétrie</a></td><td><?php echo $meteoVEEAMVolume_Franklin ?></td>

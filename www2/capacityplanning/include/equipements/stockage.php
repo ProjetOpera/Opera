@@ -46,7 +46,7 @@
 </style>
 
 <div class="date_jour">
-	<? echo date("d/m/Y")?>
+	<? echo date("d/m/Y");?>
 </div>
 
 <script type="text/javascript">
@@ -113,11 +113,11 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Ampere</td><td style="color: black; font-size: 20px;" colspan=2>SNP2 - Franklin</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>Vue globale</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="?type=data_center&target=SNP1" target="_self">Stockage</a></td><td><?php echo $meteoStockage_AMPERE ?></td>
-			<td><a href="?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><?php echo $meteoStockage_FRANKLIN ?></td>
+			<td><a href="?type=data_center&target=data_center" target="_self">Stockage</a></td><td><?php echo $meteoStockage ?></td>
+			<!--<td><a href="?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><?php //echo $meteoStockage_FRANKLIN ?></td>-->
 		</tr>
 	</table>
 	<a href="javascript:history.back()" target="_self">Retour</a>

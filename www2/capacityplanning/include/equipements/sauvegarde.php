@@ -74,7 +74,6 @@
 ?>
 
 <?php
-/*
 	if ($type == "SI") {
 ?>
 	<table class="tableau_meteo_middle">
@@ -90,7 +89,7 @@
 	</table>
 	
 <?php
-	}*/
+	}
 
 	if ($type == "data_center" && $target == "data_center") {
 ?>
@@ -213,7 +212,7 @@
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "bandes";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -233,18 +232,22 @@
 		<tr>
 	  		<td><a href="?type=data_center&target=SNP1_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Ampere ?></td>
 	  	</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
 			<td><a href="?type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Ampere ?></td>
 		</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
@@ -267,7 +270,7 @@
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "bd";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -287,18 +290,22 @@
 		<tr>
 	  		<td><a style="color: #2c3e50;" href="?type=data_center&target=SNP1_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Ampere ?></td>
 	  	</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
 			<td><a href="?type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Ampere ?></td>
 		</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
@@ -322,7 +329,7 @@
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "lib_util";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -342,18 +349,22 @@
 		<tr>
 	  		<td><a href="?type=data_center&target=SNP1_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Ampere ?></td>
 	  	</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
 			<td><a style="color: #2c3e50;" href="?type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Ampere ?></td>
 		</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
@@ -377,7 +388,7 @@
 		$environnement = "TSM";
 		$site = "AMPERE";
 		$type = "stock_vierges";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -397,18 +408,22 @@
 		<tr>
 	  		<td><a href="?type=data_center&target=SNP1_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Ampere ?></td>
 	  	</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Librairie</td>
 	  	</tr>
 	  	<tr>
 			<td><a href="?type=data_center&target=SNP1_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Ampere ?></td>
 		</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Stock</td>
 	  	</tr>
@@ -431,7 +446,7 @@
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "bandes";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Bandes' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -451,18 +466,22 @@
 		<tr>
 	  		<td><a href="?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
 			<td><a href="?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
@@ -485,7 +504,7 @@
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "bd";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='BD' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -505,18 +524,22 @@
 		<tr>
 	  		<td><a style="color: #2c3e50;" href="?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
 			<td><a href="?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
@@ -540,7 +563,7 @@
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "lib_util";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Lib_util' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -560,18 +583,22 @@
 		<tr>
 	  		<td><a href="?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
 			<td><a style="color: #2c3e50;" href="?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
@@ -595,7 +622,7 @@
 		$environnement = "TSM";
 		$site = "FRANKLIN";
 		$type = "stock_vierges";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='TSM' AND Label='Stock_vierges' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -615,18 +642,22 @@
 		<tr>
 	  		<td><a href="?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
 			<td><a href="?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
+		</table>
 		
 		</br></br>
 		
+		<table class="tableau_meteo_graph">
 		<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
