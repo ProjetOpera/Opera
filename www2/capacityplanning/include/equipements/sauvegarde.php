@@ -87,7 +87,7 @@
 			<td><a href="?type=data_center&target=data_center" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM ?></td>
 		</tr>
 	</table>
-	
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
 
