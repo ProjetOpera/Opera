@@ -68,14 +68,6 @@
 	}
 ?>
 
-<!--<center>
-	<select name="menu_deroulant" id="menu_deroulant" onChange="redirection();">
-		<option value="SI" <?//=$select_SI?>>SI</option>
-		<option value="data_center" <?//=$select_data_center?>>Data Center</option>
-		<option value="baie_ipstor" <?//=$select_baie_ipstor?>>Baie/IPSTOR</option>
-	</select>
-</center></br></br>-->
-
 <?php
 	require_once 'calculsMeteoStockage.php';
 ?>
@@ -117,7 +109,6 @@
 	  	</tr>
 	  	<tr>
 			<td><a href="?type=data_center&target=data_center" target="_self">Stockage</a></td><td><?php echo $meteoStockage ?></td>
-			<!--<td><a href="?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><?php //echo $meteoStockage_FRANKLIN ?></td>-->
 		</tr>
 	</table>
 	<a href="javascript:history.back()" target="_self">Retour</a>
@@ -133,90 +124,87 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Ampere</td><td style="color: black; font-size: 20px;" colspan=2>SNP2 - Franklin</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="?type=data_center&target=SNP1" target="_self">Stockage</a></td><td><?php echo $meteoStockageStockage_AMPERE ?></td>
-			<td><a href="?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><?php echo $meteoStockageStockage_FRANKLIN ?></td>
+			<td><a href="?type=data_center&target=SNP1" target="_self">Stockage</a></td><td><?php echo $meteoStockageTaux_Ampere ?></td>
+			<td><a href="?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><?php echo $meteoStockageTaux_Franklin ?></td>
 		</tr>
 		
 		</br></br>
 		
 		<tr>
-			<td><a href="?type=data_center&target=SNP1" target="_self">IPSTOR</a></td><td><?php echo $meteoStockageIPSTOR_AMPERE ?></td>
-			<td><a href="?type=data_center&target=SNP2" target="_self">IPSTOR</a></td><td><?php echo $meteoStockageIPSTOR_FRANKLIN ?></td>
+			<td><a href="?type=data_center&target=SNP1" target="_self">IPSTOR</a></td><td><?php echo $meteoStockageTaux_Ampere ?></td>
+			<td><a href="?type=data_center&target=SNP2" target="_self">IPSTOR</a></td><td><?php echo $meteoStockageTaux_Franklin ?></td>
 		</tr>
 	</table>
 	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php	} ?>
 
 <?php
-	if ($type == "data_center" && $target == "SNP1") {
-?>
-	<table class="tableau_meteo_middle">
-	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Baies</td>
-	  	</tr>
-<?php
-	while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
+	if ($type == "data_center" && $target == "SNP1")
 	{
-		$recup_name = $row_recup_app['name'];
-		
-		$contenu_tab_app .= "<tr>";
-			if (substr($recup_name, -3) == "AMP")
-				$contenu_tab_app .= "<td><a href='?type=data_center&target=SNP1_" . $recup_name . "' target='_self'>" . $recup_name . "</td><td>" . $meteo . "</td>";
-		$contenu_tab_app .= "</tr>";
-		$nb_ligne++;
-	}
+		$environnement = "Stockage";
+		$site = "AMPERE";
+		$type = "taux";
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Stockage' AND Label='Taux util' AND Site='AMPERE'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
 ?>
-		
-		<!--<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - IPSTOR</td>
-	  	</tr>-->
-		
-<?php
-	if($nb_ligne != 0)
-	{	
-		echo "<table class='tableau_meteo_middle'";
-		
-		echo $contenu_tab_app;
-		
-		echo "</table>";
-	}
-?>
-	<a href="javascript:history.back()" target="_self">Retour</a>
-<?php
-	}
-	$nb_ligne = 0;
-?>
-
-<?php
-	if ($type == "data_center" && $target == "SNP2") {
-?>
-	<table class="tableau_meteo_middle">
+	<table class="tableau_meteo_graph">
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Baies</td>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Ampere</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="?type=data_center&target=SNP1" target="_self">Stockage</a></td><td><?php echo $meteoStockageTaux_Ampere ?></td>
 	  	</tr>
 	</table>
-<?php
-	while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
+	<?php
+	if ($_GET['origin'] == "equipement")
 	{
-		$recup_name = $row_recup_app['name'];
-		
-		$contenu_tab_app .= "<tr>";
-		if (substr($recup_name, -3) == "FKL")
-				$contenu_tab_app .= "<td>"."<a href='?type=data_center&target=SNP2_" . $recup_name . "' target='_self'>" . $recup_name . "</td><td>" . $meteo . "</td>";
-		$contenu_tab_app .= "</tr>";
-		$nb_ligne++;
-	}
-
-	if($nb_ligne != 0)
-	{	
-		echo "<table class='tableau_meteo_middle'";
-		
-		echo $contenu_tab_app;
-		
-		echo "</table>";
-	}
-?>
-	<a href="javascript:history.back()" target="_self">Retour</a>
+	?>
+	<a style="position:absolute;top:600px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	<?php } else { ?>
+	<a style="position:absolute;top:600px;left:10px;" href="?type=data_center&target=data_center" target="_self">Retour</a>
+	<?php } ?>
 <?php
+	include 'amchart_stockage.php';
+	}
+	if ($type == "data_center" && $target == "SNP2")
+	{
+		$environnement = "Stockage";
+		$site = "FRANKLIN";
+		$type = "taux";
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Stockage' AND Label='Taux util' AND Site='FRANKLIN'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
+?>
+	<table class="tableau_meteo_graph">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Franklin</td>
+	  	</tr>
+	  	<tr>
+	  		<td><a href="?type=data_center&target=SNP2" target="_self">Stockage</a></td><td><?php echo $meteoStockageTaux_Franklin ?></td>
+	  	</tr>
+	</table>
+	<?php
+	if ($_GET['origin'] == "equipement")
+	{
+	?>
+	<a style="position:absolute;top:600px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	<?php } else { ?>
+	<a style="position:absolute;top:600px;left:10px;" href="?type=data_center&target=data_center" target="_self">Retour</a>
+	<?php } ?>
+<?php
+	include 'amchart_stockage.php';
 	}
 ?>

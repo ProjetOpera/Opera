@@ -1,73 +1,52 @@
 <?php
-	///////////////////////////
-	// Affichage tableau app //
-	///////////////////////////
-	
-	
-	/*$sql_recup_app="SELECT name, role, localisation FROM inv_san.baie WHERE date_releve = (SELECT MAX(date_releve) FROM inv_san.baie) ORDER BY name;";
-
-	$result_recup_app = $ressourceBDD_appli->query($sql_recup_app);
-	
-	echo "<br/>\n";
-	echo "<br/>\n";
-	
-	$contenu_tab_app = "";
-	$nb_ligne=0;
-	
-	while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
-	{
-		$recup_name=$row_recup_app['name'];
-		$recup_role=  $row_recup_app['role'];
-		$recup_localisation=$row_recup_app['localisation'];
-		
-		$contenu_tab_app .= "<tr class='line".(($nb_ligne+1)%2)."'>\n";
-			$contenu_tab_app .= "<td>".$recup_name."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_role."</td>\n";
-			$contenu_tab_app .= "<td>".$recup_localisation."</td>\n";			
-		$contenu_tab_app .= "</tr>\n";
-		$nb_ligne++;
-	}
-	if($nb_ligne!=0)
-	{	
-		echo "<table class='display_list2' cellpadding=0 cellspacing=0 border=0>\n";
-		
-		echo "<tr class='table_line'>\n";
-		
-			echo "<td>Nom</td>\n";
-			echo "<td>Role</td>\n";
-			echo "<td>Localisation</td>\n";
-			
-		echo "</tr>\n";
-		
-		echo $contenu_tab_app;	
-		
-		echo "</table>\n";
-	}*/
-	
+	require_once("connect.php");
 ?>
 <style type="text/css">
 	.date_jour {
 	  	text-align: right;
 	  	font-size: 16px;
 	  	font-weight: bold;
+	  	margin-bottom: 2%;
 	}
-
-	.tableau_meteo {
-		width: 50%;
-		margin-left: 25%;
+	
+	.tableau_meteo_middle {
+		width: 40%;
+		margin-left: 30%;
 		background-color: #66A3C7;
 	}
 
-	.tableau_meteo td {
+	.tableau_meteo_middle td {
 	  	font-size: 16px;
 	 	font-weight: bold;
 		text-align: center;
 		color: white;
 	}
+	
+	.tableau_meteo_graph {
+		width: 39%;
+		margin-left: 1%;
+		background-color: #66A3C7;
+		float: left;
+	}
+
+	.tableau_meteo_graph td {
+	  	font-size: 16px;
+	 	font-weight: bold;
+		text-align: center;
+		color: white;
+	}
+
+	.tableau_meteo_graph a {
+		color: #FFFFFF;
+	}
+
+	.tableau_meteo_middle a {
+		color: #FFFFFF;
+	}
 </style>
 
 <div class="date_jour">
-	<?=date("d/m/Y")?>
+	<? echo date("d/m/Y");?>
 </div>
 
 <script type="text/javascript">
@@ -96,6 +75,10 @@
 		<option value="baie_ipstor" <?//=$select_baie_ipstor?>>Baie/IPSTOR</option>
 	</select>
 </center></br></br>-->
+
+<?php
+	require_once 'calculsMeteoVirtu.php';
+?>
 
 <?php
 	if ($type == "SI") {

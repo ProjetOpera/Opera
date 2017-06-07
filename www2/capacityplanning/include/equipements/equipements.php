@@ -78,6 +78,8 @@
 <?php
 	require_once 'calculsMeteoTSM.php';
 	require_once 'calculsMeteoVEEAM.php';
+	require_once 'calculsMeteoStockage.php';
+	require_once 'calculsMeteoVirtu.php';
 ?>
 
 <?php			
@@ -86,6 +88,8 @@
 	$url_interne_veeam = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_VEEAM' //$id_textuel_menu_veeam
 	);
 	$url_interne_stockage = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_STOCKAGE' //$id_textuel_menu_stockage
+	);
+	$url_interne_stockage = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_VIRTUALISATION' //$id_textuel_menu_virtu
 	);
 ?>
 
@@ -125,10 +129,10 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 		<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Stockage</td><td style="color: black;" colspan=2>SNP2 - Stockage</td>
+	  		<td style="color: black;" colspan=2>Vue globale - Stockage</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="/<?php echo $url_interne_stockage;?>&type=data_center&target=data_center&origin=equipement" target="_self">Stockage</a></td><td><?php echo $meteoStockage_AMPERE ?></td><td><a href="/<?php echo $url_interne_stockage;?>&type=data_center&target=data_center&origin=equipement" target="_self">Stockage</a></td><td><?php echo $meteoStockage_FRANKLIN ?></td>
+	  		<td><a href="/<?php echo $url_interne_stockage;?>&type=data_center&target=data_center&origin=equipement" target="_self">Stockage</a></td><td><?php echo $meteoStockage ?></td>
 	  	</tr>
 	</table>
 	
