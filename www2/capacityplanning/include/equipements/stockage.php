@@ -151,7 +151,6 @@
 	if ($type == "data_center" && $target == "SNP1") {
 ?>
 	<table class="tableau_meteo_middle">
-	  	
 	  	<tr>
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Baies</td>
 	  	</tr>
@@ -163,8 +162,6 @@
 		$contenu_tab_app .= "<tr>";
 			if (substr($recup_name, -3) == "AMP")
 				$contenu_tab_app .= "<td><a href='?type=data_center&target=SNP1_" . $recup_name . "' target='_self'>" . $recup_name . "</td><td>" . $meteo . "</td>";
-			if (substr($recup_name, -3) == "FKL")
-				$contenu_tab_app .= "<td>"."<a href='?type=data_center&target=SNP2_" . $recup_name . "' target='_self'>" . $recup_name . "</td><td>" . $meteo . "</td>";
 		$contenu_tab_app .= "</tr>";
 		$nb_ligne++;
 	}
@@ -179,53 +176,47 @@
 	{	
 		echo "<table class='tableau_meteo_middle'";
 		
-		echo $contenu_tab_app;	
+		echo $contenu_tab_app;
 		
 		echo "</table>";
 	}
 ?>
-	  	<!--<tr>
-	  		<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1_axiom1" target="_self">AXIOM600BENAMP</td><td><img src="images/soleil.png"></td>
-	  	</tr>
-	  	<tr>
-			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1_fsone1" target="_self">FSONE316AMP</td><td><img src="images/pluvieux.png"></td>
-		</tr>
-		<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - IPSTOR</td>
-	  	</tr>
-		<tr>
-			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP1_falcon1" target="_self">FALCONV8_AMP</td><td><img src="images/pluvieux.png"></td>
-		</tr>
-	</table>-->
-	<a href="./include/equipements/stockage.php?type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
+	$nb_ligne = 0;
 ?>
 
 <?php
 	if ($type == "data_center" && $target == "SNP2") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
-			<th></th><th></th>
-		</tr>
-	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP2 - Baies</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Baies</td>
 	  	</tr>
-	  	<tr>
-	  		<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP2_axiom1" target="_self">AXIOM600BENFKL</a></td><td><img src="images/soleil.png"></td>
-	  	</tr>
-	  	<tr>
-			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP2_fsone1" target="_self">FSONE316FKL</a></td><td><img src="images/pluvieux.png"></td>
-		</tr>
-		<tr>
-	  		<td style="color: black;" colspan=2>SNP2 - IPSTOR</td>
-	  	</tr>
-		<tr>
-			<td><a href="./include/equipements/stockage.php?type=data_center&target=SNP2_falcon1" target="_self">FALCONV8_FKL</a></td><td><img src="images/pluvieux.png"></td>
-		</tr>
 	</table>
-	<a href="./include/equipements/stockage.php?type=data_center&target=data_center" target="_self">Retour</a>
+<?php
+	while ($row_recup_app = $result_recup_app->fetch(PDO::FETCH_ASSOC))
+	{
+		$recup_name = $row_recup_app['name'];
+		
+		$contenu_tab_app .= "<tr>";
+		if (substr($recup_name, -3) == "FKL")
+				$contenu_tab_app .= "<td>"."<a href='?type=data_center&target=SNP2_" . $recup_name . "' target='_self'>" . $recup_name . "</td><td>" . $meteo . "</td>";
+		$contenu_tab_app .= "</tr>";
+		$nb_ligne++;
+	}
+
+	if($nb_ligne != 0)
+	{	
+		echo "<table class='tableau_meteo_middle'";
+		
+		echo $contenu_tab_app;
+		
+		echo "</table>";
+	}
+?>
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
 ?>
