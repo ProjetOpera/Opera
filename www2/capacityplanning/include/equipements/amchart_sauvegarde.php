@@ -1,16 +1,17 @@
+<style>
+	#chartdiv {
+		width	: 58%;
+		margin-left: 41%;
+		top: 28%;
+		float: left;
+		height: 350px;
+    	position: absolute;
+	}																		
+</style>
+
 <?php
 	if ($type == "bandes") {	
-?>
-	<style>
-		#chartdiv {
-			width	: 59%;
-			margin-left: 1%;
-			margin-top: 1%;
-			float: left;
-			height: 350px;
-		}																		
-	</style>
-	
+?>	
 	<script src="javascript/amcharts/amcharts.js"></script>
 	<script src="javascript/amcharts/serial.js"></script>
 	<script src="javascript/amcharts/plugins/export/export.min.js"></script>
@@ -125,16 +126,6 @@
 <?php
 	if ($type == "bd") {	
 ?>
-	<style>
-		#chartdiv {
-			width	: 59%;
-			margin-left: 1%;
-			margin-top: 1%;
-			float: left;
-			height: 350px;
-		}																		
-	</style>															
-	</style>
 
 	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
@@ -250,16 +241,6 @@
 <?php
 	if ($type == "lib_util") {	
 ?>
-	<style>
-		#chartdiv {
-			width	: 59%;
-			margin-left: 1%;
-			margin-top: 1%;
-			float: left;
-			height: 350px;
-		}																		
-	</style>
-
 	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
 	<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
@@ -374,15 +355,6 @@
 <?php
 	if ($type == "stock_vierges") {	
 ?>
-	<style>
-		#chartdiv {
-			width	: 59%;
-			margin-left: 1%;
-			margin-top: 1%;
-			float: left;
-			height: 350px;
-		}																		
-	</style>
 
 	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 	<script src="https://www.amcharts.com/lib/3/serial.js"></script>

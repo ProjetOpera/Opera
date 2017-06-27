@@ -24,10 +24,9 @@
 	}
 	
 	.tableau_meteo_graph {
-		width: 39%;
+		width: 40%;
 		margin-left: 1%;
 		background-color: #66A3C7;
-		float: left;
 	}
 
 	.tableau_meteo_graph td {
@@ -258,10 +257,10 @@
 	<?php
 	if ($_GET['origin'] == "equipement")
 	{
-	?>
-	<a style="position:absolute;top:600px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
-	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="?type=data_center&target=SNP1" target="_self">Retour</a>
+	?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	<?php } else { ?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="?type=data_center&target=SNP1" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -316,10 +315,10 @@
 	<?php
 	if ($_GET['origin'] == "equipement")
 	{
-	?>
-	<a style="position:absolute;top:600px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
-	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="?type=data_center&target=SNP1" target="_self">Retour</a>
+	?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	<?php } else { ?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="?type=data_center&target=SNP1" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -375,10 +374,10 @@
 	<?php
 	if ($_GET['origin'] == "equipement")
 	{
-	?>
-	<a style="position:absolute;top:600px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
-	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="?type=data_center&target=SNP1" target="_self">Retour</a>
+	?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	<?php } else { ?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="?type=data_center&target=SNP1" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -434,10 +433,10 @@
 	<?php
 	if ($_GET['origin'] == "equipement")
 	{
-	?>
-	<a style="position:absolute;top:600px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
-	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="?type=data_center&target=SNP1" target="_self">Retour</a>
+	?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	<?php } else { ?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="?type=data_center&target=SNP1" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -492,10 +491,10 @@
 	<?php
 	if ($_GET['origin'] == "equipement")
 	{
-	?>
-	<a style="position:absolute;top:600px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
-	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="?type=data_center&target=SNP2" target="_self">Retour</a>
+	?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	<?php } else { ?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="?type=data_center&target=SNP2" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -550,10 +549,10 @@
 	<?php
 	if ($_GET['origin'] == "equipement")
 	{
-	?>
-	<a style="position:absolute;top:600px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
-	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="?type=data_center&target=SNP2" target="_self">Retour</a>
+	?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	<?php } else { ?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="?type=data_center&target=SNP2" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -609,10 +608,10 @@
 	<?php
 	if ($_GET['origin'] == "equipement")
 	{
-	?>
-	<a style="position:absolute;top:600px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
-	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="?type=data_center&target=SNP2" target="_self">Retour</a>
+	?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	<?php } else { ?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="?type=data_center&target=SNP2" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
@@ -668,10 +667,10 @@
 	<?php
 	if ($_GET['origin'] == "equipement")
 	{
-	?>
-	<a style="position:absolute;top:600px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
-	<?php } else { ?>
-	<a style="position:absolute;top:600px;left:10px;" href="?type=data_center&target=SNP2" target="_self">Retour</a>
+	?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	<?php } else { ?></br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="?type=data_center&target=SNP2" target="_self">Retour</a>
 	<?php } ?>
 <?php
 	include 'amchart_sauvegarde.php';
