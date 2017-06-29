@@ -11,8 +11,8 @@
 	}
 	
 	.tableau_meteo_middle {
-		width: 40%;
-		margin-left: 30%;
+		width: 30%;
+		margin-left: 35%;
 		background-color: #66A3C7;
 	}
 
@@ -24,7 +24,7 @@
 	}
 	
 	.tableau_meteo_graph {
-		width: 40%;
+		width: 25%;
 		margin-left: 1%;
 		background-color: #66A3C7;
 	}
@@ -577,10 +577,10 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td><?php echo $meteoTSMBandes_Franklin ?></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSMBandes_Franklin ?></td>
 	  	</tr>
 		<tr>
-	  		<td><a href="?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td><?php echo $meteoTSMBD_Franklin ?></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_TSM_BD" target="_self">BD</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSMBD_Franklin ?></td>
 	  	</tr>
 		</table>
 		
@@ -591,7 +591,7 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Librairie</td>
 	  	</tr>
 	  	<tr>
-			<td><a style="color: #2c3e50;" href="?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td><?php echo $meteoTSMLib_Franklin ?></td>
+			<td style="text-align: left; padding-left: 10px;"><a style="color: #2c3e50;" href="?type=data_center&target=SNP2_lib_util" target="_self">% d'utilisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSMLib_Franklin ?></td>
 		</tr>
 		</table>
 		
@@ -602,7 +602,7 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Stock</td>
 	  	</tr>
 		<tr>
-			<td><a href="?type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</a></td><td><?php echo $meteoTSMStock_Franklin ?></td>
+			<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_stock_vierges" target="_self">Bandes vierges</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSMStock_Franklin ?></td>
 		</tr>
 	</table>
 	<?php

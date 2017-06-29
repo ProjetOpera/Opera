@@ -1,7 +1,7 @@
 <style>
 	#chartdiv {
-		width	: 58%;
-		margin-left: 41%;
+		width	: 73%;
+		margin-left: 26%;
 		top: 28%;
 		float: left;
 		height: 350px;
