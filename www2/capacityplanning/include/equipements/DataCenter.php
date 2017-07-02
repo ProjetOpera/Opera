@@ -83,21 +83,35 @@
 ?>
 
 <?php			
-	$url_interne_datacenter = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_DATACENTER' //$id_textuel_menu_datacenter
+	$url_interne_DCAmpere = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_AMPERE' //$id_textuel_menu_DCAmpere
+	);
+	$url_interne_DCFranklin = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_FRANKLIN' //$id_textuel_menu_DCFranklin
 	);
 	
+	if ($test_meteoTSM_N3_SNP1 == 0 && $test_meteoVirtu_N2_SNP1 == 0)
+	{
+		$meteoDatacenter_SNP1 = "<img src='images/soleil.png'>";
+	}
+	else if ($test_meteoTSM_N3_SNP1 >= 1 || $test_meteoVirtu_N2_SNP1 >= 1)
+	{
+		$meteoDatacenter_SNP1 = "<img src='images/nuageux.png'>";
+	}
+	else if ($test_meteoTSM_N3_SNP1 >= 1 && $test_meteoVirtu_N2_SNP1 >= 1)
+	{
+		$meteoDatacenter_SNP1 = "<img src='images/pluvieux.png'>";
+	}
 	
-	if ($test_datacenter_TSM == 0 && $test_datacenter_Virtu == 0)
+	if ($test_meteoTSM_N3_SNP2 == 0 && $test_meteoVirtu_N2_SNP2 == 0)
 	{
-		$meteoSI = "<img src='images/soleil.png'>";
+		$meteoDatacenter_SNP2 = "<img src='images/soleil.png'>";
 	}
-	else if ($test_datacenter_TSM == 1 || $test_datacenter_Virtu == 1)
+	else if ($test_meteoTSM_N3_SNP2 >= 1 || $test_meteoVirtu_N2_SNP2 >= 1)
 	{
-		$meteoSI = "<img src='images/nuageux.png'>";
+		$meteoDatacenter_SNP2 = "<img src='images/nuageux.png'>";
 	}
-	else if ($test_datacenter_TSM >= 1 && $test_datacenter_Virtu >= 1)
+	else if ($test_meteoTSM_N3_SNP2 >= 1 && $test_meteoVirtu_N2_SNP2 >= 1)
 	{
-		$meteoSI = "<img src='images/pluvieux.png'>";
+		$meteoDatacenter_SNP2 = "<img src='images/pluvieux.png'>";
 	}
 ?>
 
@@ -109,10 +123,10 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 		<tr>
-	  		<td style="color: black;" colspan=2>SI</td>
+	  		<td style="color: black;" colspan=2>SNP1</td><td style="color: black;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_datacenter;?>&type=SI" target="_self">Vue globale</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoSI ?></td>
+			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_DCAmpere;?>&type=SI" target="_self">Vue globale</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoDatacenter_SNP1 ?></td><td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_DCFranklin;?>&type=SI" target="_self">Vue globale</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoDatacenter_SNP2 ?></td>
 		</tr>
 		</table>	
 <?php

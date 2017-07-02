@@ -89,7 +89,7 @@
 	);
 	$url_interne_stockage = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_STOCKAGE' //$id_textuel_menu_stockage
 	);
-	$url_interne_stockage = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_VIRTUALISATION' //$id_textuel_menu_virtu
+	$url_interne_virtu = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_VIRTUALISATION' //$id_textuel_menu_virtu
 	);
 ?>
 
@@ -110,6 +110,18 @@
 		
 		</br></br>
 		
+		<table class="tableau_meteo_middle">
+		<tr>
+			<th></th><th></th><th></th><th></th>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Virtu</td><td style="color: black;" colspan=2>SNP2 - Virtu</td>
+	  	</tr>
+	  	<tr>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_virtu;?>&type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu_Ampere_N2 ?></td><td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_virtu;?>&type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu_Franklin_N2 ?></td>
+	  	</tr>
+		</table>
+		
 		<!--<table class="tableau_meteo_middle">
 		<tr>
 			<th></th><th></th><th></th><th></th>
@@ -118,7 +130,7 @@
 	  		<td style="color: black;" colspan=2>SNP1 - VEEAM</td><td style="color: black;" colspan=2>SNP2 - VEEAM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="/<?php //echo $url_interne_veeam;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegardes de VMs</a></td><td><?php echo $meteoVEEAM_AMPERE ?></td><td><a href="/<?php echo $url_interne_veeam;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegardes de VMs</a></td><td><?php echo $meteoVEEAM_FRANKLIN ?></td>
+	  		<td><a href="/<?php //echo $url_interne_veeam;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegardes de VMs</a></td><td><?php //echo $meteoVEEAM_AMPERE ?></td><td><a href="/<?php //echo $url_interne_veeam;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegardes de VMs</a></td><td><?php //echo $meteoVEEAM_FRANKLIN ?></td>
 	  	</tr>
 		</table>
 		
@@ -132,7 +144,7 @@
 	  		<td style="color: black;" colspan=2>Vue globale - Stockage</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="/<?php //echo $url_interne_stockage;?>&type=data_center&target=data_center&origin=equipement" target="_self">Stockage</a></td><td><?php echo $meteoStockage ?></td>
+	  		<td><a href="/<?php //echo $url_interne_stockage;?>&type=data_center&target=data_center&origin=equipement" target="_self">Stockage</a></td><td><?php //echo $meteoStockage ?></td>
 	  	</tr>
 	</table>-->
 	

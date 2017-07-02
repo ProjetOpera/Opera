@@ -32,8 +32,7 @@
 			$contenu_tab_app .= "<td id=site_val" . $row_recup_app['id'] . ">".$recup_site."</td>\n";
 			$contenu_tab_app .= "<td id=alerte_val" . $row_recup_app['id'] . ">".$recup_alerte."</td>\n";
 			$contenu_tab_app .= "<td id=seuil_val" . $row_recup_app['id'] . ">".$recup_seuil."</td>\n";
-			$contenu_tab_app .= "<td><input type='button' id='edit_button".$row_recup_app['id']."' value='Editer' class='edit' onclick='edit_row(".$row_recup_app['id'].")'>
-										<input type='button' style='display:none' id='save_button".$row_recup_app['id']."' value='Sauvegarder' class='save' onclick='save_row(".$row_recup_app['id'].")'>
+			$contenu_tab_app .= "<td><input type='button' style='display:none' id='save_button".$row_recup_app['id']."' value='Sauvegarder' class='save' onclick='save_row(".$row_recup_app['id'].")'>
 										<input type='button' value='Supprimer' class='delete' onclick='delete_row(".$row_recup_app['id'].")'></td>";
 		$contenu_tab_app .= "</tr>\n";
 		$nb_ligne++;

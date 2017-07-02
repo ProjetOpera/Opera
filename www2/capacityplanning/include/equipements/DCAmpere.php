@@ -83,22 +83,10 @@
 ?>
 
 <?php			
-	$url_interne_datacenter = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_DATACENTER' //$id_textuel_menu_datacenter
+	$url_interne_sauvegarde = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_SAUVEGARDE' //$id_textuel_menu_sauvegarde
 	);
-	
-	
-	if ($test_datacenter_TSM == 0 && $test_datacenter_Virtu == 0)
-	{
-		$meteoSI = "<img src='images/soleil.png'>";
-	}
-	else if ($test_datacenter_TSM == 1 || $test_datacenter_Virtu == 1)
-	{
-		$meteoSI = "<img src='images/nuageux.png'>";
-	}
-	else if ($test_datacenter_TSM >= 1 && $test_datacenter_Virtu >= 1)
-	{
-		$meteoSI = "<img src='images/pluvieux.png'>";
-	}
+	$url_interne_virtu = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_VIRTUALISATION' //$id_textuel_menu_virtu
+	);
 ?>
 
 <?php
@@ -109,12 +97,26 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 		<tr>
-	  		<td style="color: black;" colspan=2>SI</td>
+	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
 	  	</tr>
 	  	<tr>
-			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_datacenter;?>&type=SI" target="_self">Vue globale</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoSI ?></td>
+			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_sauvegarde;?>&type=data_center&target=SNP1" target="_self">Sauvegarde TSM</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSM_AMPERE ?></td>
 		</tr>
-		</table>	
+	</table>
+		
+		</br></br>
+	
+	<table class="tableau_meteo_middle">
+		<tr>
+			<th></th><th></th><th></th><th></th>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Virtu</td>
+	  	</tr>
+		<tr>
+			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_virtu;?>&type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu_Ampere_N2 ?></td>
+		</tr>
+	</table>	
 <?php
 	}
 ?>

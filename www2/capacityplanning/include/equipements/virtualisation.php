@@ -1,6 +1,7 @@
 <?php
 	require_once("connect.php");
 ?>
+
 <style type="text/css">
 	.date_jour {
 	  	text-align: right;
@@ -10,8 +11,8 @@
 	}
 	
 	.tableau_meteo_middle {
-		width: 40%;
-		margin-left: 30%;
+		width: 20%;
+		margin-left: 35%;
 		background-color: #66A3C7;
 	}
 
@@ -23,10 +24,9 @@
 	}
 	
 	.tableau_meteo_graph {
-		width: 39%;
+		width: 20%;
 		margin-left: 1%;
 		background-color: #66A3C7;
-		float: left;
 	}
 
 	.tableau_meteo_graph td {
@@ -46,13 +46,13 @@
 </style>
 
 <div class="date_jour">
-	<? echo date("d/m/Y");?>
+	<?php echo date("d/m/Y");?>
 </div>
 
 <script type="text/javascript">
 	function redirection()
 	{
-		window.location.href = window.location.href + '&type=' + document.getElementById("menu_deroulant").value + '&target=' + document.getElementById("menu_deroulant").value;
+		window.location.href = window.location.href + '?type=' + document.getElementById("menu_deroulant").value + '&target=' + document.getElementById("menu_deroulant").value;
 	}
 </script>
 
@@ -68,14 +68,6 @@
 	}
 ?>
 
-<!--<center>
-	<select name="menu_deroulant" id="menu_deroulant" onChange="redirection();">
-		<option value="SI" <?//=$select_SI?>>SI</option>
-		<option value="data_center" <?//=$select_data_center?>>Data Center</option>
-		<option value="baie_ipstor" <?//=$select_baie_ipstor?>>Baie/IPSTOR</option>
-	</select>
-</center></br></br>-->
-
 <?php
 	require_once 'calculsMeteoVirtu.php';
 ?>
@@ -83,35 +75,36 @@
 <?php
 	if ($type == "SI") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>Vue globale</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>Vue globale Virtualisation</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=data_center" target="_self">Virtualisation</a></td><td><img src="images/pluvieux.png"></td>
+			<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=data_center" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu ?></td>
 		</tr>
 	</table>
-	
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
 
 	if ($type == "data_center" && $target == "data_center") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
 			<th></th><th></th><th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Ampere</td><td style="color: black;" colspan=2>SNP2 - Franklin</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1</td><td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td><img src="images/pluvieux.png"></td><td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP2" target="_self">Virtualisation</a></td><td><img src="images/pluvieux.png"></td>
+			<td><a href="?type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td><?php echo $meteoVirtu_Ampere_N2 ?></td>
+			<td><a href="?type=data_center&target=SNP2" target="_self">Virtualisation</a></td><td><?php echo $meteoVirtu_Franklin_N2 ?></td>
 		</tr>
 	</table>
-	<a href="./include/equipements/virtualisation.php" target="_self">Retour</a>
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -119,27 +112,27 @@
 <?php
 	if ($type == "data_center" && $target == "SNP1") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP1</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Virtualisation</td>
 	  	</tr>
+		
+		<?php
+			foreach ($SNP1_Clusters as $Cluster) {
+		?>
+		
 	  	<tr>
-	  		<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP1_clus1" target="_self">NUTAMPPRD</a></td><td><img src="images/soleil.png"></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $Cluster;?>" target="_self"><?php echo $Cluster;?></a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AMPERE_'.$Cluster}; ?></td>
 	  	</tr>
-	  	<tr>
-			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP1_clus2" target="_self">ORAAMPPRD</a></td><td><img src="images/pluvieux.png"></td>
-		</tr>
-		<tr>
-			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP1_clus3" target="_self">VSPAMPRD</a></td><td><img src="images/pluvieux.png"></td>
-		</tr>
-		<tr>
-			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP1_clus4" target="_self">VSPPRDSII</a></td><td><img src="images/pluvieux.png"></td>
-		</tr>
+		
+		<?php
+			}
+		?>
 	</table>
-	<a href="./include/equipements/virtualisation.php?type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
 ?>
@@ -147,27 +140,73 @@
 <?php
 	if ($type == "data_center" && $target == "SNP2") {
 ?>
-	<table class="tableau_meteo">
+	<table class="tableau_meteo_middle">
 	  	<tr>
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black;" colspan=2>SNP2</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Virtualisation</td>
 	  	</tr>
+		
+		<?php
+			foreach ($SNP2_Clusters as $Cluster) {
+		?>
+		
 	  	<tr>
-	  		<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP2_clus1" target="_self">NUTAMPPRD</a></td><td><img src="images/soleil.png"></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_Virtu<?php echo $Cluster;?>" target="_self"><?php echo $Cluster;?></a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FRANKLIN_'.$Cluster}; ?></td>
 	  	</tr>
-	  	<tr>
-			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP2_clus2" target="_self">ORAAMPPRD</a></td><td><img src="images/pluvieux.png"></td>
-		</tr>
-		<tr>
-			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP2_clus3" target="_self">VSPAMPRD</a></td><td><img src="images/pluvieux.png"></td>
-		</tr>
-		<tr>
-			<td><a href="./include/equipements/virtualisation.php?type=data_center&target=SNP2_clus4" target="_self">VSPPRDSII</a></td><td><img src="images/pluvieux.png"></td>
-		</tr>
+
+		<?php
+			}
+		?>
+		
 	</table>
-	<a href="./include/equipements/virtualisation.php?type=data_center&target=data_center" target="_self">Retour</a>
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
+	}
+?>
+
+<?php
+
+	foreach ($SNP1_Clusters as $Cluster) {
+		if ($type == "data_center" && $target == "SNP1_Virtu" . $Cluster) {
+		$environnement = "Virtu";
+		$site = "AMPERE";
+		$type = "CPU";
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='CPU utilisé (%)' AND Site='AMPERE'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
+?>
+	<table class="tableau_meteo_graph">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Virtualisation</td>
+	  	</tr>
+		
+		<?php
+			foreach ($SNP1_Clusters as $Cluster) {
+		?>
+		
+	  	<tr>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $Cluster;?>" target="_self"><?php echo $Cluster;?></a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AMPERE_'.$Cluster}; ?></td>
+	  	</tr>
+		
+		<?php
+			}
+		?>
+	</table>
+	</br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	</br>
+<?php
+	include 'amchart_virtualisation.php';
+	}
+?>
+<?php	
 	}
 ?>
