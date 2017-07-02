@@ -130,7 +130,7 @@
 	  		<td style="color: black;" colspan=2>SNP1 - VEEAM</td><td style="color: black;" colspan=2>SNP2 - VEEAM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="/<?php //echo $url_interne_veeam;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegardes de VMs</a></td><td><?php //echo $meteoVEEAM_AMPERE ?></td><td><a href="/<?php //echo $url_interne_veeam;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegardes de VMs</a></td><td><?php //echo $meteoVEEAM_FRANKLIN ?></td>
+	  		<td><a href="/<?php //echo $url_interne_veeam;?>&type=data_center&target=SNP1" target="_self">Sauvegardes de VMs</a></td><td><?php //echo $meteoVEEAM_AMPERE ?></td><td><a href="/<?php //echo $url_interne_veeam;?>&type=data_center&target=SNP2" target="_self">Sauvegardes de VMs</a></td><td><?php //echo $meteoVEEAM_FRANKLIN ?></td>
 	  	</tr>
 		</table>
 		
@@ -144,10 +144,10 @@
 	  		<td style="color: black;" colspan=2>Vue globale - Stockage</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="/<?php //echo $url_interne_stockage;?>&type=data_center&target=data_center&origin=equipement" target="_self">Stockage</a></td><td><?php //echo $meteoStockage ?></td>
+	  		<td><a href="/<?php //echo $url_interne_stockage;?>&type=data_center&target=SNP1" target="_self">Stockage</a></td><td><?php //echo $meteoStockage ?></td>
 	  	</tr>
 	</table>-->
-	
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
 ?>

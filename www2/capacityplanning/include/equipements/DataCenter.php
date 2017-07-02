@@ -128,7 +128,8 @@
 	  	<tr>
 			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_DCAmpere;?>&type=SI" target="_self">Vue globale</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoDatacenter_SNP1 ?></td><td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_DCFranklin;?>&type=SI" target="_self">Vue globale</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoDatacenter_SNP2 ?></td>
 		</tr>
-		</table>	
+	</table>
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
 ?>

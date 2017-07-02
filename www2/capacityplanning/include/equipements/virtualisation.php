@@ -80,7 +80,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>Vue globale Virtualisation</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>Vue globale - Virtualisation</td>
 	  	</tr>
 	  	<tr>
 			<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=data_center" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu ?></td>

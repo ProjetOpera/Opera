@@ -13,8 +13,8 @@
 	}
 	
 	.tableau_meteo_middle {
-		width: 40%;
-		margin-left: 25%;
+		width: 20%;
+		margin-left: 35%;
 		background-color: #66A3C7;
 	}
 
@@ -116,7 +116,8 @@
 		<tr>
 			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_virtu;?>&type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu_Ampere_N2 ?></td>
 		</tr>
-	</table>	
+	</table>
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
 ?>
