@@ -1,6 +1,7 @@
 package com.msia.cp.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
@@ -8,13 +9,25 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "cp_tsm", schema = "inv_datacenter", catalog = "")
-public class TSMEntity {
+public class TSMEntity implements Serializable{
+    @Id @GeneratedValue
+    private Integer id;
     private String site;
     private int scratchtape;
     private int dbpctutil;
     private int libpctutil;
     private int stockscratchtape;
     private Timestamp date;
+
+    @Id
+    @Column(name = "Id")
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     @Basic
     @Column(name = "tsmsite")
@@ -66,7 +79,6 @@ public class TSMEntity {
         this.stockscratchtape = stockscratchtape;
     }
 
-    @Id // Pour les besoin d'hibernate, n'est pas considéré comme Id dans la table, à voir si cela pose problème
     @Column(name = "date_releve")
     public Timestamp getDate() {
         return date;

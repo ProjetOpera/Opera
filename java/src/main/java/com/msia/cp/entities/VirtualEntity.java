@@ -1,15 +1,17 @@
 package com.msia.cp.entities;
 
 import javax.persistence.*;
-import java.math.BigInteger;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  * Created by A618735 on 07/04/2017.
  */
 @Entity
-@Table(name = "inv_vcenter_cp", schema = "inv_datacenter")
-public class VirtualEntity {
+@Table(name = "inv_vcenter_cp", schema = "inv_datacenter", catalog = "")
+public class VirtualEntity implements Serializable {
+    @Id @GeneratedValue
+    private Integer Id;
     private String vcenter;
     private String dataCenter;
     private String cluster;
@@ -17,7 +19,7 @@ public class VirtualEntity {
     private Integer nbrVMs;
     private Integer nbrVMsOn;
     private Integer vMsOnHosts;
-    private BigInteger vCpUpCpu;
+    private Integer vCpUpCpu;
     private Integer totalMemoryPhyGb;
     private Integer usedMemoryGb;
     private Integer totalCpuMhz;
@@ -25,6 +27,17 @@ public class VirtualEntity {
     private Integer totalDiskspaceGb;
     private Integer usedDiskspaceGb;
     private Timestamp dateReleve;
+
+
+    @Id
+    @Column(name = "Id")
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
 
     @Basic
     @Column(name = "vcenter")
@@ -98,11 +111,11 @@ public class VirtualEntity {
 
     @Basic
     @Column(name = "vCPUpCPU")
-    public BigInteger getvCpUpCpu() {
+    public Integer getvCpUpCpu() {
         return vCpUpCpu;
     }
 
-    public void setvCpUpCpu(BigInteger vCpUpCpu) {
+    public void setvCpUpCpu(Integer vCpUpCpu) {
         this.vCpUpCpu = vCpUpCpu;
     }
 
@@ -166,7 +179,6 @@ public class VirtualEntity {
         this.usedDiskspaceGb = usedDiskspaceGb;
     }
 
-    @Id
     @Column(name = "date_releve")
     public Timestamp getDateReleve() {
         return dateReleve;
@@ -196,4 +208,5 @@ public class VirtualEntity {
                 ", dateReleve=" + dateReleve +
                 '}';
     }
+
 }

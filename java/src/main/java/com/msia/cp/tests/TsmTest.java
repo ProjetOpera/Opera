@@ -14,10 +14,10 @@ public class TsmTest {
         TsmDaoImpl tsm = new TsmDaoImpl();
         System.out.println("Taille de la liste tsm : " + tsm.findAllTsm().size());
 
-//        for (Object o : tsm.findAllTsm())
-//            System.out.println("  " + o.toString());
+        for (Object o : tsm.findAllTsm())
+            System.out.println("  " + o.toString());
 
-       // EnregistrementBdd.tsmVersVueGlobale();
+        EnregistrementBdd.tsmVersVueGlobale();
 
 
     }

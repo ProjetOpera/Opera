@@ -18,6 +18,7 @@ public class VueGlobaleTest {
         //vueG.deleteAllVueGlobale();
 
         EnregistrementBdd.tsmVersVueGlobale();
+        EnregistrementBdd.virtualVersVueGlobale();
         System.out.println("Taille de la liste vueG après : " + vueG.findAllVueGlobale().size());
 
 
@@ -35,15 +36,16 @@ public class VueGlobaleTest {
         vueG.createVueGloable(vue);*/
 
         System.out.println("Taille de la liste vueG : " + vueG.findAllVueGlobale().size());
-        System.out.println("Ampère : " + vueG.findAllBySite("Ampère").size());
+        System.out.println("Ampère : " + vueG.findAllBySite("AMP").size());
         System.out.println("Franklin : " + vueG.findAllBySite("Franklin").size());
+        System.out.println("GEO : " + vueG.findAllBySite("GEO").size());
 
-        System.out.println("Environnement Veeam : " + vueG.findAllByEnv("VEEAM").size());
+        System.out.println("Environnement Virtu : " + vueG.findAllByEnv("Virtualisation").size());
         System.out.println("Environnement TSM : " + vueG.findAllByEnv("TSM").size());
 
         System.out.println("Environnement TSM + site Ampère: " + vueG.findAllBySiteAndEnv("AMPERE", "TSM").size());
 
-        for (Object o : vueG.findAllBySiteAndEnv("AMPERE", "TSM")) {
+        for (Object o : vueG.findAllBySiteAndEnv("AMPERE", "Virtualisation")) {
             System.out.println("  " + o.toString());
         }
 

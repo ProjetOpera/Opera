@@ -21,6 +21,7 @@ public class VirtualDaoImpl implements IVirtualDAO{
     private Session session = null;
     private Transaction transaction = null;
 
+
     public ArrayList findAllVirtual() {
         ArrayList virtualList = new ArrayList();
         try {

@@ -38,6 +38,10 @@ public class Main {
             EnregistrementBdd.tsmVersVueGlobale();
             logger.info("Fin de l'enregistrement TSM vers Vue Globale");
 
+            logger.info("Lancement de l'enregistrement Virtualisation vers Vue Globale");
+            EnregistrementBdd.virtualVersVueGlobale();
+            logger.info("Fin de l'enregistrement Virtualisation vers Vue Globale");
+
             logger.info("Phase de calcul : début");
             CalculPrevisionnel CalculPrevisionnel = new com.msia.cp.util.CalculPrevisionnel();
 
