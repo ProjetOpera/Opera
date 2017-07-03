@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * Created by Cendri on 26/04/2017.
  */
 public class LogsDaoImpl implements ILogsDAO {
-    private static Logger logger = LoggerFactory.getLogger(TsmDaoImpl.class);
+    private static Logger logger = LoggerFactory.getLogger(LogsDaoImpl.class);
 
     private SessionFactory sessionFactory = new Configuration().configure("vueglobale.cfg.xml").buildSessionFactory();
     private Session session = null;

@@ -30,7 +30,7 @@ public class VirtualEntity implements Serializable {
 
 
     @Id
-    @Column(name = "Id")
+    @Column(name = "id_vcenter")
     public Integer getId() {
         return Id;
     }

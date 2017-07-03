@@ -20,7 +20,7 @@ public class TSMEntity implements Serializable{
     private Timestamp date;
 
     @Id
-    @Column(name = "Id")
+    @Column(name = "id_tsm")
     public Integer getId() {
         return id;
     }
