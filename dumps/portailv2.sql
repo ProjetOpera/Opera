@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 26 Avril 2017 à 20:25
+-- Généré le :  Lun 03 Juillet 2017 à 14:27
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 -- Structure de la table `applications`
 --
 
+DROP TABLE IF EXISTS `applications`
+
 CREATE TABLE `applications` (
   `id` int(11) NOT NULL,
   `nom_appli` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -46,13 +48,15 @@ CREATE TABLE `applications` (
 INSERT INTO `applications` (`id`, `nom_appli`, `url_appli`, `interne`, `serveur_bdd`, `type_serveur_bdd`, `nom_bdd`, `user_bdd`, `password`, `id_categories`) VALUES
 (1, 'Administration Portail', 'portailadmin', 1, 'localhost', 'MYSQL', 'portailv2', 'portailv2', 'Portailv2', 1),
 (15, 'Portail', 'portailv2', 1, '', 'MYSQL', '', '', '', 0),
-(16, 'Capacity Planning', 'capacityplanning', 1, 'localhost', 'MYSQL', 'capacityplanning', 'capacityplanning', 'Capacityplanning', 2);
+(16, 'Capacity Planning', 'capacityplanning', 1, 'localhost', 'MYSQL', 'capacityplanning', 'capacityplanning', 'capacityplanning', 2);
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `associations_contacts_groupes`
 --
+
+DROP TABLE IF EXISTS `associations_contacts_groupes`
 
 CREATE TABLE `associations_contacts_groupes` (
   `id_groupes` int(11) NOT NULL,
@@ -72,6 +76,8 @@ INSERT INTO `associations_contacts_groupes` (`id_groupes`, `id_contacts`) VALUES
 -- Structure de la table `associations_groupes`
 --
 
+DROP TABLE IF EXISTS `associations_groupes`
+
 CREATE TABLE `associations_groupes` (
   `id_groupe_parent` int(11) NOT NULL,
   `id_groupe` int(11) NOT NULL
@@ -82,6 +88,8 @@ CREATE TABLE `associations_groupes` (
 --
 -- Structure de la table `categories`
 --
+
+DROP TABLE IF EXISTS `categories`
 
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
@@ -107,6 +115,9 @@ INSERT INTO `categories` (`id`, `nom_categorie`, `couleur_categorie`) VALUES
 -- Doublure de structure pour la vue `contacts`
 -- (Voir ci-dessous la vue réelle)
 --
+
+DROP TABLE IF EXISTS `contacts`
+
 CREATE TABLE `contacts` (
 `id` bigint(20)
 ,`login_contact` varchar(255)
@@ -119,6 +130,8 @@ CREATE TABLE `contacts` (
 --
 -- Structure de la table `groupes`
 --
+
+DROP TABLE IF EXISTS `groupes`
 
 CREATE TABLE `groupes` (
   `id` int(11) NOT NULL,
@@ -141,6 +154,8 @@ INSERT INTO `groupes` (`id`, `nom`, `description`) VALUES
 -- Structure de la table `group_has_level_acces`
 --
 
+DROP TABLE IF EXISTS `group_has_level_acces`
+
 CREATE TABLE `group_has_level_acces` (
   `id_groupes` int(11) NOT NULL,
   `id_level_access` int(11) NOT NULL,
@@ -160,6 +175,8 @@ INSERT INTO `group_has_level_acces` (`id_groupes`, `id_level_access`, `id_applic
 --
 -- Structure de la table `level_access`
 --
+
+DROP TABLE IF EXISTS `level_access`
 
 CREATE TABLE `level_access` (
   `id` int(11) NOT NULL,
@@ -183,6 +200,8 @@ INSERT INTO `level_access` (`id`, `level`, `description`) VALUES
 --
 -- Structure de la table `libelles`
 --
+
+DROP TABLE IF EXISTS `libelles`
 
 CREATE TABLE `libelles` (
   `id` int(11) NOT NULL,
@@ -410,6 +429,8 @@ INSERT INTO `libelles` (`id`, `code`, `description`) VALUES
 --
 -- Structure de la table `libelles_trad`
 --
+
+DROP TABLE IF EXISTS `libelles_trad`
 
 CREATE TABLE `libelles_trad` (
   `id` int(11) NOT NULL,
@@ -840,6 +861,8 @@ INSERT INTO `libelles_trad` (`id`, `id_libelle`, `traduction`, `id_lookup_values
 -- Structure de la table `lookup_values`
 --
 
+DROP TABLE IF EXISTS `lookup_values`
+
 CREATE TABLE `lookup_values` (
   `id` int(11) NOT NULL,
   `type` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -859,6 +882,8 @@ INSERT INTO `lookup_values` (`id`, `type`, `value`) VALUES
 --
 -- Structure de la table `menus`
 --
+
+DROP TABLE IF EXISTS `menus`
 
 CREATE TABLE `menus` (
   `id` int(11) NOT NULL,
@@ -896,21 +921,21 @@ INSERT INTO `menus` (`id`, `Id_Textuel`, `url`, `lien`, `code_libelle`, `ordre`,
 (203, 'ADMINISTRATION_PORTAIL_CONTACTS', 'commun/contacts.php', NULL, 158, 1, 0, 199, 1, 1),
 (226, 'ADMINISTRATION_PORTAIL_LOV', 'typesvaleurs/typesvaleurs.inc.php', NULL, 178, 4, 0, 199, 1, 1),
 (229, 'MENU_CAPACITYPLANNING_SEUILS_ALERTES', 'seuils_alertes/seuils_alertes.php', NULL, 243, 4, 0, -1, 16, 2),
-(234, 'MENU_CAPACITYPLANNING_SI', 'si/si.php', NULL, 247, 1, 0, -1, 16, 2),
-(235, 'MENU_CAPACITYPLANNING_DATACENTER', 'datacenter/datacenter.php', NULL, 248, 2, 0, -1, 16, 2),
-(236, 'MENU_CAPACITYPLANNING_AMPERE', 'datacenter/ampere.php', NULL, 249, 1, 0, 235, 16, 2),
-(237, 'MENU_CAPACITYPLANNING_FRANKLIN', 'datacenter/franklin.php', NULL, 250, 2, 0, 235, 16, 2),
-(238, 'MENU_CAPACITYPLANNING_EQUIPEMENTS', 'equipements/equipements.php', NULL, 251, 3, 1, -1, 16, 2),
+(234, 'MENU_CAPACITYPLANNING_SI', 'equipements/si.php', NULL, 247, 1, 1, -1, 16, 2),
+(235, 'MENU_CAPACITYPLANNING_DATACENTER', 'equipements/DataCenter.php', NULL, 248, 2, 0, -1, 16, 2),
+(236, 'MENU_CAPACITYPLANNING_AMPERE', 'equipements/DCAmpere.php', NULL, 249, 1, 0, 235, 16, 2),
+(237, 'MENU_CAPACITYPLANNING_FRANKLIN', 'equipements/DCFranklin.php', NULL, 250, 2, 0, 235, 16, 2),
+(238, 'MENU_CAPACITYPLANNING_EQUIPEMENTS', 'equipements/equipements.php', NULL, 251, 3, 0, -1, 16, 2),
 (239, 'MENU_CAPACITYPLANNING_VIRTUALISATION', 'equipements/virtualisation.php', NULL, 246, 1, 0, 238, 16, 2),
-(240, 'MENU_CAPACITYPLANNING_VEEAM', 'equipements/veeam.php', NULL, 245, 2, 0, 238, 16, 2),
-(241, 'MENU_CAPACITYPLANNING_STOCKAGE', 'equipements/stockage.php', NULL, 241, 3, 0, 238, 16, 2),
-(243, 'MENU_CAPACITYPLANNING_SAUVEGARDE', 'equipements/sauvegarde.php', NULL, 244, 4, 0, 238, 16, 2);
+(243, 'MENU_CAPACITYPLANNING_SAUVEGARDE', 'equipements/sauvegarde.php', NULL, 244, 2, 0, 238, 16, 2);
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `param_appli`
 --
+
+DROP TABLE IF EXISTS `param_appli`
 
 CREATE TABLE `param_appli` (
   `id` int(11) NOT NULL,
@@ -935,6 +960,8 @@ INSERT INTO `param_appli` (`id`, `code_param`, `type_param`, `valeur_param_int`,
 -- Structure de la table `typevaleur`
 --
 
+DROP TABLE IF EXISTS `typevaleur`
+
 CREATE TABLE `typevaleur` (
   `id_typevaleur` bigint(20) NOT NULL,
   `code` varchar(50) COLLATE utf8_bin NOT NULL,
@@ -957,6 +984,8 @@ INSERT INTO `typevaleur` (`id_typevaleur`, `code`, `description`) VALUES
 --
 -- Structure de la table `typevaleur_items`
 --
+
+DROP TABLE IF EXISTS `typevaleur_items`
 
 CREATE TABLE `typevaleur_items` (
   `id` bigint(20) NOT NULL,
