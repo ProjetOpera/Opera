@@ -167,7 +167,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN - TSM</td>
 	  	</tr>
 	  	<tr>
 	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSMBandes_Franklin ?></td>
@@ -437,7 +437,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN - TSM</td>
 	  	</tr>
 	  	<tr>
 	  		<td style="text-align: left; padding-left: 10px;"><a style="color: #2c3e50;" href="?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSMBandes_Franklin ?></td>
@@ -490,7 +490,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN - TSM</td>
 	  	</tr>
 	  	<tr>
 	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSMBandes_Franklin ?></td>
@@ -544,7 +544,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN - TSM</td>
 	  	</tr>
 	  	<tr>
 	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSMBandes_Franklin ?></td>
@@ -598,7 +598,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN - TSM</td>
 	  	</tr>
 	  	<tr>
 	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_TSM_Bandes" target="_self">Bandes</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSMBandes_Franklin ?></td>

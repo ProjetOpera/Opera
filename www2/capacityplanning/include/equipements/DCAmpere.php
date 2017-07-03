@@ -97,7 +97,7 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 		<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - TSM</td>
+	  		<td style="color: black;" colspan=2>AMPERE</td>
 	  	</tr>
 	  	<tr>
 			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_sauvegarde;?>&type=data_center&target=SNP1" target="_self">Sauvegarde TSM</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSM_AMPERE ?></td>
@@ -111,7 +111,7 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 		<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Virtu</td>
+	  		<td style="color: black;" colspan=2>AMPERE</td>
 	  	</tr>
 		<tr>
 			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_virtu;?>&type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu_Ampere_N2 ?></td>

@@ -97,7 +97,7 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 		<tr>
-	  		<td style="color: black;" colspan=2>SNP2 - TSM</td>
+	  		<td style="color: black;" colspan=2>FRANKLIN</td>
 	  	</tr>
 	  	<tr>
 			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_sauvegarde;?>&type=data_center&target=SNP2" target="_self">Sauvegarde TSM</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSM_FRANKLIN ?></td>
@@ -111,7 +111,7 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 		<tr>
-	  		<td style="color: black;" colspan=2>SNP2 - Virtu</td>
+	  		<td style="color: black;" colspan=2>FRANKLIN</td>
 	  	</tr>
 		<tr>
 			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_virtu;?>&type=data_center&target=SNP2" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu_Franklin_N2 ?></td>

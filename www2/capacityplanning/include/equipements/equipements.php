@@ -13,8 +13,8 @@
 	}
 	
 	.tableau_meteo_middle {
-		width: 40%;
-		margin-left: 25%;
+		width: 20%;
+		margin-left: 35%;
 		background-color: #66A3C7;
 	}
 
