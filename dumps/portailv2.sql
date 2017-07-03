@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `applications`
 --
 
-DROP TABLE IF EXISTS `applications`
+DROP TABLE IF EXISTS `applications`;
 
 CREATE TABLE `applications` (
   `id` int(11) NOT NULL,
@@ -56,7 +56,7 @@ INSERT INTO `applications` (`id`, `nom_appli`, `url_appli`, `interne`, `serveur_
 -- Structure de la table `associations_contacts_groupes`
 --
 
-DROP TABLE IF EXISTS `associations_contacts_groupes`
+DROP TABLE IF EXISTS `associations_contacts_groupes`;
 
 CREATE TABLE `associations_contacts_groupes` (
   `id_groupes` int(11) NOT NULL,
@@ -76,7 +76,7 @@ INSERT INTO `associations_contacts_groupes` (`id_groupes`, `id_contacts`) VALUES
 -- Structure de la table `associations_groupes`
 --
 
-DROP TABLE IF EXISTS `associations_groupes`
+DROP TABLE IF EXISTS `associations_groupes`;
 
 CREATE TABLE `associations_groupes` (
   `id_groupe_parent` int(11) NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE `associations_groupes` (
 -- Structure de la table `categories`
 --
 
-DROP TABLE IF EXISTS `categories`
+DROP TABLE IF EXISTS `categories`;
 
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
@@ -116,7 +116,7 @@ INSERT INTO `categories` (`id`, `nom_categorie`, `couleur_categorie`) VALUES
 -- (Voir ci-dessous la vue réelle)
 --
 
-DROP TABLE IF EXISTS `contacts`
+DROP TABLE IF EXISTS `contacts`;
 
 CREATE TABLE `contacts` (
 `id` bigint(20)
@@ -131,7 +131,7 @@ CREATE TABLE `contacts` (
 -- Structure de la table `groupes`
 --
 
-DROP TABLE IF EXISTS `groupes`
+DROP TABLE IF EXISTS `groupes`;
 
 CREATE TABLE `groupes` (
   `id` int(11) NOT NULL,
@@ -154,7 +154,7 @@ INSERT INTO `groupes` (`id`, `nom`, `description`) VALUES
 -- Structure de la table `group_has_level_acces`
 --
 
-DROP TABLE IF EXISTS `group_has_level_acces`
+DROP TABLE IF EXISTS `group_has_level_acces`;
 
 CREATE TABLE `group_has_level_acces` (
   `id_groupes` int(11) NOT NULL,
@@ -176,7 +176,7 @@ INSERT INTO `group_has_level_acces` (`id_groupes`, `id_level_access`, `id_applic
 -- Structure de la table `level_access`
 --
 
-DROP TABLE IF EXISTS `level_access`
+DROP TABLE IF EXISTS `level_access`;
 
 CREATE TABLE `level_access` (
   `id` int(11) NOT NULL,
@@ -201,7 +201,7 @@ INSERT INTO `level_access` (`id`, `level`, `description`) VALUES
 -- Structure de la table `libelles`
 --
 
-DROP TABLE IF EXISTS `libelles`
+DROP TABLE IF EXISTS `libelles`;
 
 CREATE TABLE `libelles` (
   `id` int(11) NOT NULL,
@@ -430,7 +430,7 @@ INSERT INTO `libelles` (`id`, `code`, `description`) VALUES
 -- Structure de la table `libelles_trad`
 --
 
-DROP TABLE IF EXISTS `libelles_trad`
+DROP TABLE IF EXISTS `libelles_trad`;
 
 CREATE TABLE `libelles_trad` (
   `id` int(11) NOT NULL,
@@ -861,7 +861,7 @@ INSERT INTO `libelles_trad` (`id`, `id_libelle`, `traduction`, `id_lookup_values
 -- Structure de la table `lookup_values`
 --
 
-DROP TABLE IF EXISTS `lookup_values`
+DROP TABLE IF EXISTS `lookup_values`;
 
 CREATE TABLE `lookup_values` (
   `id` int(11) NOT NULL,
@@ -883,7 +883,7 @@ INSERT INTO `lookup_values` (`id`, `type`, `value`) VALUES
 -- Structure de la table `menus`
 --
 
-DROP TABLE IF EXISTS `menus`
+DROP TABLE IF EXISTS `menus`;
 
 CREATE TABLE `menus` (
   `id` int(11) NOT NULL,
@@ -935,7 +935,7 @@ INSERT INTO `menus` (`id`, `Id_Textuel`, `url`, `lien`, `code_libelle`, `ordre`,
 -- Structure de la table `param_appli`
 --
 
-DROP TABLE IF EXISTS `param_appli`
+DROP TABLE IF EXISTS `param_appli`;
 
 CREATE TABLE `param_appli` (
   `id` int(11) NOT NULL,
@@ -960,7 +960,7 @@ INSERT INTO `param_appli` (`id`, `code_param`, `type_param`, `valeur_param_int`,
 -- Structure de la table `typevaleur`
 --
 
-DROP TABLE IF EXISTS `typevaleur`
+DROP TABLE IF EXISTS `typevaleur`;
 
 CREATE TABLE `typevaleur` (
   `id_typevaleur` bigint(20) NOT NULL,
@@ -985,7 +985,7 @@ INSERT INTO `typevaleur` (`id_typevaleur`, `code`, `description`) VALUES
 -- Structure de la table `typevaleur_items`
 --
 
-DROP TABLE IF EXISTS `typevaleur_items`
+DROP TABLE IF EXISTS `typevaleur_items`;
 
 CREATE TABLE `typevaleur_items` (
   `id` bigint(20) NOT NULL,
