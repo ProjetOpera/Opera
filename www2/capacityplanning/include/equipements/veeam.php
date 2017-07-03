@@ -86,7 +86,7 @@
 			<td><a href="?type=data_center&target=data_center" target="_self">Sauvegarde des VMs</a></td><td><?php echo $meteoVEEAM ?></td>
 		</tr>
 	</table>
-	
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
 
@@ -205,7 +205,7 @@
 		$environnement = "VEEAM";
 		$site = "AMPERE";
 		$type = "volume";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='VEEAM' AND Label='Volumétrie (%)' AND Site='AMPERE'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='VEEAM' AND Label='Volumétrie (%)' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -243,7 +243,7 @@
 		$environnement = "VEEAM";
 		$site = "AMPERE";
 		$type = "licences";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='VEEAM' AND Label='Licences dispo' AND Site='AMPERE'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='VEEAM' AND Label='Licences dispo' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -281,7 +281,7 @@
 		$environnement = "VEEAM";
 		$site = "FRANKLIN";
 		$type = "volume";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='VEEAM' AND Label='Volumétrie (%)' AND Site='FRANKLIN'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='VEEAM' AND Label='Volumétrie (%)' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];
@@ -319,7 +319,7 @@
 		$environnement = "VEEAM";
 		$site = "FRANKLIN";
 		$type = "licences";
-		$result = $connexion->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='VEEAM' AND Label='Licences dispo' AND Site='FRANKLIN'");
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='VEEAM' AND Label='Licences dispo' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$seuil = $row['Seuil'];

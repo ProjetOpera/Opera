@@ -208,45 +208,45 @@
 	}
 	
 	if ($test_meteoVEEAM_AmpereN2 == 0)
-			{
-				$meteoVEEAM_AMPERE = "<img src='images/soleil.png'>";
-			}
-			else if ($test_meteoVEEAM_AmpereN2 == 1)
-			{
-				$meteoVEEAM_AMPERE = "<img src='images/nuageux.png'>";
-				$test_meteoVEEAM_N3++;
-			}
-			else if ($test_meteoVEEAM_AmpereN2 >= 2)
-			{
-				$meteoVEEAM_AMPERE = "<img src='images/pluvieux.png'>";
-				$test_meteoVEEAM_N3++;
-			}
-			
-			if ($test_meteoVEEAM_FranklinN2 == 0)
-			{
-				$meteoVEEAM_FRANKLIN = "<img src='images/soleil.png'>";
-			}
-			else if ($test_meteoVEEAM_FranklinN2 == 1)
-			{
-				$meteoVEEAM_FRANKLIN = "<img src='images/nuageux.png'>";
-				$test_meteoVEEAM_N3++;
-			}
-			else if ($test_meteoVEEAM_FranklinN2 >= 2)
-			{
-				$meteoVEEAM_FRANKLIN = "<img src='images/pluvieux.png'>";
-				$test_meteoVEEAM_N3++;
-			}
-			
-			if ($test_meteoVEEAM_N3 == 0)
-			{
-				$meteoVEEAM = "<img src='images/soleil.png'>";
-			}
-			else if ($test_meteoVEEAM_N3 == 1)
-			{
-				$meteoVEEAM = "<img src='images/nuageux.png'>";
-			}
-			else if ($test_meteoVEEAM_N3 >= 2)
-			{
-				$meteoVEEAM = "<img src='images/pluvieux.png'>";
-			}
+	{
+		$meteoVEEAM_AMPERE = "<img src='images/soleil.png'>";
+	}
+	else if ($test_meteoVEEAM_AmpereN2 == 1)
+	{
+		$meteoVEEAM_AMPERE = "<img src='images/nuageux.png'>";
+		$test_meteoVEEAM_N3++;
+	}
+	else if ($test_meteoVEEAM_AmpereN2 >= 2)
+	{
+		$meteoVEEAM_AMPERE = "<img src='images/pluvieux.png'>";
+		$test_meteoVEEAM_N3++;
+	}
+	
+	if ($test_meteoVEEAM_FranklinN2 == 0)
+	{
+		$meteoVEEAM_FRANKLIN = "<img src='images/soleil.png'>";
+	}
+	else if ($test_meteoVEEAM_FranklinN2 == 1)
+	{
+		$meteoVEEAM_FRANKLIN = "<img src='images/nuageux.png'>";
+		$test_meteoVEEAM_N3++;
+	}
+	else if ($test_meteoVEEAM_FranklinN2 >= 2)
+	{
+		$meteoVEEAM_FRANKLIN = "<img src='images/pluvieux.png'>";
+		$test_meteoVEEAM_N3++;
+	}
+	
+	if ($test_meteoVEEAM_N3 == 0)
+	{
+		$meteoVEEAM = "<img src='images/soleil.png'>";
+	}
+	else if ($test_meteoVEEAM_N3 == 1)
+	{
+		$meteoVEEAM = "<img src='images/nuageux.png'>";
+	}
+	else if ($test_meteoVEEAM_N3 >= 2)
+	{
+		$meteoVEEAM = "<img src='images/pluvieux.png'>";
+	}
 ?>

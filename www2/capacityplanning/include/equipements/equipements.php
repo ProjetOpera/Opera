@@ -13,7 +13,7 @@
 	}
 	
 	.tableau_meteo_middle {
-		width: 50%;
+		width: 40%;
 		margin-left: 25%;
 		background-color: #66A3C7;
 	}
@@ -70,14 +70,16 @@
 		$target = $_GET['target'];
 	}
 	
-	if (isset($_GET['origin'])) {
+	/*if (isset($_GET['origin'])) {
 		$origin = $_GET['origin'];
-	}
+	}*/
 ?>
 
 <?php
 	require_once 'calculsMeteoTSM.php';
 	require_once 'calculsMeteoVEEAM.php';
+	require_once 'calculsMeteoStockage.php';
+	require_once 'calculsMeteoVirtu.php';
 ?>
 
 <?php			
@@ -86,6 +88,8 @@
 	$url_interne_veeam = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_VEEAM' //$id_textuel_menu_veeam
 	);
 	$url_interne_stockage = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_STOCKAGE' //$id_textuel_menu_stockage
+	);
+	$url_interne_virtu = getInternalUrl($ressourceBDD_appli, $line_tum['nom_appli'], 'MENU_CAPACITYPLANNING_VIRTUALISATION' //$id_textuel_menu_virtu
 	);
 ?>
 
@@ -100,13 +104,25 @@
 	  		<td style="color: black;" colspan=2>SNP1 - TSM</td><td style="color: black;" colspan=2>SNP2 - TSM</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="/<?php echo $url_interne_sauvegarde;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM_AMPERE ?></td><td><a href="/<?php echo $url_interne_sauvegarde;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegarde TSM</a></td><td><?php echo $meteoTSM_FRANKLIN ?></td>
+			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_sauvegarde;?>&type=data_center&target=SNP1" target="_self">Sauvegarde TSM</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSM_AMPERE ?></td><td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_sauvegarde;?>&type=data_center&target=SNP2" target="_self">Sauvegarde TSM</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoTSM_FRANKLIN ?></td>
 		</tr>
 		</table>
 		
 		</br></br>
 		
 		<table class="tableau_meteo_middle">
+		<tr>
+			<th></th><th></th><th></th><th></th>
+		</tr>
+		<tr>
+	  		<td style="color: black;" colspan=2>SNP1 - Virtu</td><td style="color: black;" colspan=2>SNP2 - Virtu</td>
+	  	</tr>
+	  	<tr>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_virtu;?>&type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu_Ampere_N2 ?></td><td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_virtu;?>&type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu_Franklin_N2 ?></td>
+	  	</tr>
+		</table>
+		
+		<!--<table class="tableau_meteo_middle">
 		<tr>
 			<th></th><th></th><th></th><th></th>
 		</tr>
@@ -114,7 +130,7 @@
 	  		<td style="color: black;" colspan=2>SNP1 - VEEAM</td><td style="color: black;" colspan=2>SNP2 - VEEAM</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="/<?php echo $url_interne_veeam;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegardes de VMs</a></td><td><?php echo $meteoVEEAM_AMPERE ?></td><td><a href="/<?php echo $url_interne_veeam;?>&type=data_center&target=data_center&origin=equipement" target="_self">Sauvegardes de VMs</a></td><td><?php echo $meteoVEEAM_FRANKLIN ?></td>
+	  		<td><a href="/<?php //echo $url_interne_veeam;?>&type=data_center&target=SNP1" target="_self">Sauvegardes de VMs</a></td><td><?php //echo $meteoVEEAM_AMPERE ?></td><td><a href="/<?php //echo $url_interne_veeam;?>&type=data_center&target=SNP2" target="_self">Sauvegardes de VMs</a></td><td><?php //echo $meteoVEEAM_FRANKLIN ?></td>
 	  	</tr>
 		</table>
 		
@@ -125,13 +141,13 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 		<tr>
-	  		<td style="color: black;" colspan=2>SNP1 - Stockage</td><td style="color: black;" colspan=2>SNP2 - Stockage</td>
+	  		<td style="color: black;" colspan=2>Vue globale - Stockage</td>
 	  	</tr>
 	  	<tr>
-	  		<td><a href="/<?php echo $url_interne_stockage;?>&type=data_center&target=data_center&origin=equipement" target="_self">Stockage</a></td><td><?php echo $meteoStockage_AMPERE ?></td><td><a href="/<?php echo $url_interne_stockage;?>&type=data_center&target=data_center&origin=equipement" target="_self">Stockage</a></td><td><?php echo $meteoStockage_FRANKLIN ?></td>
+	  		<td><a href="/<?php //echo $url_interne_stockage;?>&type=data_center&target=SNP1" target="_self">Stockage</a></td><td><?php //echo $meteoStockage ?></td>
 	  	</tr>
-	</table>
-	
+	</table>-->
+	<a href="javascript:history.back()" target="_self">Retour</a>
 <?php
 	}
 ?>
