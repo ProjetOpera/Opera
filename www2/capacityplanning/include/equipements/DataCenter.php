@@ -13,8 +13,8 @@
 	}
 	
 	.tableau_meteo_middle {
-		width: 40%;
-		margin-left: 25%;
+		width: 20%;
+		margin-left: 35%;
 		background-color: #66A3C7;
 	}
 
@@ -120,13 +120,16 @@
 ?>
 	<table class="tableau_meteo_middle">
 	  	<tr>
-			<th></th><th></th><th></th><th></th>
+			<th></th><th></th>
 		</tr>
 		<tr>
-	  		<td style="color: black;" colspan=2>SNP1</td><td style="color: black;" colspan=2>SNP2</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>DataCenter</td>
 	  	</tr>
 	  	<tr>
-			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_DCAmpere;?>&type=SI" target="_self">Vue globale</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoDatacenter_SNP1 ?></td><td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_DCFranklin;?>&type=SI" target="_self">Vue globale</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoDatacenter_SNP2 ?></td>
+			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_DCAmpere;?>&type=SI" target="_self">AMPERE</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoDatacenter_SNP1 ?></td>
+		</tr>
+		<tr>
+			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_DCFranklin;?>&type=SI" target="_self">FRANKLIN</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoDatacenter_SNP2 ?></td>
 		</tr>
 	</table>
 	<a href="javascript:history.back()" target="_self">Retour</a>

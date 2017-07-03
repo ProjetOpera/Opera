@@ -112,7 +112,7 @@
 	  		<td style="color: black;" colspan=2>SI</td>
 	  	</tr>
 	  	<tr>
-			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_datacenter;?>&type=SI" target="_self">Vue globale</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoSI ?></td>
+			<td style="text-align: left; padding-left: 10px;"><a href="/<?php echo $url_interne_datacenter;?>&type=SI" target="_self">DataCenter</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoSI ?></td>
 		</tr>
 		</table>	
 <?php

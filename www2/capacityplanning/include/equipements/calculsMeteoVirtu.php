@@ -13,7 +13,7 @@
 	$capacity = array();
 	$SNP1_Clusters = array();
 	
-	if ($sql = $ressourceBDD_appli->query("SELECT DISTINCT Cluster from inv_datacenter.inv_vcenter_cp WHERE DataCenter='SNP1' ORDER BY Cluster ASC"))
+	if ($sql = $ressourceBDD_appli->query("SELECT DISTINCT Cluster from inv_datacenter.inv_vcenter_cp WHERE DataCenter='SNP1' AND Cluster NOT LIKE 'VSPGEO%' ORDER BY Cluster ASC"))
 	{
 		while ($temp = $sql->fetch())
 		{

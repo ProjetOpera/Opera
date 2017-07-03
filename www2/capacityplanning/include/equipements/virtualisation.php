@@ -80,7 +80,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>Vue globale - Virtualisation</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>Equipements</td>
 	  	</tr>
 	  	<tr>
 			<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=data_center" target="_self">Virtualisation</a></td><td style="text-align: right; padding-right: 10px;"><?php echo $meteoVirtu ?></td>
@@ -97,11 +97,11 @@
 			<th></th><th></th><th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1</td><td style="color: black; font-size: 20px;" colspan=2>SNP2</td>
+	  		<td style="color: black; font-size: 20px; text-align: center;" colspan=4>Virtualisation</td>
 	  	</tr>
 	  	<tr>
-			<td><a href="?type=data_center&target=SNP1" target="_self">Virtualisation</a></td><td><?php echo $meteoVirtu_Ampere_N2 ?></td>
-			<td><a href="?type=data_center&target=SNP2" target="_self">Virtualisation</a></td><td><?php echo $meteoVirtu_Franklin_N2 ?></td>
+			<td><a href="?type=data_center&target=SNP1" target="_self">AMPERE</a></td><td><?php echo $meteoVirtu_Ampere_N2 ?></td>
+			<td><a href="?type=data_center&target=SNP2" target="_self">FRANKLIN</a></td><td><?php echo $meteoVirtu_Franklin_N2 ?></td>
 		</tr>
 	</table>
 	<a href="javascript:history.back()" target="_self">Retour</a>
@@ -117,7 +117,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Virtualisation</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>AMPERE - Virtualisation</td>
 	  	</tr>
 		
 		<?php
@@ -145,7 +145,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP2 - Virtualisation</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN - Virtualisation</td>
 	  	</tr>
 		
 		<?php
@@ -173,6 +173,7 @@
 		$environnement = "Virtu";
 		$site = "AMPERE";
 		$type = "CPU";
+		$sav_cluster = $Cluster;
 		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='CPU utilisé (%)' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
@@ -185,7 +186,7 @@
 			<th></th><th></th>
 		</tr>
 	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>SNP1 - Virtualisation</td>
+	  		<td style="color: black; font-size: 20px;" colspan=2>AMPERE - Virtualisation</td>
 	  	</tr>
 		
 		<?php
@@ -193,7 +194,51 @@
 		?>
 		
 	  	<tr>
-	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $Cluster;?>" target="_self"><?php echo $Cluster;?></a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AMPERE_'.$Cluster}; ?></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a <?php if ($sav_cluster==$Cluster) { echo 'style="color: #2c3e50;"'; } ?> href="?type=data_center&target=SNP1_Virtu<?php echo $Cluster;?>" target="_self"><?php echo $Cluster;?></a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AMPERE_'.$Cluster}; ?></td>
+	  	</tr>
+		
+		<?php
+			}
+		?>
+	</table>
+	</br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	</br>
+<?php
+	include 'amchart_virtualisation.php';
+	}
+?>
+<?php	
+	}
+?>
+<?php
+	foreach ($SNP2_Clusters as $Cluster) {
+		if ($type == "data_center" && $target == "SNP2_Virtu" . $Cluster) {
+		$environnement = "Virtu";
+		$site = "AMPERE";
+		$type = "CPU";
+		$sav_cluster = $Cluster;
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='CPU utilisé (%)' AND Site='FRANKLIN'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuil = $row['Seuil'];
+			$alerte = $row['Alerte'];
+		}
+?>
+	<table class="tableau_meteo_graph">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN - Virtualisation</td>
+	  	</tr>
+		
+		<?php
+			foreach ($SNP2_Clusters as $Cluster) {
+		?>
+		
+	  	<tr>
+	  		<td style="text-align: left; padding-left: 10px;"><a <?php if ($sav_cluster==$Cluster) { echo 'style="color: #2c3e50;"'; } ?> href="?type=data_center&target=SNP2_Virtu<?php echo $Cluster;?>" target="_self"><?php echo $Cluster;?></a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FRANKLIN_'.$Cluster}; ?></td>
 	  	</tr>
 		
 		<?php
