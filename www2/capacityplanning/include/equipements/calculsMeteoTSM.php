@@ -27,7 +27,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom1 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom1, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='TSM' AND Site='AMPERE' GROUP BY Custom1"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -78,7 +78,7 @@
 		$alerte = 0;
 	}
 	
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom2, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='TSM' AND Site='AMPERE' GROUP BY Custom2"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -128,11 +128,11 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom3, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='TSM' AND Site='AMPERE' GROUP BY Custom3"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
-			$capacity = $temp['Custom3'];
+			$capacity = (int)$temp['Custom3'];
 		}
 	}
 	else
@@ -178,7 +178,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom4 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='AMPERE' AND Date_Releve=CURDATE()"))
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom4, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='TSM' AND Site='AMPERE' GROUP BY Custom4"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -228,7 +228,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom1 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom1, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='TSM' AND Site='FRANKLIN' GROUP BY Custom1"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -278,7 +278,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom2, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='TSM' AND Site='FRANKLIN' GROUP BY Custom2"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -328,7 +328,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom3 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom3, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='TSM' AND Site='FRANKLIN' GROUP BY Custom3"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -378,7 +378,7 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Custom2 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='TSM' AND Site='FRANKLIN' AND Date_Releve=CURDATE()"))
+	if ($sql = $ressourceBDD_appli->query("SELECT Custom4, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='TSM' AND Site='FRANKLIN' GROUP BY Custom4"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{

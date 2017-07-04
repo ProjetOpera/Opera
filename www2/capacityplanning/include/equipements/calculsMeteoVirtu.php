@@ -48,7 +48,7 @@
 	//$test_meteoVirtu_AmpereN2 = 0;
 	//$test_meteoVirtu_FranklinN2 = 0;
 
-	$capacity = 0;
+	//$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
 	$i = 0;
@@ -66,16 +66,19 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Cluster, Custom11, Custom12 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='Virtu' AND Site='AMPERE' AND Date_Releve=CURDATE() ORDER BY Cluster ASC"))
+	foreach ($SNP1_Clusters as $Cluster)
 	{
-		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		if ($sql = $ressourceBDD_appli->query("SELECT Custom3, Custom11, Custom12, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='Virtualisation' AND Site='AMP' AND Custom3='$Cluster' GROUP BY Custom3, Custom11, Custom12 ORDER BY Custom3 ASC"))
 		{
-			$capacity[] = $temp['Custom12'] / $temp['Custom11'] * 100;
+			while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+			{
+				$capacity[] = $temp['Custom12'] / $temp['Custom11'] * 100;
+			}
 		}
-	}
-	else
-	{
-		$capacity = 0;
+		else
+		{
+			//$capacity = 0;
+		}
 	}
 	foreach ($SNP1_Clusters as $Cluster)
 	{
@@ -109,7 +112,7 @@
 	/* ***** CPU SNP2 ***** */
 	/* ******************** */
 	
-	$capacity = 0;
+	//$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
 	$i = 0;
@@ -127,16 +130,19 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Cluster, Custom11, Custom12 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='Virtu' AND Site='FRANKLIN' AND Date_Releve=CURDATE() ORDER BY Cluster ASC"))
+	foreach ($SNP2_Clusters as $Cluster)
 	{
-		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		if ($sql = $ressourceBDD_appli->query("SELECT Custom3, Custom11, Custom12, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='Virtualisation' AND Site='FKL' AND Custom3='$Cluster' GROUP BY Custom3, Custom11, Custom12 ORDER BY Custom3 ASC"))
 		{
-			$capacity[] = $temp['Custom12'] / $temp['Custom11'] * 100;
+			while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+			{
+				$capacity[] = $temp['Custom12'] / $temp['Custom11'] * 100;
+			}
 		}
-	}
-	else
-	{
-		$capacity = 0;
+		else
+		{
+			$capacity = 0;
+		}
 	}
 	foreach ($SNP2_Clusters as $Cluster)
 	{
@@ -174,7 +180,7 @@
 	//$test_meteoVirtu_FranklinN2 = 0;
 	//$test_meteoVirtu_N3 = array();
 
-	$capacity = 0;
+	//$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
 	$i = 0;
@@ -192,16 +198,19 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Cluster, Custom13, Custom14 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='Virtu' AND Site='AMPERE' AND Date_Releve=CURDATE() ORDER BY Cluster ASC"))
+	foreach ($SNP1_Clusters as $Cluster)
 	{
-		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		if ($sql = $ressourceBDD_appli->query("SELECT Custom3, Custom13, Custom14, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='Virtualisation' AND Site='AMP' AND Custom3='$Cluster' GROUP BY Custom3, Custom13, Custom14 ORDER BY Custom3 ASC"))
 		{
-			$capacity[] = $temp['Custom14'] / $temp['Custom13'] * 100;
+			while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+			{
+				$capacity[] = $temp['Custom14'] / $temp['Custom13'] * 100;
+			}
 		}
-	}
-	else
-	{
-		$capacity = 0;
+		else
+		{
+			$capacity = 0;
+		}
 	}
 	foreach ($SNP1_Clusters as $Cluster)
 	{
@@ -235,7 +244,7 @@
 	/* ***** HDD SNP2 ***** */
 	/* ******************** */
 	
-	$capacity = 0;
+	//$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
 	$i = 0;
@@ -253,16 +262,19 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Cluster, Custom13, Custom14 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='Virtu' AND Site='FRANKLIN' AND Date_Releve=CURDATE() ORDER BY Cluster ASC"))
+	foreach ($SNP2_Clusters as $Cluster)
 	{
-		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		if ($sql = $ressourceBDD_appli->query("SELECT Custom3, Custom13, Custom14, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='Virtualisation' AND Site='FKL' AND Custom3='$Cluster' GROUP BY Custom3, Custom13, Custom14 ORDER BY Custom3 ASC"))
 		{
-			$capacity[] = $temp['Custom14'] / $temp['Custom13'] * 100;
+			while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+			{
+				$capacity[] = $temp['Custom14'] / $temp['Custom13'] * 100;
+			}
 		}
-	}
-	else
-	{
-		$capacity = 0;
+		else
+		{
+			$capacity = 0;
+		}
 	}
 	foreach ($SNP2_Clusters as $Cluster)
 	{
@@ -300,7 +312,7 @@
 	//$test_meteoVirtu_FranklinN2 = 0;
 	//$test_meteoVirtu_N3 = array();
 
-	$capacity = 0;
+	//$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
 	$i = 0;
@@ -318,16 +330,19 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Cluster, Custom9, Custom10 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='Virtu' AND Site='AMPERE' AND Date_Releve=CURDATE() ORDER BY Cluster ASC"))
+	foreach ($SNP1_Clusters as $Cluster)
 	{
-		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		if ($sql = $ressourceBDD_appli->query("SELECT Custom3, Custom9, Custom10, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='Virtualisation' AND Site='AMP' AND Custom3='$Cluster' GROUP BY Custom3, Custom9, Custom10 ORDER BY Custom3 ASC"))
 		{
-			$capacity[] = $temp['Custom10'] / $temp['Custom9'] * 100;
+			while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+			{
+				$capacity[] = $temp['Custom10'] / $temp['Custom9'] * 100;
+			}
 		}
-	}
-	else
-	{
-		$capacity = 0;
+		else
+		{
+			$capacity = 0;
+		}
 	}
 	foreach ($SNP1_Clusters as $Cluster)
 	{
@@ -361,7 +376,7 @@
 	/* ***** HDD SNP2 ***** */
 	/* ******************** */
 	
-	$capacity = 0;
+	//$capacity = 0;
 	$seuil = 0;
 	$alerte = 0;
 	$i = 0;
@@ -379,16 +394,19 @@
 		$seuil = 0;
 		$alerte = 0;
 	}
-	if ($sql = $ressourceBDD_appli->query("SELECT Cluster, Custom9, Custom10 from capacityplanning.vueglobale WHERE Prevision=0 AND Environnement='Virtu' AND Site='FRANKLIN' AND Date_Releve=CURDATE() ORDER BY Cluster ASC"))
+	foreach ($SNP2_Clusters as $Cluster)
 	{
-		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+		if ($sql = $ressourceBDD_appli->query("SELECT Custom3, Custom9, Custom10, MAX(Date_Releve) from capacityplanning.vueglobale WHERE Prevision=1 AND Environnement='Virtualisation' AND Site='FKL' AND Custom3='$Cluster' GROUP BY Custom3, Custom9, Custom10 ORDER BY Custom3 ASC"))
 		{
-			$capacity[] = $temp['Custom10'] / $temp['Custom9'] * 100;
+			while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
+			{
+				$capacity[] = $temp['Custom10'] / $temp['Custom9'] * 100;
+			}
 		}
-	}
-	else
-	{
-		$capacity = 0;
+		else
+		{
+			$capacity = 0;
+		}
 	}
 	foreach ($SNP2_Clusters as $Cluster)
 	{
