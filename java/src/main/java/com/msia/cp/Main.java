@@ -48,6 +48,9 @@ public class Main {
             for(int i = 1; i <= 90; i++)
             {
                 CalculPrevisionnel.PointXY_suivant("TSM", "AMPERE");
+                CalculPrevisionnel.PointXY_suivant("TSM", "FRANKLIN");
+                CalculPrevisionnel.PointXY_suivant("Virtualisation", "AMP");
+                CalculPrevisionnel.PointXY_suivant("Virtualisation", "FKL");
             }
             logger.info("Phase de calcul : fin");
         } catch (Exception e) {

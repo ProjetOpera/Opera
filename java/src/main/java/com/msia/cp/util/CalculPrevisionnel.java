@@ -197,7 +197,221 @@ public class CalculPrevisionnel {
 
             //Calcul Virtualisation Debut (11 Customs)
             if (Environnement_util == "Virtualisation") {
+                //Calcul Custom1 Debut
+                String PointXYSuivantCustom1 = "Erreur";
+                HashMap<Integer, PointXYString> liste_PointXYString = new HashMap<Integer, PointXYString>();
 
+                for (int i = 0; i < liste_vueG.size(); i++) {
+                    VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+                    //liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+                    liste_PointXYString.put(i, new PointXYString((int) vueG_entity.getDate().getTime() / 1000, vueG_entity.getCustom1()));
+                }
+
+                for (Entry<Integer, PointXYString> liste_PointXY_temp : liste_PointXYString.entrySet()) {
+                    Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
+                    PointXYString liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
+                    PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+                    PointXYSuivantCustom1 = liste_PointXY_temp_valeur.Y;
+                }
+
+                PointXYSuivantDate = PointXYSuivantDate + 86400;
+                //Calcul Custom1 Fin
+
+                //Calcul Custom2 Debut
+                String PointXYSuivantCustom2 = "Erreur";
+                HashMap<Integer, PointXYString> liste_PointXYString2 = new HashMap<Integer, PointXYString>();
+
+                for (int i = 0; i < liste_vueG.size(); i++) {
+                    VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+                    //liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+                    liste_PointXYString2.put(i, new PointXYString((int) vueG_entity.getDate().getTime() / 1000, vueG_entity.getCustom2()));
+                }
+
+                for (Entry<Integer, PointXYString> liste_PointXY_temp : liste_PointXYString2.entrySet()) {
+                    Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
+                    PointXYString liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
+                    PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+                    PointXYSuivantCustom2 = liste_PointXY_temp_valeur.Y;
+                }
+
+                PointXYSuivantDate = PointXYSuivantDate + 86400;
+                //Calcul Custom2 Fin
+
+                //Calcul Custom3 Debut
+                String PointXYSuivantCustom3 = "Erreur";
+                HashMap<Integer, PointXYString> liste_PointXYString3 = new HashMap<Integer, PointXYString>();
+
+                for (int i = 0; i < liste_vueG.size(); i++) {
+                    VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+                    //liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+                    liste_PointXYString3.put(i, new PointXYString((int) vueG_entity.getDate().getTime() / 1000, vueG_entity.getCustom3()));
+                }
+
+                for (Entry<Integer, PointXYString> liste_PointXY_temp : liste_PointXYString3.entrySet()) {
+                    Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
+                    PointXYString liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
+                    PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+                    PointXYSuivantCustom3 = liste_PointXY_temp_valeur.Y;
+                }
+
+                PointXYSuivantDate = PointXYSuivantDate + 86400;
+                //Calcul Custom3 Fin
+
+                //Calcul Custom4 Debut
+                String PointXYSuivantCustom4 = "Erreur";
+                HashMap<Integer, PointXYString> liste_PointXYString4 = new HashMap<Integer, PointXYString>();
+
+                for (int i = 0; i < liste_vueG.size(); i++) {
+                    VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+                    //liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+                    liste_PointXYString4.put(i, new PointXYString((int) vueG_entity.getDate().getTime() / 1000, vueG_entity.getCustom4()));
+                }
+
+                for (Entry<Integer, PointXYString> liste_PointXY_temp : liste_PointXYString4.entrySet()) {
+                    Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
+                    PointXYString liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
+                    PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+                    PointXYSuivantCustom4 = liste_PointXY_temp_valeur.Y;
+                }
+
+                PointXYSuivantDate = PointXYSuivantDate + 86400;
+                //Calcul Custom4 Fin
+
+                //Calcul Custom5 Debut
+                String PointXYSuivantCustom5 = "Erreur";
+                HashMap<Integer, PointXYString> liste_PointXYString5 = new HashMap<Integer, PointXYString>();
+
+                for (int i = 0; i < liste_vueG.size(); i++) {
+                    VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+                    //liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+                    liste_PointXYString5.put(i, new PointXYString((int) vueG_entity.getDate().getTime() / 1000, vueG_entity.getCustom5()));
+                }
+
+                for (Entry<Integer, PointXYString> liste_PointXY_temp : liste_PointXYString5.entrySet()) {
+                    Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
+                    PointXYString liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
+                    PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+                    PointXYSuivantCustom5 = liste_PointXY_temp_valeur.Y;
+                }
+
+                PointXYSuivantDate = PointXYSuivantDate + 86400;
+                //Calcul Custom5 Fin
+
+                //Calcul Custom6 Debut
+                String PointXYSuivantCustom6 = "Erreur";
+                HashMap<Integer, PointXYString> liste_PointXYString6 = new HashMap<Integer, PointXYString>();
+
+                for (int i = 0; i < liste_vueG.size(); i++) {
+                    VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+                    //liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+                    liste_PointXYString6.put(i, new PointXYString((int) vueG_entity.getDate().getTime() / 1000, vueG_entity.getCustom6()));
+                }
+
+                for (Entry<Integer, PointXYString> liste_PointXY_temp : liste_PointXYString6.entrySet()) {
+                    Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
+                    PointXYString liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
+                    PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+                    PointXYSuivantCustom6 = liste_PointXY_temp_valeur.Y;
+                }
+
+                PointXYSuivantDate = PointXYSuivantDate + 86400;
+                //Calcul Custom6 Fin
+
+                //Calcul Custom7 Debut
+                String PointXYSuivantCustom7 = "Erreur";
+                HashMap<Integer, PointXYString> liste_PointXYString7 = new HashMap<Integer, PointXYString>();
+
+                for (int i = 0; i < liste_vueG.size(); i++) {
+                    VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+                    //liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+                    liste_PointXYString7.put(i, new PointXYString((int) vueG_entity.getDate().getTime() / 1000, vueG_entity.getCustom7()));
+                }
+
+                for (Entry<Integer, PointXYString> liste_PointXY_temp : liste_PointXYString7.entrySet()) {
+                    Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
+                    PointXYString liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
+                    PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+                    PointXYSuivantCustom7 = liste_PointXY_temp_valeur.Y;
+                }
+
+                PointXYSuivantDate = PointXYSuivantDate + 86400;
+                //Calcul Custom7 Fin
+
+                //Calcul Custom9 Debut
+                String PointXYSuivantCustom9 = "Erreur";
+                HashMap<Integer, PointXYString> liste_PointXYString9 = new HashMap<Integer, PointXYString>();
+
+                for (int i = 0; i < liste_vueG.size(); i++) {
+                    VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+                    //liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+                    liste_PointXYString9.put(i, new PointXYString((int) vueG_entity.getDate().getTime() / 1000, vueG_entity.getCustom7()));
+                }
+
+                for (Entry<Integer, PointXYString> liste_PointXY_temp : liste_PointXYString9.entrySet()) {
+                    Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
+                    PointXYString liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
+                    PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+                    PointXYSuivantCustom9 = liste_PointXY_temp_valeur.Y;
+                }
+
+                PointXYSuivantDate = PointXYSuivantDate + 86400;
+                //Calcul Custom9 Fin
+
+                //Calcul Custom10 Debut
+                total = 0;
+                float PointXYSuivantCustom10 = 0;
+                HashMap<Integer, PointXY> liste_PointXY10 = new HashMap<Integer, PointXY>();
+
+                for (int i = 0; i < liste_vueG.size(); i++) {
+                    VueGlobaleEntity vueG_entity = (VueGlobaleEntity) liste_vueG.get(i);
+                    //liste_PointXY.put(id_SQL, new PointXY(datetimestamp, valeur));
+                    liste_PointXY10.put(i, new PointXY((int) vueG_entity.getDate().getTime() / 1000, Float.parseFloat(vueG_entity.getCustom10())));
+                    DerniereDateBD = vueG_entity.getDate().getTime() / 1000;
+                }
+
+                if (liste_PointXY10.size() < 30) {
+                    coef = (float) 1 / liste_PointXY10.size();
+                    ponderation = (float) 1 / liste_PointXY10.size();
+                } else {
+                    coef = (float) 1 / 30;
+                    ponderation = (float) 1 / 30;
+                }
+
+                for (Entry<Integer, PointXY> liste_PointXY_temp : liste_PointXY10.entrySet()) {
+                    Integer liste_PointXY_temp_cle = liste_PointXY_temp.getKey();
+                    PointXY liste_PointXY_temp_valeur = liste_PointXY_temp.getValue();
+                    PointXYSuivantDate = liste_PointXY_temp_valeur.X;
+                    PointXYSuivantCustom10 = liste_PointXY_temp_valeur.Y;
+
+                    if (liste_PointXY_temp_cle > 1 && liste_PointXY_temp_cle > liste_PointXY10.size() - 29) {
+                        PointXY point_temp = liste_PointXY10.get(liste_PointXY_temp_cle.intValue() - 1);
+                        total = total + (liste_PointXY_temp_valeur.Y - point_temp.Y) * ponderation;
+                        total_ponderation_inverse = total_ponderation_inverse + (1 - ponderation);
+                        ponderation = ponderation + coef;
+                    }
+                }
+
+                PointXYSuivantDate = PointXYSuivantDate + 86400;
+                PointXYSuivantCustom10 = PointXYSuivantCustom10 + total / total_ponderation_inverse;
+                //Calcul Custom10 Fin
+
+                //Instentiation vue
+                Timestamp date = new Timestamp(DerniereDateBD * 1000);
+                vue.setDate(date);
+                vue.setCustom1(String.valueOf(PointXYSuivantCustom1));
+                vue.setCustom2(String.valueOf(PointXYSuivantCustom2));
+                vue.setCustom3(String.valueOf(PointXYSuivantCustom3));
+                vue.setCustom4(String.valueOf(PointXYSuivantCustom4));
+                vue.setCustom5(String.valueOf(PointXYSuivantCustom5));
+                vue.setCustom6(String.valueOf(PointXYSuivantCustom6));
+                vue.setCustom7(String.valueOf(PointXYSuivantCustom7));
+                //8
+                vue.setCustom9(String.valueOf(PointXYSuivantCustom9));
+                vue.setCustom10(String.valueOf(PointXYSuivantCustom10));
+                //vue.setCustom11(String.valueOf(PointXYSuivantCustom11));
+                //12
+                //vue.setCustom13(String.valueOf(PointXYSuivantCustom13));
+                //14
             }
 
             //Create vue (Enregistrement des resultats)
