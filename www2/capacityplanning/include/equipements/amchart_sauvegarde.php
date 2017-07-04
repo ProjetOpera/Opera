@@ -11,13 +11,13 @@
 
 <?php
 	if ($type == "bandes") {	
-?>	
-	<script src="javascript/amcharts/amcharts.js"></script>
-	<script src="javascript/amcharts/serial.js"></script>
-	<script src="javascript/amcharts/plugins/export/export.min.js"></script>
-	<script src="javascript/amcharts/themes/light.js"></script>
-	<link rel="stylesheet" href="javascript/amcharts/plugins/export/export.css" type="text/css" media="all" />
-
+?>
+	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+	<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+	<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	
 	<script>
 		var chart = AmCharts.makeChart(
 			"chartdiv", {
@@ -355,7 +355,6 @@
 <?php
 	if ($type == "stock_vierges") {	
 ?>
-
 	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
 	<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
@@ -376,13 +375,13 @@
 					while ($row = $result->fetch(PDO::FETCH_ASSOC))
 					{
 						if ($row['Custom4'] < $seuil) {
-							$color = '#2980b9';
+							$color = '#c0392b';
 						}
 						if ($row['Custom4'] >= $seuil) {
 							$color = '#e67e22';
 						}
 						if ($row['Custom4'] >= $alerte) {
-							$color = '#c0392b';
+							$color = '#2980b9';
 						}
 
 						$date = date_create($row['Date_Releve']);
