@@ -172,13 +172,25 @@
 		if ($type == "data_center" && $target == "SNP1_Virtu" . $Cluster) {
 		$environnement = "Virtu";
 		$site = "AMPERE";
-		$type = "CPU";
+		//$type = "CPU";
 		$sav_cluster = $Cluster;
 		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='CPU utilisé (%)' AND Site='AMPERE'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
-			$seuil = $row['Seuil'];
-			$alerte = $row['Alerte'];
+			$seuilCPU = $row['Seuil'];
+			$alerteCPU = $row['Alerte'];
+		}
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='RAM utilisée (%)' AND Site='AMPERE'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuilRAM = $row['Seuil'];
+			$alerteRAM = $row['Alerte'];
+		}
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='Occupation disque (%)' AND Site='AMPERE'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuilHDD = $row['Seuil'];
+			$alerteHDD = $row['Alerte'];
 		}
 ?>
 	<table class="tableau_meteo_graph">
@@ -216,13 +228,25 @@
 		if ($type == "data_center" && $target == "SNP2_Virtu" . $Cluster) {
 		$environnement = "Virtu";
 		$site = "AMPERE";
-		$type = "CPU";
+		//$type = "CPU";
 		$sav_cluster = $Cluster;
 		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='CPU utilisé (%)' AND Site='FRANKLIN'");
 		while ($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
-			$seuil = $row['Seuil'];
-			$alerte = $row['Alerte'];
+			$seuilCPU = $row['Seuil'];
+			$alerteCPU = $row['Alerte'];
+		}
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='RAM utilisée (%)' AND Site='FRANKLIN'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuilRAM = $row['Seuil'];
+			$alerteRAM = $row['Alerte'];
+		}
+		$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='Occupation disque (%)' AND Site='FRANKLIN'");
+		while ($row = $result->fetch(PDO::FETCH_ASSOC))
+		{
+			$seuilHDD = $row['Seuil'];
+			$alerteHDD = $row['Alerte'];
 		}
 ?>
 	<table class="tableau_meteo_graph">
