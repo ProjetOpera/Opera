@@ -12,11 +12,11 @@
 <?php
 	if ($type == "bandes") {	
 ?>
-	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
-	<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-	<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script src="amcharts/amcharts.js"></script>
+	<script src="amcharts/serial.js"></script>
+	<script src="amcharts/export.min.js"></script>
+	<link rel="stylesheet" href="amcharts/export.css" type="text/css" media="all" />
+	<script src="amcharts/light.js"></script>
 	
 	<script>
 		var chart = AmCharts.makeChart(
@@ -126,12 +126,11 @@
 <?php
 	if ($type == "bd") {	
 ?>
-
-	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
-	<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-	<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script src="amcharts/amcharts.js"></script>
+	<script src="amcharts/serial.js"></script>
+	<script src="amcharts/export.min.js"></script>
+	<link rel="stylesheet" href="amcharts/export.css" type="text/css" media="all" />
+	<script src="amcharts/light.js"></script>
 
 	<script>
 		var chart = AmCharts.makeChart(
@@ -241,11 +240,11 @@
 <?php
 	if ($type == "lib_util") {	
 ?>
-	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
-	<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-	<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script src="amcharts/amcharts.js"></script>
+	<script src="amcharts/serial.js"></script>
+	<script src="amcharts/export.min.js"></script>
+	<link rel="stylesheet" href="amcharts/export.css" type="text/css" media="all" />
+	<script src="amcharts/light.js"></script>
 
 	<script>
 		var chart = AmCharts.makeChart(
@@ -355,11 +354,11 @@
 <?php
 	if ($type == "stock_vierges") {	
 ?>
-	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
-	<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-	<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script src="amcharts/amcharts.js"></script>
+	<script src="amcharts/serial.js"></script>
+	<script src="amcharts/export.min.js"></script>
+	<link rel="stylesheet" href="amcharts/export.css" type="text/css" media="all" />
+	<script src="amcharts/light.js"></script>
 
 	<script>
 		var chart = AmCharts.makeChart(
