@@ -61,14 +61,20 @@
 
 	if (isset($_GET['type'])) {
 		$type = $_GET['type'];
+	} else {
+		$type = "";
 	}
 	
 	if (isset($_GET['target'])) {
 		$target = $_GET['target'];
+	} else {
+		$target = "";
 	}
 	
 	if (isset($_GET['data'])) {
 		$data = $_GET['data'];
+	} else {
+		$data = "";
 	}
 ?>
 
@@ -176,7 +182,7 @@
 <?php
 	$sav_cluster = "";
 	foreach ($SNP1_Clusters as $Cluster) {
-		if ($type == "data_center" && $target == "SNP1_Virtu" . $Cluster)
+		if ($type == "data_center" && $target == "SNP1_Virtu" . $Cluster && $data == "")
 		{
 			$sav_cluster = $Cluster;
 ?>
@@ -207,7 +213,7 @@
 <?php
 	$sav_cluster = "";
 	foreach ($SNP2_Clusters as $Cluster) {
-		if ($type == "data_center" && $target == "SNP2_Virtu" . $Cluster)
+		if ($type == "data_center" && $target == "SNP2_Virtu" . $Cluster && $data == "")
 		{
 			$sav_cluster = $Cluster;
 ?>
