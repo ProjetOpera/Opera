@@ -132,7 +132,7 @@
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
-			$capacity = (int)$temp['Custom3'];
+			$capacity = $temp['Custom3'];
 		}
 	}
 	else

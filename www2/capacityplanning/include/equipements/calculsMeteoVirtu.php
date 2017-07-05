@@ -86,16 +86,18 @@
 		{
 			if ($capacity[i] < $seuil)
 			{
-				
+				${'meteoVirtu_AmpereCPU_'.$Cluster} = "<img src='images/soleil.png'>";
 			}
 			if ($capacity[i] >= $seuil && $capacity < $alerte)
 			{
+				${'meteoVirtu_AmpereCPU_'.$Cluster} = "<img src='images/nuageux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/nuageux.png'>";
 				${'test_meteoVirtu_AmpereN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
 			}
 			if ($capacity[i] >= $alerte)
 			{
+				${'meteoVirtu_AmpereCPU_'.$Cluster} = "<img src='images/pluvieux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/pluvieux.png'>";
 				${'test_meteoVirtu_AmpereN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
@@ -150,16 +152,18 @@
 		{
 			if ($capacity[i] < $seuil)
 			{
-				
+				${'meteoVirtu_FranklinCPU_'.$Cluster} = "<img src='images/soleil.png'>";
 			}
 			if ($capacity[i] >= $seuil && $capacity < $alerte)
 			{
+				${'meteoVirtu_FranklinCPU_'.$Cluster} = "<img src='images/nuageux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/nuageux.png'>";
 				${'test_meteoVirtu_FranklinN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
 			}
 			if ($capacity[i] >= $alerte)
 			{
+				${'meteoVirtu_FranklinCPU_'.$Cluster} = "<img src='images/pluvieux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/pluvieux.png'>";
 				${'test_meteoVirtu_FranklinN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
@@ -218,16 +222,18 @@
 		{
 			if ($capacity[i] < $seuil)
 			{
-				
+				${'meteoVirtu_AmpereHDD_'.$Cluster} = "<img src='images/soleil.png'>";
 			}
 			if ($capacity[i] >= $seuil && $capacity < $alerte)
 			{
+				${'meteoVirtu_AmpereHDD_'.$Cluster} = "<img src='images/nuageux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/nuageux.png'>";
 				${'test_meteoVirtu_AmpereN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
 			}
 			if ($capacity[i] >= $alerte)
 			{
+				${'meteoVirtu_AmpereHDD_'.$Cluster} = "<img src='images/pluvieux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/pluvieux.png'>";
 				${'test_meteoVirtu_AmpereN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
@@ -282,16 +288,18 @@
 		{
 			if ($capacity[i] < $seuil)
 			{
-				
+				${'meteoVirtu_FranklinHDD_'.$Cluster} = "<img src='images/soleil.png'>";
 			}
 			if ($capacity[i] >= $seuil && $capacity < $alerte)
 			{
+				${'meteoVirtu_FranklinHDD_'.$Cluster} = "<img src='images/nuageux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/nuageux.png'>";
 				${'test_meteoVirtu_FranklinN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
 			}
 			if ($capacity[i] >= $alerte)
 			{
+				${'meteoVirtu_FranklinHDD_'.$Cluster} = "<img src='images/pluvieux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/pluvieux.png'>";
 				${'test_meteoVirtu_FranklinN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
@@ -350,16 +358,18 @@
 		{
 			if ($capacity[i] < $seuil)
 			{
-				
+				${'meteoVirtu_AmpereRAM_'.$Cluster} = "<img src='images/soleil.png'>";
 			}
 			if ($capacity[i] >= $seuil && $capacity < $alerte)
 			{
+				${'meteoVirtu_AmpereRAM_'.$Cluster} = "<img src='images/nuageux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/nuageux.png'>";
 				${'test_meteoVirtu_AmpereN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
 			}
 			if ($capacity[i] >= $alerte)
 			{
+				${'meteoVirtu_AmpereRAM_'.$Cluster} = "<img src='images/pluvieux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/pluvieux.png'>";
 				${'test_meteoVirtu_AmpereN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
@@ -373,7 +383,7 @@
 	}
 	
 	/* ******************** */
-	/* ***** HDD SNP2 ***** */
+	/* ***** RAM SNP2 ***** */
 	/* ******************** */
 	
 	//$capacity = 0;
@@ -381,7 +391,7 @@
 	$alerte = 0;
 	$i = 0;
 	
-	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='Occupation disque (%)' AND Site='FRANKLIN'"))
+	if ($sql = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='RAM dispo' AND Site='FRANKLIN'"))
 	{
 		while ($temp = $sql->fetch(PDO::FETCH_ASSOC))
 		{
@@ -414,16 +424,18 @@
 		{
 			if ($capacity[i] < $seuil)
 			{
-				
+				${'meteoVirtu_FranklinRAM_'.$Cluster} = "<img src='images/soleil.png'>";
 			}
 			if ($capacity[i] >= $seuil && $capacity < $alerte)
 			{
+				${'meteoVirtu_FranklinRAM_'.$Cluster} = "<img src='images/nuageux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/nuageux.png'>";
 				${'test_meteoVirtu_FranklinN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
 			}
 			if ($capacity[i] >= $alerte)
 			{
+				${'meteoVirtu_FranklinRAM_'.$Cluster} = "<img src='images/pluvieux.png'>";
 				//$meteoTSMBandes_Ampere = "<img src='images/pluvieux.png'>";
 				${'test_meteoVirtu_FranklinN2_'.$Cluster}++;
 				//$test_meteoTSM_AmpereN2++;
