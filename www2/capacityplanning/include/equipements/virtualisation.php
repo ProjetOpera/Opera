@@ -290,9 +290,9 @@
 	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
 	</br>
 	<?php
+	include 'amchart_virtualisation.php';
 		}
 	}
-	include 'amchart_virtualisation.php';
 ?>
 <?php
 	$sav_cluster = "";
@@ -341,7 +341,7 @@
 	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
 	</br>
 	<?php
+	include 'amchart_virtualisation.php';
 		}
 	}
-	include 'amchart_virtualisation.php';
 ?>
