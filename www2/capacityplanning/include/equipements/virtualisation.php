@@ -61,14 +61,10 @@
 
 	if (isset($_GET['type'])) {
 		$type = $_GET['type'];
-	} else {
-		$type = "";
 	}
 	
 	if (isset($_GET['target'])) {
 		$target = $_GET['target'];
-	} else {
-		$target = "";
 	}
 	
 	if (isset($_GET['data'])) {
