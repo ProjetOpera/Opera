@@ -167,41 +167,6 @@
 ?>
 
 <?php
-
-	foreach ($SNP1_Clusters as $Cluster) {
-		if ($type == "data_center" && $target == "SNP1_Virtu" . $Cluster) {
-		$environnement = "Virtu";
-		$site = "AMPERE";
-		//$type = "CPU";
-		$sav_cluster = $Cluster;
-?>
-	<table class="tableau_meteo_middle">
-	  	<tr>
-			<th></th><th></th>
-		</tr>
-	  	<tr>
-	  		<td style="color: black; font-size: 20px;" colspan=2>AMPERE - Virtualisation</td>
-	  	</tr>
-		
-		<?php
-			foreach ($SNP1_Clusters as $Cluster) {
-		?>
-		
-	  	<tr>
-	  		<td style="text-align: left; padding-left: 10px;"><a <?php if ($sav_cluster==$Cluster) { echo 'style="color: #2c3e50;"'; } ?> href="?type=data_center&target=SNP1_Virtu<?php echo $Cluster;?>" target="_self"><?php echo $Cluster;?></a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AMPERE_'.$Cluster}; ?></td>
-	  	</tr>
-		
-		<?php
-			}
-		?>
-	</table>
-	</br>
-	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
-	</br>
-<?php
-	}
-?>
-<?php	
 	}
 	$sav_cluster = "";
 	foreach ($SNP1_Clusters as $Cluster) {
@@ -235,13 +200,13 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>AMPERE - Virtualisation</td>
 	  	</tr>
 	  	<tr>
-	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster . "CPU";?>" target="_self">Occupation CPU (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AmpereCPU_'.$Cluster}; ?></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster;?>&data=CPU" target="_self">Occupation CPU (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AmpereCPU_'.$Cluster}; ?></td>
 	  	</tr>
 		<tr>
-	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster . "RAM";?>" target="_self">Occupation RAM (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AmpereRAM_'.$Cluster}; ?></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster;?>&data=RAM" target="_self">Occupation RAM (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AmpereRAM_'.$Cluster}; ?></td>
 	  	</tr>
 		<tr>
-	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster . "HDD";?>" target="_self">Occupation disque (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AmpereHDD_'.$Cluster}; ?></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster;?>&data=HDD" target="_self">Occupation disque (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AmpereHDD_'.$Cluster}; ?></td>
 	  	</tr>
 	</table>
 	</br>
@@ -286,13 +251,13 @@
 	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN - Virtualisation</td>
 	  	</tr>
 	  	<tr>
-	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster . "CPU";?>" target="_self">Occupation CPU (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FranklinCPU_'.$Cluster}; ?></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_Virtu<?php echo $sav_cluster;?>&data=CPU" target="_self">Occupation CPU (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FranklinCPU_'.$Cluster}; ?></td>
 	  	</tr>
 		<tr>
-	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster . "RAM";?>" target="_self">Occupation RAM (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FranklinRAM_'.$Cluster}; ?></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_Virtu<?php echo $sav_cluster;?>&data=RAM" target="_self">Occupation RAM (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FranklinRAM_'.$Cluster}; ?></td>
 	  	</tr>
 		<tr>
-	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster . "HDD";?>" target="_self">Occupation disque (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FranklinHDD_'.$Cluster}; ?></td>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_Virtu<?php echo $sav_cluster;?>&data=HDD" target="_self">Occupation disque (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FranklinHDD_'.$Cluster}; ?></td>
 	  	</tr>
 	</table>
 	</br>
