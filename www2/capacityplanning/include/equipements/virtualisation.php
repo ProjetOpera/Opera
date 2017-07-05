@@ -167,7 +167,6 @@
 ?>
 
 <?php
-	}
 	$sav_cluster = "";
 	foreach ($SNP1_Clusters as $Cluster) {
 		if ($type == "data_center" && $target == "SNP1_Virtu" . $Cluster)
