@@ -1,10 +1,3 @@
-<?php
-	echo $seuil.'<br>';
-	echo $alerte.'<br>';
-	echo $sav_cluster.'<br>';
-	echo $_GET['data'].'<br>';
-?>
-
 <style>
 	#chartdiv {
 		width	: 73%;
@@ -29,20 +22,35 @@
 			    "theme": "light",
 			    "dataProvider": [
 			    <?php
-					$sql = "SELECT DISTINCT(Date_Releve), Custom10 FROM capacityplanning.vueglobale WHERE Custom3 = '".$sav_cluster."' ORDER BY Date_Releve";
+					if ($_GET['data'] == 'CPU')
+					{
+						$sql = "SELECT DISTINCT(Date_Releve), Custom11 AS Total, Custom12 AS Util FROM capacityplanning.vueglobale WHERE Custom3 = '".$sav_cluster."' ORDER BY Date_Releve";
+					}
+					
+					if ($_GET['data'] == 'RAM')
+					{
+						$sql = "SELECT DISTINCT(Date_Releve), Custom9 AS Total, Custom10 AS Util FROM capacityplanning.vueglobale WHERE Custom3 = '".$sav_cluster."' ORDER BY Date_Releve";
+					}
+					
+					if ($_GET['data'] == 'HDD')
+					{
+						$sql = "SELECT DISTINCT(Date_Releve), Custom13 AS Total, Custom14 AS Util FROM capacityplanning.vueglobale WHERE Custom3 = '".$sav_cluster."' ORDER BY Date_Releve";
+					}
 
 					$result = $ressourceBDD_appli->query($sql);
 		
 					while ($row = $result->fetch(PDO::FETCH_ASSOC))
-					{
+					{		
+						$taux_util = $row['Util'] / $row['Total'] * 100;
+						
 						if ($row['Custom10'] < $seuil) {
-							$color = '#2980b9';
+							$color = '#c0392b';
 						}
 						if ($row['Custom10'] >= $seuil) {
 							$color = '#e67e22';
 						}
 						if ($row['Custom10'] >= $alerte) {
-							$color = '#c0392b';
+							$color = '#2980b9';
 						}
 
 						$date = date_create($row['Date_Releve']);
@@ -50,7 +58,7 @@
 					{
 	    				"lineColor": "<?=$color?>",
 	    				"date": "<?=date_format($date, 'd-m-Y')?>",
-	    				"value": <?=round($row['Custom10'])?>
+	    				"value": <?=round($taux_util)?>
 					},
 				<?php
 					}
