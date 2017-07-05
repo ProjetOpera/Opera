@@ -66,6 +66,10 @@
 	if (isset($_GET['target'])) {
 		$target = $_GET['target'];
 	}
+	
+	if (isset($_GET['data'])) {
+		$data = $_GET['data'];
+	}
 ?>
 
 <?php
@@ -166,10 +170,82 @@
 	}
 ?>
 
+
+
+
 <?php
 	$sav_cluster = "";
 	foreach ($SNP1_Clusters as $Cluster) {
 		if ($type == "data_center" && $target == "SNP1_Virtu" . $Cluster)
+		{
+			$sav_cluster = $Cluster;
+?>
+			<table class="tableau_meteo_middle">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black; font-size: 20px;" colspan=2>AMPERE - Virtualisation</td>
+	  	</tr>
+	  	<tr>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster;?>&data=CPU" target="_self">Occupation CPU (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AmpereCPU_'.$Cluster}; ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster;?>&data=RAM" target="_self">Occupation RAM (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AmpereRAM_'.$Cluster}; ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP1_Virtu<?php echo $sav_cluster;?>&data=HDD" target="_self">Occupation disque (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_AmpereHDD_'.$Cluster}; ?></td>
+	  	</tr>
+	</table>
+	</br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	</br>
+	<?php
+		}
+	}
+?>
+<?php
+	$sav_cluster = "";
+	foreach ($SNP2_Clusters as $Cluster) {
+		if ($type == "data_center" && $target == "SNP2_Virtu" . $Cluster)
+		{
+			$sav_cluster = $Cluster;
+?>
+
+	<table class="tableau_meteo_middle">
+	  	<tr>
+			<th></th><th></th>
+		</tr>
+	  	<tr>
+	  		<td style="color: black; font-size: 20px;" colspan=2>FRANKLIN - Virtualisation</td>
+	  	</tr>
+	  	<tr>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_Virtu<?php echo $sav_cluster;?>&data=CPU" target="_self">Occupation CPU (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FranklinCPU_'.$Cluster}; ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_Virtu<?php echo $sav_cluster;?>&data=RAM" target="_self">Occupation RAM (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FranklinRAM_'.$Cluster}; ?></td>
+	  	</tr>
+		<tr>
+	  		<td style="text-align: left; padding-left: 10px;"><a href="?type=data_center&target=SNP2_Virtu<?php echo $sav_cluster;?>&data=HDD" target="_self">Occupation disque (%)</a></td><td style="text-align: right; padding-right: 10px;"><?php echo ${'meteoVirtu_FranklinHDD_'.$Cluster}; ?></td>
+	  	</tr>
+	</table>
+	</br>
+	<a style="position:relative;margin-top:25px;left:10px;" href="javascript:history.back()" target="_self">Retour</a>
+	</br>
+<?php
+		}
+	}
+?>
+
+
+
+
+
+
+<?php
+	$sav_cluster = "";
+	foreach ($SNP1_Clusters as $Cluster) {
+		if ($type == "data_center" && $target == "SNP1_Virtu" . $Cluster && ($data == "CPU" || $data == "RAM" || $data == "HDD"))
 		{
 			$sav_cluster = $Cluster;
 			$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='CPU utilisé (%)' AND Site='AMPERE'");
@@ -219,7 +295,7 @@
 <?php
 	$sav_cluster = "";
 	foreach ($SNP2_Clusters as $Cluster) {
-		if ($type == "data_center" && $target == "SNP2_Virtu" . $Cluster)
+		if ($type == "data_center" && $target == "SNP2_Virtu" . $Cluster && ($data == "CPU" || $data == "RAM" || $data == "HDD"))
 		{
 			$sav_cluster = $Cluster;
 			$result = $ressourceBDD_appli->query("SELECT Seuil, Alerte from capacityplanning.parametres WHERE Module_concerne='Virtu' AND Label='CPU utilisé (%)' AND Site='FRANKLIN'");
